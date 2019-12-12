@@ -17,6 +17,8 @@ import java.util.Optional;
 @RequestMapping("/hello")
 public class AutopilotController {
 
+    private String nameNotFound;
+
     @Autowired
     EmployeeRepository repository;
 
@@ -24,7 +26,9 @@ public class AutopilotController {
     @ApiOperation("Fetch specific employee")
     public ResponseEntity<EmployeeEntity> sayHello(@PathVariable long id, Model model){
         Optional<EmployeeEntity> emp = repository.findById(id);
-        return new ResponseEntity(emp, HttpStatus.OK);
+        String resp = emp.map(employeeEntity -> "Hello " + employeeEntity.toString() + "!").orElse(nameNotFound);
+        HttpStatus status = nameNotFound.equals(resp) ? HttpStatus.NO_CONTENT : HttpStatus.OK;
+        return new ResponseEntity(resp, status);
     }
 
     @RequestMapping(value = "/add", method = RequestMethod.POST)

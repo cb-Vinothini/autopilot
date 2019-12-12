@@ -1,0 +1,85 @@
+# ruby dir
+./ruby/
+!/cb-app/src/com/chargebee/app/api/gen/ruby/
+######## OS Specific ############
+
+# Windows
+Thumbs.db
+Desktop.ini
+
+#OSX
+.DS_Store
+Icon?
+G# Thumbnails
+._*
+# Files that might appear on external disk
+.Spotlight-V100
+.Trashes
+
+#Linux
+!.gitignore
+!.gitattributes
+*~
+# KDE
+.directory
+*.rbc
+
+############ Editor Specific ############
+# vim
+.*.sw[a-z]
+*.un~
+*~
+Session.vim
+
+#netbeans
+nbproject/private/
+!.netbeans_automatic_build
+#eclipse
+*.pydevproject
+.project
+.metadata
+bin/**
+tmp/**
+tmp/**/*
+*.tmp
+*.bak
+*.swp
+*~.nib
+local.properties
+.classpath
+.settings/
+.loadpath
+
+# CDT-specific
+.cproject
+
+#emacs
+*~
+\#*\#
+/.emacs.desktop
+/.emacs.desktop.lock
+.elc
+auto-save-list
+tramp
+
+
+########## Others ############
+*.sassc
+.sass-cache
+/tomcat/logs/*
+/tomcat/work/*
+/tomcat/temp/*
+webapp/WEB-INF/classes/
+webapp/WEB-INF/sun-web.xml
+/build/output
+mig_todel/*
+
+#including the .sorting file of jawr which is being excluded by the rules of Linux
+!.sorting
+
+#exclude java classes
+*.class
+
+## build excludes
+*.out
+generated_web.xml

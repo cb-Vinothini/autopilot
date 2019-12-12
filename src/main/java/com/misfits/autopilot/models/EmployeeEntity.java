@@ -29,7 +29,17 @@ public class EmployeeEntity {
     @ApiModelProperty(example = "vinothini@chargebee.com")
     private String email;
 
-    //Setters and getters left out for brevity.
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
 
     @Override
     public String toString() {
