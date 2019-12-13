@@ -9,7 +9,7 @@ import javax.persistence.*;
 import java.time.LocalDateTime;
 
 @Entity
-@Table(name="TBL_EMPLOYEES")
+@Table(name="ACTION")
 public class Action {
 
     @Id
