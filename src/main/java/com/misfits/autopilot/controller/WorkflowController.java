@@ -1,7 +1,7 @@
 package com.misfits.autopilot.controller;
 
-import com.misfits.autopilot.models.Workflow;
-import com.misfits.autopilot.models.WorkflowRepository;
+import com.misfits.autopilot.models.entity.Workflow;
+import com.misfits.autopilot.models.repositories.WorkflowRepository;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.models.Model;

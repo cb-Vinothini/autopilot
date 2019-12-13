@@ -1,7 +1,7 @@
 package com.misfits.autopilot.controller;
 
-import com.misfits.autopilot.models.Action;
-import com.misfits.autopilot.models.ActionRepository;
+import com.misfits.autopilot.models.entity.Action;
+import com.misfits.autopilot.models.repositories.ActionRepository;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.models.Model;

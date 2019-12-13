@@ -1,7 +1,7 @@
 package com.misfits.autopilot.controller;
 
-import com.misfits.autopilot.models.EmployeeEntity;
-import com.misfits.autopilot.models.EmployeeRepository;
+import com.misfits.autopilot.models.entity.EmployeeEntity;
+import com.misfits.autopilot.models.repositories.EmployeeRepository;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.models.Model;
