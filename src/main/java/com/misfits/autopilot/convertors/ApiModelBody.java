@@ -3,22 +3,31 @@ package com.misfits.autopilot.convertors;
 import com.chargebee.models.enums.EntityType;
 import com.chargebee.models.enums.EventType;
 import com.misfits.autopilot.models.entity.*;
-import org.hibernate.jdbc.Work;
+import io.swagger.annotations.ApiModelProperty;
 
+import java.util.LinkedList;
 import java.util.List;
 
 public class ApiModelBody {
 
+    @ApiModelProperty(example = "Add shipping charges")
     private String name;
+
+    @ApiModelProperty(example = "Add shipping charges when subscription shipping address is in US")
     private String desc;
+
     private Workflow.WorkflowType workflowType;
+
+    @ApiModelProperty(example = "SUBSCRIPTION")
     private EntityType entityName;
-    private EventType trigger;
+
+    @ApiModelProperty(example = "SUBSCRIPTION_CREATED")
+    private List<EventType> triggers;
 
     private List<Criteria> criterias;
     private ActionGroup actionGroup;
     public Workflow workflow;
-    private Hook hook;
+    private List<Hook> hooks = new LinkedList<>();
     private Action action;
 
     /*
@@ -29,8 +38,8 @@ public class ApiModelBody {
         return workflow;
     }
 
-    public Hook getHook() {
-        return hook;
+    public List<Hook> getHooks() {
+        return hooks;
     }
 
 
@@ -46,8 +55,8 @@ public class ApiModelBody {
         this.workflow = workflow;
     }
 
-    public void setHook(Hook hook) {
-        this.hook = hook;
+    public void setHooks(List<Hook> hooks) {
+        this.hooks = hooks;
     }
 
     public void setAction(Action action) {
@@ -103,22 +112,25 @@ public class ApiModelBody {
         workflow.setType(workflowType);
     }
 
-    public void setObjs(Workflow flow) throws Exception {
-        hook = new Hook();
-        hook.setEventType(trigger);
-        hook.setWorkflowId(flow.getId());
+    public void convertValues(Workflow flow) throws Exception {
+        triggers.forEach(t -> {
+            Hook hook = new Hook();
+            hook.setEventType(t);
+            hook.setWorkflowId(flow.getId());
+            hooks.add(hook);
+        });
         for(Criteria criteria : criterias) {
             criteria.convertValues();
         }
         action.convertValues();
     }
 
-    public EventType getTrigger() {
-        return trigger;
+    public List<EventType> getTriggers() {
+        return triggers;
     }
 
-    public void setTrigger(EventType trigger) {
-        this.trigger = trigger;
+    public void setTriggers(List<EventType> triggers) {
+        this.triggers = triggers;
     }
 }
 

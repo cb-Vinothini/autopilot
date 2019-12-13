@@ -17,14 +17,13 @@ import java.util.List;
 @Table(name="criterias")
 public class Criteria {
 
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @ApiModelProperty(hidden = true)
     private Long id;
 
     @Column(name="parameter", nullable=false)
-    @ApiModelProperty(example = "")
+    @ApiModelProperty(example = "subscriptions.shipping_address.country")
     private String name;
 
     @Column(name="operator", nullable=false)
@@ -33,7 +32,7 @@ public class Criteria {
     private Operator operator;
 
     @Column(name="value", nullable=false)
-    @ApiModelProperty(example = "Add shipping charges when subscription shipping address is in US")
+    @ApiModelProperty(example = "US")
     private String value;
 
     @CreationTimestamp
@@ -45,12 +44,15 @@ public class Criteria {
     private LocalDateTime modifiedAt;
 
     @Transient
+    @ApiModelProperty(example = "US")
     public String from;
 
     @Transient
+    @ApiModelProperty(example = "US")
     public String to;
 
     @Transient
+    @ApiModelProperty(dataType = "list", example = "[\"US\", \"EU\"]")
     public List<String> list;
 
     public String getName() {

@@ -12,12 +12,11 @@ UNIQUE KEY uk_workflows_name (name)
 
 
 CREATE TABLE hooks(
-id bigint(19) not null auto_increment,
 event_type int(11) not null,
 workflow_id bigint(19) not null,
 created_at timestamp not null DEFAULT CURRENT_TIMESTAMP,
 modified_at timestamp not null DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-PRIMARY KEY (id),
+PRIMARY KEY (event_type, workflow_id),
 CONSTRAINT fk_hooks_workflow_id FOREIGN KEY (workflow_id) REFERENCES workflows (id) ON DELETE CASCADE
 )ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
@@ -32,12 +31,11 @@ PRIMARY KEY (id)
 )ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 CREATE TABLE criteria_groups(
-id bigint(19) not null auto_increment,
-workflow_id bigint(19) not null,
 criteria_id bigint(19) not null,
+workflow_id bigint(19) not null,
 created_at timestamp not null DEFAULT CURRENT_TIMESTAMP,
 modified_at timestamp not null DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-PRIMARY KEY (id),
+PRIMARY KEY (criteria_id, workflow_id),
 CONSTRAINT fk_criteria_groups_workflow_id FOREIGN KEY (workflow_id) REFERENCES workflows (id) ON DELETE CASCADE,
 CONSTRAINT fk_criteria_groups_criteria_id FOREIGN KEY (criteria_id) REFERENCES criterias (id) ON DELETE CASCADE
 )ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
@@ -52,12 +50,11 @@ PRIMARY KEY (id)
 )ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 CREATE TABLE action_groups(
-id bigint(19) not null auto_increment,
-workflow_id bigint(19) not null,
 action_id bigint(19) not null,
+workflow_id bigint(19) not null,
 created_at timestamp not null DEFAULT CURRENT_TIMESTAMP,
 modified_at timestamp not null DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-PRIMARY KEY (id),
+PRIMARY KEY (action_id, workflow_id),
 CONSTRAINT fk_action_groups_workflow_id FOREIGN KEY (workflow_id) REFERENCES workflows (id) ON DELETE CASCADE,
 CONSTRAINT fk_action_groups_action_id FOREIGN KEY (action_id) REFERENCES actions (id) ON DELETE CASCADE
 )ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;

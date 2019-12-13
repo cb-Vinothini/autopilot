@@ -47,8 +47,8 @@ public class WorkflowController {
     public void save(ApiModelBody modelBody) throws Exception {
         modelBody.setWorkflow();
         Workflow workflow = workflowRepo.save(modelBody.getWorkflow());
-        modelBody.setObjs(workflow);
-        hookRepository.save(modelBody.getHook());
+        modelBody.convertValues(workflow);
+        hookRepository.saveAll(modelBody.getHooks());
         criteriaRepository.saveAll(modelBody.getCriterias());
         actionRepository.save(modelBody.getAction());
         createActionGroup(workflow.getId(), modelBody.getAction().getId());
@@ -57,7 +57,7 @@ public class WorkflowController {
 
     private ActionGroup createActionGroup(Long workflowId, Long actionId) {
         ActionGroup actGroup = new ActionGroup();
-        actGroup.setWorkFlowId(workflowId);
+        actGroup.setWorkflowId(workflowId);
         actGroup.setActionId(actionId);
         actionGroupRepository.save(actGroup);
         return actGroup;

@@ -32,7 +32,7 @@ public class Workflow {
 
     @Column(name="entityType", nullable=false, length=200)
     @Enumerated(EnumType.ORDINAL)
-    @ApiModelProperty(example = "CUSTOMER")
+    @ApiModelProperty(example = "SUBSCRIPTION")
     private EntityType entityType;
 
     @CreationTimestamp

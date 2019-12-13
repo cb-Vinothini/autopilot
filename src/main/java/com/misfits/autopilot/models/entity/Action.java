@@ -25,12 +25,12 @@ public class Action {
     private Long id;
 
     @Column(name="api_name", nullable = false)
-    @ApiModelProperty(example = "subscriptions.add_charge")
+    @ApiModelProperty(example = "subscriptions.add_charge_at_term_end")
     private String name;
 
     @Column(name="api_parameters", nullable = false)
     @Type(type="text")
-    @ApiModelProperty(example = "{'amount=50'}")
+    @ApiModelProperty(example = "[{\"name\":\"amount\",\"value\":\"300\"},{\"name\":\"description\",\"value\":\"Shipping Charge\"}]")
     private String apiParameters;
 
     @CreationTimestamp
@@ -62,7 +62,7 @@ public class Action {
         this.modifiedAt = modifiedAt;
     }
 
-    public void setAttribute(List<Attribute> attributes) { this.attributes = attributes; }
+    public void setAttributes(List<Attribute> attributes) { this.attributes = attributes; }
 
     // Getters
 
@@ -86,13 +86,12 @@ public class Action {
         return modifiedAt;
     }
 
-    public List<Attribute> getAttribute() {return attributes;}
+    public List<Attribute> getAttributes() {return attributes;}
 
     public void convertValues() throws JSONException {
         JSONArray attr = new JSONArray();
         for (Attribute attribute : attributes){
-            attr.put(new JSONObject().put("name", attribute.getName()));
-            attr.put(new JSONObject().put("value", attribute.getValue()));
+            attr.put(new JSONObject().put("name", attribute.getName()).put("value", attribute.getValue()));
         }
         apiParameters = attr.toString();
     }

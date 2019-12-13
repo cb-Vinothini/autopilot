@@ -10,23 +10,19 @@ import java.time.LocalDateTime;
 
 
 @Entity
+@IdClass(CriteriaGroupCompositeKey.class)
 @Table(name="criteria_groups")
 public class CriteriaGroup {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @ApiModelProperty(hidden = true)
-    private Long id;
-
     @Column(name="workflow_id", nullable=false)
     @ApiModelProperty(example = "")
     private Long workflowId;
 
-
+    @Id
     @Column(name="criteria_id", nullable=false)
     @ApiModelProperty(example = "")
     private Long criteriaId;
-
 
     @CreationTimestamp
     @Column(name="created_at", nullable=false)

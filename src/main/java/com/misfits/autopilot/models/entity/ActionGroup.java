@@ -2,25 +2,22 @@ package com.misfits.autopilot.models.entity;
 
 import io.swagger.annotations.ApiModelProperty;
 import org.hibernate.annotations.CreationTimestamp;
-import org.hibernate.annotations.Type;
 import org.hibernate.annotations.UpdateTimestamp;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
 
 @Entity
+@IdClass(ActionGroupCompositeKey.class)
 @Table(name="action_groups")
 public class ActionGroup {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @ApiModelProperty(hidden = true)
-    private Long id;
-
     @Column(name="workflow_id", nullable = false)
     @ApiModelProperty(example = "123")
-    private Long workFlowId;
+    private Long workflowId;
 
+    @Id
     @Column(name="action_id", nullable = false)
     @ApiModelProperty(example = "789")
     private Long actionId;
@@ -35,12 +32,8 @@ public class ActionGroup {
 
     // Setters
 
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public void setWorkFlowId(Long workFlowId) {
-        this.workFlowId = workFlowId;
+    public void setWorkflowId(Long workflowId) {
+        this.workflowId = workflowId;
     }
 
     public void setActionId(Long actionId) {
@@ -57,15 +50,9 @@ public class ActionGroup {
 
     // Getters
 
-    public Long getId() {
-        return id;
+    public Long getWorkflowId() {
+        return workflowId;
     }
-
-
-    public Long getWorkFlowId() {
-        return workFlowId;
-    }
-
 
     public Long getActionId() {
         return actionId;

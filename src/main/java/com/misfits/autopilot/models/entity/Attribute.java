@@ -1,7 +1,13 @@
 package com.misfits.autopilot.models.entity;
 
+import io.swagger.annotations.ApiModelProperty;
+
 public class Attribute {
+
+    @ApiModelProperty(example = "amount")
     private String name;
+
+    @ApiModelProperty(example = "300")
     private String value;
 
     public String getName() {

@@ -10,24 +10,19 @@ import javax.persistence.*;
 import java.time.LocalDateTime;
 
 @Entity
+@IdClass(HookCompositeKey.class)
 @Table(name="hooks")
 public class Hook {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @ApiModelProperty(hidden = true)
-    private Long id;
-
     @Column(name="eventType", nullable=false, length=200)
     @Enumerated(EnumType.ORDINAL)
-    @ApiModelProperty(example = "CUSTOMER_CREATED")
+    @ApiModelProperty(example = "SUBSCRIPTION_CREATED")
     private EventType eventType;
 
-
+    @Id
     @Column(name="workflow_id", nullable=false)
-    @ApiModelProperty(example = "Add shipping charges when subscription shipping address is in US")
     private Long workflowId;
-
 
     @CreationTimestamp
     @Column(name="created_at", nullable=false)
@@ -36,7 +31,6 @@ public class Hook {
     @UpdateTimestamp
     @Column(name="modified_at", nullable=false)
     private LocalDateTime modifiedAt;
-
 
     public EventType getEventType() {
         return eventType;
