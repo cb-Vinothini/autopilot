@@ -15,7 +15,7 @@ public class Workflow {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @ApiModelProperty(example = "081")
+    @ApiModelProperty(hidden = true)
     private Long id;
 
     @Column(name="name", nullable=false)
@@ -28,23 +28,21 @@ public class Workflow {
 
     @Column(name="type", nullable=false)
     @Enumerated(EnumType.ORDINAL)
-    @ApiModelProperty(example = "hook")
+    @ApiModelProperty(example = "HOOK")
     private WorkflowType type;
 
     @Column(name="entityType", nullable=false, length=200)
     @Enumerated(EnumType.ORDINAL)
-    @ApiModelProperty(example = "subscription", allowableValues = "")
+    @ApiModelProperty(example = "CUSTOMER")
     @Basic
     private EntityType entityType;
 
     @CreationTimestamp
     @Column(name="createdAt", nullable=false)
-    @ApiModelProperty(example = "1560319388818")
     private LocalDateTime createdAt;
 
     @UpdateTimestamp
     @Column(name="modifiedAt", nullable=false)
-    @ApiModelProperty(example = "1560319388818")
     private LocalDateTime modifiedAt;
 
     public Long getId() {

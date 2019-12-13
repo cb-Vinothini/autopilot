@@ -18,7 +18,7 @@ public class SwaggerConfig {
         return new Docket(DocumentationType.SWAGGER_2)
                 .select()
                 .apis(RequestHandlerSelectors.basePackage("com.misfits.autopilot.controller"))
-                .paths(regex("/hello.*"))
+                .paths(regex("/workflow.*"))
                 .build()
                 .apiInfo(metaData());
     }
