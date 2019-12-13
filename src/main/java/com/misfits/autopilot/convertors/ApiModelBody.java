@@ -103,10 +103,14 @@ public class ApiModelBody {
         workflow.setType(workflowType);
     }
 
-    public void setObjs(Workflow flow) {
+    public void setObjs(Workflow flow) throws Exception {
         hook = new Hook();
         hook.setEventType(trigger);
         hook.setWorkflowId(flow.getId());
+        for(Criteria criteria : criterias) {
+            criteria.convertValues();
+        }
+        action.convertValues();
     }
 
     public EventType getTrigger() {

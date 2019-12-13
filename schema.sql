@@ -26,7 +26,6 @@ id bigint(19) not null auto_increment,
 parameter varchar(100) not null collate utf8_unicode_ci,
 operator int(11) not null collate utf8_unicode_ci,
 value varchar(100) null,
-entity_type varchar(100) not null,
 created_at timestamp not null DEFAULT CURRENT_TIMESTAMP,
 modified_at timestamp not null DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
 PRIMARY KEY (id)

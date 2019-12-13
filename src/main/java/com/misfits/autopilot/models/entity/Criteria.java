@@ -2,12 +2,16 @@ package com.misfits.autopilot.models.entity;
 
 
 import com.chargebee.models.enums.EntityType;
+import com.chargebee.org.json.JSONArray;
+import com.chargebee.org.json.JSONException;
+import com.chargebee.org.json.JSONObject;
 import io.swagger.annotations.ApiModelProperty;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Entity
 @Table(name="criterias")
@@ -19,14 +23,9 @@ public class Criteria {
     @ApiModelProperty(hidden = true)
     private Long id;
 
-    @Column(name="name", nullable=false)
+    @Column(name="parameter", nullable=false)
     @ApiModelProperty(example = "")
     private String name;
-
-    @Column(name="parameter", nullable=false)
-    @ApiModelProperty(example = "Add shipping charges when subscription shipping address is in US")
-    private String parameter;
-
 
     @Column(name="operator", nullable=false)
     @Enumerated(EnumType.ORDINAL)
@@ -37,12 +36,6 @@ public class Criteria {
     @ApiModelProperty(example = "Add shipping charges when subscription shipping address is in US")
     private String value;
 
-
-    @Column(name="entityType", nullable=false, length=200)
-    @Enumerated(EnumType.ORDINAL)
-    @ApiModelProperty(example = "CUSTOMER",hidden = true)
-    private EntityType entityType;
-
     @CreationTimestamp
     @Column(name="created_at", nullable=false)
     private LocalDateTime createdAt;
@@ -51,20 +44,21 @@ public class Criteria {
     @Column(name="modified_at", nullable=false)
     private LocalDateTime modifiedAt;
 
+    @Transient
+    public String from;
+
+    @Transient
+    public String to;
+
+    @Transient
+    public List<String> list;
+
     public String getName() {
         return name;
     }
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public String getParameter() {
-        return parameter;
-    }
-
-    public void setParameter(String parameter) {
-        this.parameter = parameter;
     }
 
     public Operator getOperator() {
@@ -83,14 +77,26 @@ public class Criteria {
         this.value = value;
     }
 
-    public EntityType getEntityType() {
-        return entityType;
+    public void convertValues() throws JSONException {
+        JSONObject val = new JSONObject();
+        if(from != null && to != null){
+            val.put("from", from);
+            val.put("to", to);
+        } else if(list != null && !list.isEmpty()){
+            val.put("list", new JSONArray(list));
+        }else {
+            val.put("value", value);
+        }
+        value = val.toString();
     }
 
-    public void setEntityType(EntityType entityType) {
-        this.entityType = entityType;
+    public Long getId() {
+        return id;
     }
 
+    public void setId(Long id) {
+        this.id = id;
+    }
 
     public enum Operator {
         between("between", "between"),

@@ -11,6 +11,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @Api(value="/workflow", produces ="application/json")
 @RequestMapping("/workflow")
@@ -26,6 +28,8 @@ public class WorkflowController {
     CriteriaRepository criteriaRepository;
     @Autowired
     ActionGroupRepository actionGroupRepository;
+    @Autowired
+    CriteriaGroupRepository criteriaGroupRepository;
 
     @RequestMapping(value = "/{id}", method= RequestMethod.GET)
     @ApiOperation("Get a workflow")
@@ -35,21 +39,20 @@ public class WorkflowController {
 
     @RequestMapping(value = "/create", method = RequestMethod.POST)
     @ApiOperation("Add a workflow")
-    public ResponseEntity<Workflow> saveProduct(@RequestBody ApiModelBody modelBody) {
+    public ResponseEntity<Workflow> saveProduct(@RequestBody ApiModelBody modelBody) throws Exception {
         save(modelBody);
         return new ResponseEntity("workflow creation successfull", HttpStatus.OK);
     }
 
-    public void save(ApiModelBody modelBody) {
+    public void save(ApiModelBody modelBody) throws Exception {
         modelBody.setWorkflow();
         Workflow workflow = workflowRepo.save(modelBody.getWorkflow());
         modelBody.setObjs(workflow);
         hookRepository.save(modelBody.getHook());
-
-
-//        criteriaRepository.save(this.criteria);
-//        actionRepository.save(this.action);
-//        createActionGroup(workflow.getId(), action.getId());
+        criteriaRepository.saveAll(modelBody.getCriterias());
+        actionRepository.save(modelBody.getAction());
+        createActionGroup(workflow.getId(), modelBody.getAction().getId());
+        createCriteriaGroup(workflow.getId(), modelBody.getCriterias());
     }
 
     private ActionGroup createActionGroup(Long workflowId, Long actionId) {
@@ -58,5 +61,14 @@ public class WorkflowController {
         actGroup.setActionId(actionId);
         actionGroupRepository.save(actGroup);
         return actGroup;
+    }
+
+    private void createCriteriaGroup(Long workflowId, List<Criteria> criterias) {
+        criterias.stream().forEach(c -> {
+            CriteriaGroup criteriaGroup = new CriteriaGroup();
+            criteriaGroup.setWorkflowId(workflowId);
+            criteriaGroup.setCriteriaId(c.getId());
+            criteriaGroupRepository.save(criteriaGroup);
+        });
     }
 }

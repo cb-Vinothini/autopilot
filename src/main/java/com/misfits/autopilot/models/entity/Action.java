@@ -1,5 +1,8 @@
 package com.misfits.autopilot.models.entity;
 
+import com.chargebee.org.json.JSONArray;
+import com.chargebee.org.json.JSONException;
+import com.chargebee.org.json.JSONObject;
 import io.swagger.annotations.ApiModelProperty;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.Type;
@@ -10,14 +13,14 @@ import java.time.LocalDateTime;
 import java.util.List;
 
 @Entity
-@Table(name="ACTION")
+@Table(name="actions")
 public class Action {
 
     @Transient
     public List<Attribute> attributes;
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @ApiModelProperty(hidden = true)
     private Long id;
 
@@ -85,4 +88,12 @@ public class Action {
 
     public List<Attribute> getAttribute() {return attributes;}
 
+    public void convertValues() throws JSONException {
+        JSONArray attr = new JSONArray();
+        for (Attribute attribute : attributes){
+            attr.put(new JSONObject().put("name", attribute.getName()));
+            attr.put(new JSONObject().put("value", attribute.getValue()));
+        }
+        apiParameters = attr.toString();
+    }
 }

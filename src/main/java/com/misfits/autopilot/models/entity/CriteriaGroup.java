@@ -18,10 +18,6 @@ public class CriteriaGroup {
     @ApiModelProperty(hidden = true)
     private Long id;
 
-    @Column(name="name", nullable=false)
-    @ApiModelProperty(example = "")
-    private String name;
-
     @Column(name="workflow_id", nullable=false)
     @ApiModelProperty(example = "")
     private Long workflowId;
@@ -39,4 +35,36 @@ public class CriteriaGroup {
     @UpdateTimestamp
     @Column(name="modified_at", nullable=false)
     private LocalDateTime modifiedAt;
+
+    public Long getWorkflowId() {
+        return workflowId;
+    }
+
+    public void setWorkflowId(Long workflowId) {
+        this.workflowId = workflowId;
+    }
+
+    public Long getCriteriaId() {
+        return criteriaId;
+    }
+
+    public void setCriteriaId(Long criteriaId) {
+        this.criteriaId = criteriaId;
+    }
+
+    public LocalDateTime getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(LocalDateTime createdAt) {
+        this.createdAt = createdAt;
+    }
+
+    public LocalDateTime getModifiedAt() {
+        return modifiedAt;
+    }
+
+    public void setModifiedAt(LocalDateTime modifiedAt) {
+        this.modifiedAt = modifiedAt;
+    }
 }
