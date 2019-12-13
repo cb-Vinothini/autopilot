@@ -7,7 +7,6 @@ import org.hibernate.annotations.UpdateTimestamp;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
-import java.util.stream.Stream;
 
 @Entity
 @Table(name="workflows")
@@ -34,7 +33,6 @@ public class Workflow {
     @Column(name="entityType", nullable=false, length=200)
     @Enumerated(EnumType.ORDINAL)
     @ApiModelProperty(example = "CUSTOMER")
-    @Basic
     private EntityType entityType;
 
     @CreationTimestamp
