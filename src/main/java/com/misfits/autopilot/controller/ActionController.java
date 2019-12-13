@@ -28,7 +28,7 @@ public class ActionController {
         Optional<Action> action = actionRespositorty.findById(id);
         if(action.isPresent()) {
             Action actObj = action.get();
-            actObj.setApiName(act.getApiName());
+            actObj.setName(act.getName());
             actObj.setApiParameters(act.getApiParameters());
             actionRespositorty.save(actObj);
             return new ResponseEntity(actObj, HttpStatus.OK);

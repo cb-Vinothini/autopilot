@@ -38,10 +38,19 @@ public class Hook {
     private LocalDateTime modifiedAt;
 
 
-    @Column(name="entityType", nullable=false, length=200)
-    @Enumerated(EnumType.ORDINAL)
-    @ApiModelProperty(example = "CUSTOMER",hidden = true)
-    private EntityType entityType;
+    public EventType getEventType() {
+        return eventType;
+    }
 
+    public void setEventType(EventType eventType) {
+        this.eventType = eventType;
+    }
 
+    public Long getWorkflowId() {
+        return workflowId;
+    }
+
+    public void setWorkflowId(Long workflowId) {
+        this.workflowId = workflowId;
+    }
 }

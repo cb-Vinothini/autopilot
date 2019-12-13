@@ -1,33 +1,25 @@
 package com.misfits.autopilot.convertors;
 
+import com.chargebee.models.enums.EntityType;
+import com.chargebee.models.enums.EventType;
 import com.misfits.autopilot.models.entity.*;
-import com.misfits.autopilot.models.repositories.*;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.hibernate.jdbc.Work;
+
+import java.util.List;
 
 public class ApiModelBody {
 
-    @Autowired
-    private Workflow workflow;
-    @Autowired
-    private Hook hook;
-    @Autowired
-    private Action action;
-    @Autowired
-    private Criteria criteria;
-    @Autowired
+    private String name;
+    private String desc;
+    private Workflow.WorkflowType workflowType;
+    private EntityType entityName;
+    private EventType trigger;
+
+    private List<Criteria> criterias;
     private ActionGroup actionGroup;
-
-    @Autowired
-    WorkflowRepository workflowRepo;
-    @Autowired
-    HookRepository hookRepository;
-    @Autowired
-    ActionRepository actionRepository;
-    @Autowired
-    CriteriaRepository criteriaRepository;
-    @Autowired
-    ActionGroupRepository actionGroupRepository;
-
+    public Workflow workflow;
+    private Hook hook;
+    private Action action;
 
     /*
     *   Getters
@@ -41,9 +33,6 @@ public class ApiModelBody {
         return hook;
     }
 
-    public Criteria getCriteria() {
-        return criteria;
-    }
 
     public Action getAction() {
         return action;
@@ -61,33 +50,71 @@ public class ApiModelBody {
         this.hook = hook;
     }
 
-    public void setCriteria(Criteria criteria) {
-        this.criteria = criteria;
-    }
-
     public void setAction(Action action) {
         this.action = action;
     }
 
-    /*
-    *   Save
-    */
-
-    public void save() {
-        this.workflow = workflowRepo.save(this.workflow);
-        this.hook = hookRepository.save(this.hook);
-        this.criteria = criteriaRepository.save(this.criteria);
-        this.action = actionRepository.save(this.action);
-        this.actionGroup = createActionGroup(workflow.getId(), action.getId());
-
+    public List<Criteria> getCriterias() {
+        return criterias;
     }
 
-    private ActionGroup createActionGroup(Long workflowId, Long actionId) {
-        ActionGroup actGroup = new ActionGroup();
-        actGroup.setWorkFlowId(workflowId);
-        actGroup.setActionId(actionId);
-        actionGroupRepository.save(actGroup);
-        return actGroup;
+    public void setCriterias(List<Criteria> criterias) {
+        this.criterias = criterias;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getDesc() {
+        return desc;
+    }
+
+    public void setDesc(String desc) {
+        this.desc = desc;
+    }
+
+    public Workflow.WorkflowType getWorkflowType() {
+        return workflowType;
+    }
+
+    public void setWorkflowType(Workflow.WorkflowType workflowType) {
+        this.workflowType = workflowType;
+    }
+
+
+    public EntityType getEntityName() {
+        return entityName;
+    }
+
+    public void setEntityName(EntityType entityName) {
+        this.entityName = entityName;
+    }
+
+    public void setWorkflow() {
+        workflow = new Workflow();
+        workflow.setName(name);
+        workflow.setDescription(desc);
+        workflow.setEntityType(entityName);
+        workflow.setType(workflowType);
+    }
+
+    public void setObjs(Workflow flow) {
+        hook = new Hook();
+        hook.setEventType(trigger);
+        hook.setWorkflowId(flow.getId());
+    }
+
+    public EventType getTrigger() {
+        return trigger;
+    }
+
+    public void setTrigger(EventType trigger) {
+        this.trigger = trigger;
     }
 }
 
