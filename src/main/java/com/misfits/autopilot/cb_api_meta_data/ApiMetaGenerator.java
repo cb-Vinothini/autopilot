@@ -2,7 +2,8 @@ package com.misfits.autopilot.cb_api_meta_data;
 
 import com.chargebee.models.enums.EntityType;
 import com.chargebee.org.json.JSONArray;
-import com.chargebee.org.json.JSONObject;
+import com.sun.deploy.util.StringUtils;
+import org.json.simple.JSONObject;
 import com.chargebee.v2.internal.Request;
 import org.reflections.Reflections;
 import org.reflections.scanners.ResourcesScanner;
@@ -10,66 +11,33 @@ import org.reflections.scanners.SubTypesScanner;
 import org.reflections.util.ClasspathHelper;
 import org.reflections.util.ConfigurationBuilder;
 import org.reflections.util.FilterBuilder;
-import springfox.documentation.spring.web.json.Json;
-import sun.reflect.Reflection;
-import sun.tools.java.ClassPath;
 
 import java.io.File;
+import java.io.FileWriter;
 import java.lang.reflect.Method;
-import java.lang.reflect.TypeVariable;
 import java.util.*;
 
 public class ApiMetaGenerator {
 
 
     public static void generate() throws Exception {
-
         Map<String, Class> entityClasses = getEntityClasses();
-
         for (String className : entityClasses.keySet()) {
             Class entityClass = entityClasses.get(className);
             createEntityMetaFile(className, entityClass);
         }
-
-
     }
 
     private static void createEntityMetaFile(String entityName, Class c) throws Exception {
 
-        File file = new File(entityName);
-
+        File file = new File("./meta/" + entityName + ".json");
         JSONObject jsonObject = new JSONObject();
-
         JSONArray actions = new JSONArray();
-        Class[] declaredClasses = c.getClasses();
-        for (Class clas : declaredClasses) {
-            if (c.isAssignableFrom(Request.class)) {
-                JSONObject action = new JSONObject();
-                action.put("action_name", entityName + "." + (c.getEnclosingClass() != null ? c.getEnclosingClass().getName() : c.getName()));
-                JSONArray args = new JSONArray();
-                Method[] methods = c.getMethods();
-                for (Method m : methods) {
-                    if (m.getParameterCount() > 0 && m.getParameterCount() < 3) {
-                        JSONObject arg = new JSONObject();
-                        arg.put("method_name", m.getName());
-                        arg.put("reg", m.getName().toLowerCase().contains("opt"));
-                        arg.put("is_multi", m.getParameterCount() > 1);
-                        TypeVariable t = m.getParameterCount() > 1 ? m.getTypeParameters()[1] : m.getTypeParameters()[0];
-                        arg.put("type", t.getName());
-                        if (t.getClass() != null && t.getClass().isEnum()) {
-                            Method values = t.getClass().getDeclaredMethod("values");
-                            Object obj = values.invoke(null);
-                            arg.put("possible_values", new JSONArray((Object[]) obj));
-                        }
-                        args.put(arg);
-                    }
-
-                }
-
-                action.put("arguments", args);
-                actions.put(action);
+        Class[] entityInnerClasses = c.getEnclosingClass().getDeclaredClasses();
+        for (Class entityInnerClass : entityInnerClasses) {
+            if (Request.class.isAssignableFrom(entityInnerClass)) {
+                actions.put(setActionParams(entityName, entityInnerClass));
             }
-
         }
 
         if (actions.length() > 0) {
@@ -78,7 +46,46 @@ public class ApiMetaGenerator {
             System.out.println(jsonObject);
         }
 
+        try(FileWriter fw = new FileWriter(file)) {
+            fw.write(jsonObject.toJSONString());
+            fw.flush();
+        }
+    }
 
+    private static JSONObject setActionParams(String entityName, Class entityInnerClass) throws Exception {
+        JSONObject action = new JSONObject();
+        Method[] method = entityInnerClass.getEnclosingClass().getDeclaredMethods();
+        String actionName = "";
+        for(Method me : method) {
+            if(me.getReturnType().isAssignableFrom(entityInnerClass)) {
+                actionName = me.getName();
+            }
+        }
+        action.put("action_name", entityName + "." + actionName);
+        JSONArray args = new JSONArray();
+        Method[] methods = entityInnerClass.getDeclaredMethods();
+        for (Method m : methods) {
+            if (m.getParameterCount() > 0 && m.getParameterCount() < 3) {
+                JSONObject arg = new JSONObject();
+                arg.put("name", m.getName());
+                arg.put("method_name", m.getName());
+                arg.put("req", m.getName().toLowerCase().contains("opt"));
+                arg.put("is_multi", m.getParameterCount() > 1);
+                Class t = (m.getParameterCount() > 1) ? m.getParameterTypes()[1] : m.getParameterTypes()[0];
+                if (t.isEnum()) {
+                    Method values = t.getDeclaredMethod("values");
+                    Object obj = values.invoke(null);
+                    arg.put("type", "Enum");
+                    arg.put("possible_values", new JSONArray((Object[]) obj));
+                } else {
+                    arg.put("type", t.getSimpleName());
+                }
+                args.put(arg);
+            }
+        }
+
+        action.put("arguments", args);
+        return action;
     }
 
 
@@ -109,8 +116,9 @@ public class ApiMetaGenerator {
         Map<String, Class> entityClasses = new HashMap<>();
         List<EntityType> entities = Arrays.asList(EntityType.values());
         for (EntityType entity : entities) {
-            if (classMap.get(entity.name().toLowerCase()) != null) {
-                entityClasses.put(entity.name(), classMap.get(entity.name().toLowerCase()));
+            String entityName = entity.name().toLowerCase().replaceAll("_", "");
+            if (classMap.get(entityName) != null) {
+                entityClasses.put(classMap.get(entityName).getEnclosingClass().getSimpleName(), classMap.get(entityName));
             }
         }
 
@@ -119,6 +127,23 @@ public class ApiMetaGenerator {
 
     public static void main(String[] args) throws Exception {
         generate();
+    }
+
+    public static String toCamelCase(String init) {
+        if (init == null)
+            return null;
+
+        final StringBuilder ret = new StringBuilder(init.length());
+
+        for (final String word : init.split(" ")) {
+            if (!word.isEmpty()) {
+                ret.append(Character.toUpperCase(word.charAt(0)));
+                ret.append(word.substring(1).toLowerCase());
+            }
+            if (!(ret.length() == init.length()))
+                ret.append(" ");
+        }
+        return ret.toString();
     }
 
 
