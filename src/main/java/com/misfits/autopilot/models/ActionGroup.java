@@ -9,7 +9,7 @@ import javax.persistence.*;
 import java.time.LocalDateTime;
 
 @Entity
-@Table(name="TBL_EMPLOYEES")
+@Table(name="ACTION_GROUP")
 public class ActionGroup {
 
     @Id
@@ -17,14 +17,13 @@ public class ActionGroup {
     @ApiModelProperty(hidden = true)
     private Long id;
 
-    @Column(name="api_name", nullable = false)
-    @ApiModelProperty(example = "subscriptions.add_charge")
-    private String apiName;
+    @Column(name="workflow_id", nullable = false)
+    @ApiModelProperty(example = "123")
+    private Long workFlowId;
 
-    @Column(name="api_parameters", nullable = false)
-    @Type(type="text")
-    @ApiModelProperty(example = "{'amount=50'}")
-    private String apiParameters;
+    @Column(name="action_id", nullable = false)
+    @ApiModelProperty(example = "789")
+    private Long actionId;
 
     @CreationTimestamp
     @Column(name="created_at", nullable = false)
@@ -35,16 +34,17 @@ public class ActionGroup {
     private LocalDateTime modifiedAt;
 
     // Setters
+
     public void setId(Long id) {
         this.id = id;
     }
 
-    public void setApiName(String apiName) {
-        this.apiName = apiName;
+    public void setWorkFlowId(Long workFlowId) {
+        this.workFlowId = workFlowId;
     }
 
-    public void setApiParameters(String apiParameters) {
-        this.apiParameters = apiParameters;
+    public void setActionId(Long actionId) {
+        this.actionId = actionId;
     }
 
     public void setCreatedAt(LocalDateTime createdAt) {
@@ -61,12 +61,14 @@ public class ActionGroup {
         return id;
     }
 
-    public String getApiName() {
-        return apiName;
+
+    public Long getWorkFlowId() {
+        return workFlowId;
     }
 
-    public String getApiParameters() {
-        return apiParameters;
+
+    public Long getActionId() {
+        return actionId;
     }
 
     public LocalDateTime getCreatedAt() {
@@ -76,5 +78,4 @@ public class ActionGroup {
     public LocalDateTime getModifiedAt() {
         return modifiedAt;
     }
-
 }
