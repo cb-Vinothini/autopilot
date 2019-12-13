@@ -1,6 +1,7 @@
 package com.misfits.autopilot.convertors;
 
 import com.chargebee.models.enums.EntityType;
+import com.chargebee.models.enums.EventType;
 import com.misfits.autopilot.models.entity.*;
 import org.hibernate.jdbc.Work;
 
@@ -12,7 +13,7 @@ public class ApiModelBody {
     private String desc;
     private Workflow.WorkflowType workflowType;
     private EntityType entityName;
-    private String trigger;
+    private EventType trigger;
 
     private List<Criteria> criterias;
     private ActionGroup actionGroup;
@@ -85,13 +86,6 @@ public class ApiModelBody {
         this.workflowType = workflowType;
     }
 
-    public String getTrigger() {
-        return trigger;
-    }
-
-    public void setTrigger(String trigger) {
-        this.trigger = trigger;
-    }
 
     public EntityType getEntityName() {
         return entityName;
@@ -101,12 +95,26 @@ public class ApiModelBody {
         this.entityName = entityName;
     }
 
-    public void setObjects() {
+    public void setWorkflow() {
         workflow = new Workflow();
         workflow.setName(name);
         workflow.setDescription(desc);
         workflow.setEntityType(entityName);
         workflow.setType(workflowType);
+    }
+
+    public void setObjs(Workflow flow) {
+        hook = new Hook();
+        hook.setEventType(trigger);
+        hook.setWorkflowId(flow.getId());
+    }
+
+    public EventType getTrigger() {
+        return trigger;
+    }
+
+    public void setTrigger(EventType trigger) {
+        this.trigger = trigger;
     }
 }
 

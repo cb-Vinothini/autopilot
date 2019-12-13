@@ -41,9 +41,12 @@ public class WorkflowController {
     }
 
     public void save(ApiModelBody modelBody) {
-        modelBody.setObjects();
-        workflowRepo.save(modelBody.getWorkflow());
-//        hookRepository.save(modelBody);
+        modelBody.setWorkflow();
+        Workflow workflow = workflowRepo.save(modelBody.getWorkflow());
+        modelBody.setObjs(workflow);
+        hookRepository.save(modelBody.getHook());
+
+
 //        criteriaRepository.save(this.criteria);
 //        actionRepository.save(this.action);
 //        createActionGroup(workflow.getId(), action.getId());
