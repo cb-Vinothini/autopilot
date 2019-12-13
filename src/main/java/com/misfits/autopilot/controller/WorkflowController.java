@@ -37,11 +37,11 @@ public class WorkflowController {
         return new ResponseEntity("workflow", HttpStatus.OK);
     }
 
-    @RequestMapping(value = "/create", method = RequestMethod.POST)
+    @RequestMapping(method = RequestMethod.POST)
     @ApiOperation("Add a workflow")
-    public ResponseEntity<Workflow> saveProduct(@RequestBody ApiModelBody modelBody) throws Exception {
+    public ResponseEntity<ApiModelBody> saveProduct(@RequestBody ApiModelBody modelBody) throws Exception {
         save(modelBody);
-        return new ResponseEntity("workflow creation successfull", HttpStatus.OK);
+        return new ResponseEntity(modelBody, HttpStatus.OK);
     }
 
     public void save(ApiModelBody modelBody) throws Exception {
