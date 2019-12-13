@@ -13,7 +13,8 @@ import java.util.List;
 @Table(name="ACTION")
 public class Action {
 
-    public List<Attribute> attribute;
+    @Transient
+    public List<Attribute> attributes;
 
     @Id
     @GeneratedValue
@@ -58,7 +59,7 @@ public class Action {
         this.modifiedAt = modifiedAt;
     }
 
-    public void setAttribute(List<Attribute> attribute) { this.attribute = attribute; }
+    public void setAttribute(List<Attribute> attributes) { this.attributes = attributes; }
 
     // Getters
 
@@ -82,27 +83,28 @@ public class Action {
         return modifiedAt;
     }
 
-    public List<Attribute> getAttribute() {return attribute;}
+    public List<Attribute> getAttribute() {return attributes;}
 
-    public class Attribute {
-        private String name;
-        private String value;
+}
 
-        public String getName() {
-            return name;
-        }
+class Attribute {
+    private String name;
+    private String value;
 
-        public void setName(String name) {
-            this.name = name;
-        }
-
-        public String getValue() {
-            return value;
-        }
-
-        public void setValue(String value) {
-            this.value = value;
-        }
-
+    public String getName() {
+        return name;
     }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getValue() {
+        return value;
+    }
+
+    public void setValue(String value) {
+        this.value = value;
+    }
+
 }
