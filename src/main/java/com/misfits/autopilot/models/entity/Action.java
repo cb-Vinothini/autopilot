@@ -7,10 +7,13 @@ import org.hibernate.annotations.UpdateTimestamp;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Entity
 @Table(name="ACTION")
 public class Action {
+
+    public List<Attribute> attribute;
 
     @Id
     @GeneratedValue
@@ -55,6 +58,8 @@ public class Action {
         this.modifiedAt = modifiedAt;
     }
 
+    public void setAttribute(List<Attribute> attribute) { this.attribute = attribute; }
+
     // Getters
 
     public Long getId() {
@@ -75,5 +80,29 @@ public class Action {
 
     public LocalDateTime getModifiedAt() {
         return modifiedAt;
+    }
+
+    public List<Attribute> getAttribute() {return attribute;}
+
+    public class Attribute {
+        private String name;
+        private String value;
+
+        public String getName() {
+            return name;
+        }
+
+        public void setName(String name) {
+            this.name = name;
+        }
+
+        public String getValue() {
+            return value;
+        }
+
+        public void setValue(String value) {
+            this.value = value;
+        }
+
     }
 }
