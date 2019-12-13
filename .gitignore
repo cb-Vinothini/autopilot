@@ -62,6 +62,11 @@ local.properties
 auto-save-list
 tramp
 
+#exclude java classes
+target/classes/
+*.class
+
+
 
 ########## Others ############
 *.sassc
@@ -77,8 +82,6 @@ mig_todel/*
 #including the .sorting file of jawr which is being excluded by the rules of Linux
 !.sorting
 
-#exclude java classes
-*.class
 
 ## build excludes
 *.out
