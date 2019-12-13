@@ -61,3 +61,17 @@ PRIMARY KEY (id),
 CONSTRAINT fk_action_groups_workflow_id FOREIGN KEY (workflow_id) REFERENCES workflows (id) ON DELETE CASCADE,
 CONSTRAINT fk_action_groups_action_id FOREIGN KEY (action_id) REFERENCES actions (id) ON DELETE CASCADE
 )ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+select * from workflows;
+select * from hooks;
+select * from criterias;
+select * from criteria_groups;
+select * from actions;
+select * from action_groups;
+
+delete from workflows;
+delete from hooks;
+delete from criterias;
+delete from criteria_groups;
+delete from actions;
+delete from action_groups;
