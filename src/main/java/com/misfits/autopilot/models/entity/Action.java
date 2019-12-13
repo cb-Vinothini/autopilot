@@ -23,7 +23,7 @@ public class Action {
 
     @Column(name="api_name", nullable = false)
     @ApiModelProperty(example = "subscriptions.add_charge")
-    private String apiName;
+    private String name;
 
     @Column(name="api_parameters", nullable = false)
     @Type(type="text")
@@ -43,8 +43,8 @@ public class Action {
         this.id = id;
     }
 
-    public void setApiName(String apiName) {
-        this.apiName = apiName;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public void setApiParameters(String apiParameters) {
@@ -67,8 +67,8 @@ public class Action {
         return id;
     }
 
-    public String getApiName() {
-        return apiName;
+    public String getName() {
+        return name;
     }
 
     public String getApiParameters() {

@@ -29,7 +29,7 @@ value varchar(100) null,
 entity_type varchar(100) not null,
 created_at timestamp not null DEFAULT CURRENT_TIMESTAMP,
 modified_at timestamp not null DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-PRIMARY KEY (id),
+PRIMARY KEY (id)
 )ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 CREATE TABLE criteria_groups(
@@ -49,7 +49,7 @@ api_name varchar(100) not null collate utf8_unicode_ci,
 api_parameters mediumtext not null collate utf8_unicode_ci,
 created_at timestamp not null DEFAULT CURRENT_TIMESTAMP,
 modified_at timestamp not null DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-PRIMARY KEY (id),
+PRIMARY KEY (id)
 )ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 CREATE TABLE action_groups(
