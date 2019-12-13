@@ -1,4 +1,4 @@
-package com.misfits.autopilot.models;
+package com.misfits.autopilot.models.entity;
 
 import com.chargebee.models.enums.EntityType;
 import io.swagger.annotations.ApiModelProperty;
