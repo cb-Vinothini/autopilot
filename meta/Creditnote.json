@@ -60,17 +60,17 @@
                 },
                 {
                     "is_multi": false,
-                    "method_name": "transactionDate",
-                    "name": "transactionDate",
-                    "req": false,
-                    "type": "Timestamp"
-                },
-                {
-                    "is_multi": false,
                     "method_name": "transactionReferenceNumber",
                     "name": "transactionReferenceNumber",
                     "req": false,
                     "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "transactionDate",
+                    "name": "transactionDate",
+                    "req": false,
+                    "type": "Timestamp"
                 },
                 {
                     "is_multi": false,
@@ -98,41 +98,6 @@
                     ],
                     "req": false,
                     "type": "Enum"
-                },
-                {
-                    "is_multi": true,
-                    "method_name": "lineItemReferenceLineItemId",
-                    "name": "lineItemReferenceLineItemId",
-                    "req": false,
-                    "type": "String"
-                },
-                {
-                    "is_multi": false,
-                    "method_name": "customerNotes",
-                    "name": "customerNotes",
-                    "req": false,
-                    "type": "String"
-                },
-                {
-                    "is_multi": true,
-                    "method_name": "lineItemDescription",
-                    "name": "lineItemDescription",
-                    "req": false,
-                    "type": "String"
-                },
-                {
-                    "is_multi": true,
-                    "method_name": "lineItemUnitAmount",
-                    "name": "lineItemUnitAmount",
-                    "req": false,
-                    "type": "Integer"
-                },
-                {
-                    "is_multi": true,
-                    "method_name": "lineItemQuantity",
-                    "name": "lineItemQuantity",
-                    "req": false,
-                    "type": "Integer"
                 },
                 {
                     "is_multi": false,
@@ -163,11 +128,39 @@
                     "type": "Enum"
                 },
                 {
-                    "is_multi": false,
-                    "method_name": "total",
-                    "name": "total",
+                    "is_multi": true,
+                    "method_name": "lineItemDescription",
+                    "name": "lineItemDescription",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": true,
+                    "method_name": "lineItemUnitAmount",
+                    "name": "lineItemUnitAmount",
                     "req": false,
                     "type": "Integer"
+                },
+                {
+                    "is_multi": true,
+                    "method_name": "lineItemQuantity",
+                    "name": "lineItemQuantity",
+                    "req": false,
+                    "type": "Integer"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "customerNotes",
+                    "name": "customerNotes",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": true,
+                    "method_name": "lineItemReferenceLineItemId",
+                    "name": "lineItemReferenceLineItemId",
+                    "req": false,
+                    "type": "String"
                 },
                 {
                     "is_multi": false,
@@ -175,6 +168,13 @@
                     "name": "date",
                     "req": false,
                     "type": "Timestamp"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "total",
+                    "name": "total",
+                    "req": false,
+                    "type": "Integer"
                 }
             ],
             "static_method_name": "create"

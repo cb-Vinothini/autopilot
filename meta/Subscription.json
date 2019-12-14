@@ -5,13 +5,6 @@
             "arguments": [
                 {
                     "is_multi": false,
-                    "method_name": "paymentSourceId",
-                    "name": "paymentSourceId",
-                    "req": false,
-                    "type": "String"
-                },
-                {
-                    "is_multi": false,
                     "method_name": "autoCollection",
                     "name": "autoCollection",
                     "possible_values": [
@@ -21,6 +14,13 @@
                     ],
                     "req": false,
                     "type": "Enum"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "paymentSourceId",
+                    "name": "paymentSourceId",
+                    "req": false,
+                    "type": "String"
                 }
             ],
             "static_method_name": "overrideBillingProfile",
@@ -54,24 +54,71 @@
                 },
                 {
                     "is_multi": false,
-                    "method_name": "planId",
-                    "name": "planId",
+                    "method_name": "couponIds",
+                    "name": "couponIds",
                     "req": false,
-                    "type": "String"
+                    "type": "String[]"
                 },
                 {
                     "is_multi": false,
-                    "method_name": "setupFee",
-                    "name": "setupFee",
+                    "method_name": "couponIds",
+                    "name": "couponIds",
+                    "req": false,
+                    "type": "List"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "billingCycles",
+                    "name": "billingCycles",
                     "req": false,
                     "type": "Integer"
                 },
                 {
                     "is_multi": false,
-                    "method_name": "trialEnd",
-                    "name": "trialEnd",
+                    "method_name": "invoiceNotes",
+                    "name": "invoiceNotes",
                     "req": false,
-                    "type": "Timestamp"
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "metaData",
+                    "name": "metaData",
+                    "req": false,
+                    "type": "JSONObject"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "autoCollection",
+                    "name": "autoCollection",
+                    "possible_values": [
+                        "ON",
+                        "OFF",
+                        "_UNKNOWN"
+                    ],
+                    "req": false,
+                    "type": "Enum"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "paymentSourceId",
+                    "name": "paymentSourceId",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "poNumber",
+                    "name": "poNumber",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "planId",
+                    "name": "planId",
+                    "req": false,
+                    "type": "String"
                 },
                 {
                     "is_multi": false,
@@ -89,6 +136,13 @@
                 },
                 {
                     "is_multi": false,
+                    "method_name": "setupFee",
+                    "name": "setupFee",
+                    "req": false,
+                    "type": "Integer"
+                },
+                {
+                    "is_multi": false,
                     "method_name": "startDate",
                     "name": "startDate",
                     "req": false,
@@ -98,6 +152,13 @@
                     "is_multi": false,
                     "method_name": "trialStart",
                     "name": "trialStart",
+                    "req": false,
+                    "type": "Timestamp"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "trialEnd",
+                    "name": "trialEnd",
                     "req": false,
                     "type": "Timestamp"
                 },
@@ -131,13 +192,6 @@
                 },
                 {
                     "is_multi": true,
-                    "method_name": "addonId",
-                    "name": "addonId",
-                    "req": false,
-                    "type": "String"
-                },
-                {
-                    "is_multi": true,
                     "method_name": "addonQuantity",
                     "name": "addonQuantity",
                     "req": false,
@@ -149,6 +203,13 @@
                     "name": "addonUnitPrice",
                     "req": false,
                     "type": "Integer"
+                },
+                {
+                    "is_multi": true,
+                    "method_name": "addonId",
+                    "name": "addonId",
+                    "req": false,
+                    "type": "String"
                 },
                 {
                     "is_multi": false,
@@ -254,67 +315,6 @@
                     ],
                     "req": false,
                     "type": "Enum"
-                },
-                {
-                    "is_multi": false,
-                    "method_name": "paymentSourceId",
-                    "name": "paymentSourceId",
-                    "req": false,
-                    "type": "String"
-                },
-                {
-                    "is_multi": false,
-                    "method_name": "metaData",
-                    "name": "metaData",
-                    "req": false,
-                    "type": "JSONObject"
-                },
-                {
-                    "is_multi": false,
-                    "method_name": "autoCollection",
-                    "name": "autoCollection",
-                    "possible_values": [
-                        "ON",
-                        "OFF",
-                        "_UNKNOWN"
-                    ],
-                    "req": false,
-                    "type": "Enum"
-                },
-                {
-                    "is_multi": false,
-                    "method_name": "invoiceNotes",
-                    "name": "invoiceNotes",
-                    "req": false,
-                    "type": "String"
-                },
-                {
-                    "is_multi": false,
-                    "method_name": "poNumber",
-                    "name": "poNumber",
-                    "req": false,
-                    "type": "String"
-                },
-                {
-                    "is_multi": false,
-                    "method_name": "couponIds",
-                    "name": "couponIds",
-                    "req": false,
-                    "type": "List"
-                },
-                {
-                    "is_multi": false,
-                    "method_name": "couponIds",
-                    "name": "couponIds",
-                    "req": false,
-                    "type": "String[]"
-                },
-                {
-                    "is_multi": false,
-                    "method_name": "billingCycles",
-                    "name": "billingCycles",
-                    "req": false,
-                    "type": "Integer"
                 }
             ],
             "static_method_name": "importForCustomer",
@@ -348,87 +348,17 @@
                 },
                 {
                     "is_multi": false,
-                    "method_name": "planId",
-                    "name": "planId",
+                    "method_name": "couponIds",
+                    "name": "couponIds",
                     "req": false,
-                    "type": "String"
+                    "type": "List"
                 },
                 {
                     "is_multi": false,
-                    "method_name": "setupFee",
-                    "name": "setupFee",
+                    "method_name": "couponIds",
+                    "name": "couponIds",
                     "req": false,
-                    "type": "Integer"
-                },
-                {
-                    "is_multi": false,
-                    "method_name": "trialEnd",
-                    "name": "trialEnd",
-                    "req": false,
-                    "type": "Timestamp"
-                },
-                {
-                    "is_multi": false,
-                    "method_name": "planQuantity",
-                    "name": "planQuantity",
-                    "req": false,
-                    "type": "Integer"
-                },
-                {
-                    "is_multi": false,
-                    "method_name": "planUnitPrice",
-                    "name": "planUnitPrice",
-                    "req": false,
-                    "type": "Integer"
-                },
-                {
-                    "is_multi": false,
-                    "method_name": "startDate",
-                    "name": "startDate",
-                    "req": false,
-                    "type": "Timestamp"
-                },
-                {
-                    "is_multi": false,
-                    "method_name": "trialStart",
-                    "name": "trialStart",
-                    "req": false,
-                    "type": "Timestamp"
-                },
-                {
-                    "is_multi": false,
-                    "method_name": "currentTermStart",
-                    "name": "currentTermStart",
-                    "req": false,
-                    "type": "Timestamp"
-                },
-                {
-                    "is_multi": false,
-                    "method_name": "currentTermEnd",
-                    "name": "currentTermEnd",
-                    "req": false,
-                    "type": "Timestamp"
-                },
-                {
-                    "is_multi": false,
-                    "method_name": "startedAt",
-                    "name": "startedAt",
-                    "req": false,
-                    "type": "Timestamp"
-                },
-                {
-                    "is_multi": false,
-                    "method_name": "cancelledAt",
-                    "name": "cancelledAt",
-                    "req": false,
-                    "type": "Timestamp"
-                },
-                {
-                    "is_multi": false,
-                    "method_name": "affiliateToken",
-                    "name": "affiliateToken",
-                    "req": false,
-                    "type": "String"
+                    "type": "String[]"
                 },
                 {
                     "is_multi": false,
@@ -553,9 +483,133 @@
                     "type": "String"
                 },
                 {
-                    "is_multi": true,
-                    "method_name": "addonId",
-                    "name": "addonId",
+                    "is_multi": false,
+                    "method_name": "customerId",
+                    "name": "customerId",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "billingCycles",
+                    "name": "billingCycles",
+                    "req": false,
+                    "type": "Integer"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "invoiceNotes",
+                    "name": "invoiceNotes",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "metaData",
+                    "name": "metaData",
+                    "req": false,
+                    "type": "JSONObject"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "autoCollection",
+                    "name": "autoCollection",
+                    "possible_values": [
+                        "ON",
+                        "OFF",
+                        "_UNKNOWN"
+                    ],
+                    "req": false,
+                    "type": "Enum"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "poNumber",
+                    "name": "poNumber",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "planId",
+                    "name": "planId",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "planQuantity",
+                    "name": "planQuantity",
+                    "req": false,
+                    "type": "Integer"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "planUnitPrice",
+                    "name": "planUnitPrice",
+                    "req": false,
+                    "type": "Integer"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "setupFee",
+                    "name": "setupFee",
+                    "req": false,
+                    "type": "Integer"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "startDate",
+                    "name": "startDate",
+                    "req": false,
+                    "type": "Timestamp"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "trialStart",
+                    "name": "trialStart",
+                    "req": false,
+                    "type": "Timestamp"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "trialEnd",
+                    "name": "trialEnd",
+                    "req": false,
+                    "type": "Timestamp"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "currentTermStart",
+                    "name": "currentTermStart",
+                    "req": false,
+                    "type": "Timestamp"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "currentTermEnd",
+                    "name": "currentTermEnd",
+                    "req": false,
+                    "type": "Timestamp"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "startedAt",
+                    "name": "startedAt",
+                    "req": false,
+                    "type": "Timestamp"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "cancelledAt",
+                    "name": "cancelledAt",
+                    "req": false,
+                    "type": "Timestamp"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "affiliateToken",
+                    "name": "affiliateToken",
                     "req": false,
                     "type": "String"
                 },
@@ -572,6 +626,13 @@
                     "name": "addonUnitPrice",
                     "req": false,
                     "type": "Integer"
+                },
+                {
+                    "is_multi": true,
+                    "method_name": "addonId",
+                    "name": "addonId",
+                    "req": false,
+                    "type": "String"
                 },
                 {
                     "is_multi": false,
@@ -782,152 +843,6 @@
                     ],
                     "req": false,
                     "type": "Enum"
-                },
-                {
-                    "is_multi": false,
-                    "method_name": "paymentMethodGateway",
-                    "name": "paymentMethodGateway",
-                    "possible_values": [
-                        "CHARGEBEE",
-                        "STRIPE",
-                        "WEPAY",
-                        "BRAINTREE",
-                        "AUTHORIZE_NET",
-                        "PAYPAL_PRO",
-                        "PIN",
-                        "EWAY",
-                        "EWAY_RAPID",
-                        "WORLDPAY",
-                        "BALANCED_PAYMENTS",
-                        "BEANSTREAM",
-                        "BLUEPAY",
-                        "ELAVON",
-                        "FIRST_DATA_GLOBAL",
-                        "HDFC",
-                        "MIGS",
-                        "NMI",
-                        "OGONE",
-                        "PAYMILL",
-                        "PAYPAL_PAYFLOW_PRO",
-                        "SAGE_PAY",
-                        "TCO",
-                        "WIRECARD",
-                        "AMAZON_PAYMENTS",
-                        "PAYPAL_EXPRESS_CHECKOUT",
-                        "GOCARDLESS",
-                        "ADYEN",
-                        "NOT_APPLICABLE",
-                        "_UNKNOWN"
-                    ],
-                    "req": false,
-                    "type": "Enum"
-                },
-                {
-                    "is_multi": false,
-                    "method_name": "cardGateway",
-                    "name": "cardGateway",
-                    "possible_values": [
-                        "CHARGEBEE",
-                        "STRIPE",
-                        "WEPAY",
-                        "BRAINTREE",
-                        "AUTHORIZE_NET",
-                        "PAYPAL_PRO",
-                        "PIN",
-                        "EWAY",
-                        "EWAY_RAPID",
-                        "WORLDPAY",
-                        "BALANCED_PAYMENTS",
-                        "BEANSTREAM",
-                        "BLUEPAY",
-                        "ELAVON",
-                        "FIRST_DATA_GLOBAL",
-                        "HDFC",
-                        "MIGS",
-                        "NMI",
-                        "OGONE",
-                        "PAYMILL",
-                        "PAYPAL_PAYFLOW_PRO",
-                        "SAGE_PAY",
-                        "TCO",
-                        "WIRECARD",
-                        "AMAZON_PAYMENTS",
-                        "PAYPAL_EXPRESS_CHECKOUT",
-                        "GOCARDLESS",
-                        "ADYEN",
-                        "NOT_APPLICABLE",
-                        "_UNKNOWN"
-                    ],
-                    "req": false,
-                    "type": "Enum"
-                },
-                {
-                    "is_multi": false,
-                    "method_name": "cardTmpToken",
-                    "name": "cardTmpToken",
-                    "req": false,
-                    "type": "String"
-                },
-                {
-                    "is_multi": false,
-                    "method_name": "customerId",
-                    "name": "customerId",
-                    "req": false,
-                    "type": "String"
-                },
-                {
-                    "is_multi": false,
-                    "method_name": "metaData",
-                    "name": "metaData",
-                    "req": false,
-                    "type": "JSONObject"
-                },
-                {
-                    "is_multi": false,
-                    "method_name": "autoCollection",
-                    "name": "autoCollection",
-                    "possible_values": [
-                        "ON",
-                        "OFF",
-                        "_UNKNOWN"
-                    ],
-                    "req": false,
-                    "type": "Enum"
-                },
-                {
-                    "is_multi": false,
-                    "method_name": "invoiceNotes",
-                    "name": "invoiceNotes",
-                    "req": false,
-                    "type": "String"
-                },
-                {
-                    "is_multi": false,
-                    "method_name": "poNumber",
-                    "name": "poNumber",
-                    "req": false,
-                    "type": "String"
-                },
-                {
-                    "is_multi": false,
-                    "method_name": "couponIds",
-                    "name": "couponIds",
-                    "req": false,
-                    "type": "List"
-                },
-                {
-                    "is_multi": false,
-                    "method_name": "couponIds",
-                    "name": "couponIds",
-                    "req": false,
-                    "type": "String[]"
-                },
-                {
-                    "is_multi": false,
-                    "method_name": "billingCycles",
-                    "name": "billingCycles",
-                    "req": false,
-                    "type": "Integer"
                 },
                 {
                     "is_multi": false,
@@ -1058,6 +973,91 @@
                     "name": "cardBillingCountry",
                     "req": false,
                     "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "paymentMethodGateway",
+                    "name": "paymentMethodGateway",
+                    "possible_values": [
+                        "CHARGEBEE",
+                        "STRIPE",
+                        "WEPAY",
+                        "BRAINTREE",
+                        "AUTHORIZE_NET",
+                        "PAYPAL_PRO",
+                        "PIN",
+                        "EWAY",
+                        "EWAY_RAPID",
+                        "WORLDPAY",
+                        "BALANCED_PAYMENTS",
+                        "BEANSTREAM",
+                        "BLUEPAY",
+                        "ELAVON",
+                        "FIRST_DATA_GLOBAL",
+                        "HDFC",
+                        "MIGS",
+                        "NMI",
+                        "OGONE",
+                        "PAYMILL",
+                        "PAYPAL_PAYFLOW_PRO",
+                        "SAGE_PAY",
+                        "TCO",
+                        "WIRECARD",
+                        "AMAZON_PAYMENTS",
+                        "PAYPAL_EXPRESS_CHECKOUT",
+                        "GOCARDLESS",
+                        "ADYEN",
+                        "NOT_APPLICABLE",
+                        "_UNKNOWN"
+                    ],
+                    "req": false,
+                    "type": "Enum"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "cardGateway",
+                    "name": "cardGateway",
+                    "possible_values": [
+                        "CHARGEBEE",
+                        "STRIPE",
+                        "WEPAY",
+                        "BRAINTREE",
+                        "AUTHORIZE_NET",
+                        "PAYPAL_PRO",
+                        "PIN",
+                        "EWAY",
+                        "EWAY_RAPID",
+                        "WORLDPAY",
+                        "BALANCED_PAYMENTS",
+                        "BEANSTREAM",
+                        "BLUEPAY",
+                        "ELAVON",
+                        "FIRST_DATA_GLOBAL",
+                        "HDFC",
+                        "MIGS",
+                        "NMI",
+                        "OGONE",
+                        "PAYMILL",
+                        "PAYPAL_PAYFLOW_PRO",
+                        "SAGE_PAY",
+                        "TCO",
+                        "WIRECARD",
+                        "AMAZON_PAYMENTS",
+                        "PAYPAL_EXPRESS_CHECKOUT",
+                        "GOCARDLESS",
+                        "ADYEN",
+                        "NOT_APPLICABLE",
+                        "_UNKNOWN"
+                    ],
+                    "req": false,
+                    "type": "Enum"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "cardTmpToken",
+                    "name": "cardTmpToken",
+                    "req": false,
+                    "type": "String"
                 }
             ],
             "static_method_name": "importSubscription"
@@ -1080,13 +1080,6 @@
             "arguments": [
                 {
                     "is_multi": false,
-                    "method_name": "addonId",
-                    "name": "addonId",
-                    "req": false,
-                    "type": "String"
-                },
-                {
-                    "is_multi": false,
                     "method_name": "addonQuantity",
                     "name": "addonQuantity",
                     "req": false,
@@ -1098,6 +1091,13 @@
                     "name": "addonUnitPrice",
                     "req": false,
                     "type": "Integer"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "addonId",
+                    "name": "addonId",
+                    "req": false,
+                    "type": "String"
                 }
             ],
             "static_method_name": "chargeAddonAtTermEnd",
@@ -1129,13 +1129,6 @@
         {
             "action_name": "Subscription.reactivate",
             "arguments": [
-                {
-                    "is_multi": false,
-                    "method_name": "trialEnd",
-                    "name": "trialEnd",
-                    "req": false,
-                    "type": "Timestamp"
-                },
                 {
                     "is_multi": false,
                     "method_name": "trialPeriodDays",
@@ -1182,6 +1175,13 @@
                     "name": "billingCycles",
                     "req": false,
                     "type": "Integer"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "trialEnd",
+                    "name": "trialEnd",
+                    "req": false,
+                    "type": "Timestamp"
                 }
             ],
             "static_method_name": "reactivate",
@@ -1258,13 +1258,6 @@
             "arguments": [
                 {
                     "is_multi": false,
-                    "method_name": "prorate",
-                    "name": "prorate",
-                    "req": false,
-                    "type": "Boolean"
-                },
-                {
-                    "is_multi": false,
                     "method_name": "invoiceImmediately",
                     "name": "invoiceImmediately",
                     "req": false,
@@ -1276,6 +1269,13 @@
                     "name": "termEndsAt",
                     "req": false,
                     "type": "Timestamp"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "prorate",
+                    "name": "prorate",
+                    "req": false,
+                    "type": "Boolean"
                 }
             ],
             "static_method_name": "changeTermEnd",
@@ -1287,66 +1287,17 @@
             "arguments": [
                 {
                     "is_multi": false,
-                    "method_name": "planId",
-                    "name": "planId",
+                    "method_name": "couponIds",
+                    "name": "couponIds",
                     "req": false,
-                    "type": "String"
+                    "type": "List"
                 },
                 {
                     "is_multi": false,
-                    "method_name": "setupFee",
-                    "name": "setupFee",
+                    "method_name": "couponIds",
+                    "name": "couponIds",
                     "req": false,
-                    "type": "Integer"
-                },
-                {
-                    "is_multi": false,
-                    "method_name": "coupon",
-                    "name": "coupon",
-                    "req": false,
-                    "type": "String"
-                },
-                {
-                    "is_multi": false,
-                    "method_name": "trialEnd",
-                    "name": "trialEnd",
-                    "req": false,
-                    "type": "Timestamp"
-                },
-                {
-                    "is_multi": false,
-                    "method_name": "planQuantity",
-                    "name": "planQuantity",
-                    "req": false,
-                    "type": "Integer"
-                },
-                {
-                    "is_multi": false,
-                    "method_name": "planUnitPrice",
-                    "name": "planUnitPrice",
-                    "req": false,
-                    "type": "Integer"
-                },
-                {
-                    "is_multi": false,
-                    "method_name": "startDate",
-                    "name": "startDate",
-                    "req": false,
-                    "type": "Timestamp"
-                },
-                {
-                    "is_multi": false,
-                    "method_name": "reactivate",
-                    "name": "reactivate",
-                    "req": false,
-                    "type": "Boolean"
-                },
-                {
-                    "is_multi": false,
-                    "method_name": "prorate",
-                    "name": "prorate",
-                    "req": false,
-                    "type": "Boolean"
+                    "type": "String[]"
                 },
                 {
                     "is_multi": false,
@@ -1390,15 +1341,22 @@
                 },
                 {
                     "is_multi": false,
-                    "method_name": "replaceAddonList",
-                    "name": "replaceAddonList",
+                    "method_name": "endOfTerm",
+                    "name": "endOfTerm",
                     "req": false,
                     "type": "Boolean"
                 },
                 {
                     "is_multi": false,
-                    "method_name": "endOfTerm",
-                    "name": "endOfTerm",
+                    "method_name": "prorate",
+                    "name": "prorate",
+                    "req": false,
+                    "type": "Boolean"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "replaceAddonList",
+                    "name": "replaceAddonList",
                     "req": false,
                     "type": "Boolean"
                 },
@@ -1431,11 +1389,88 @@
                     "type": "Timestamp"
                 },
                 {
-                    "is_multi": true,
-                    "method_name": "addonId",
-                    "name": "addonId",
+                    "is_multi": false,
+                    "method_name": "billingCycles",
+                    "name": "billingCycles",
+                    "req": false,
+                    "type": "Integer"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "invoiceNotes",
+                    "name": "invoiceNotes",
                     "req": false,
                     "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "metaData",
+                    "name": "metaData",
+                    "req": false,
+                    "type": "JSONObject"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "poNumber",
+                    "name": "poNumber",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "planId",
+                    "name": "planId",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "planQuantity",
+                    "name": "planQuantity",
+                    "req": false,
+                    "type": "Integer"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "planUnitPrice",
+                    "name": "planUnitPrice",
+                    "req": false,
+                    "type": "Integer"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "setupFee",
+                    "name": "setupFee",
+                    "req": false,
+                    "type": "Integer"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "startDate",
+                    "name": "startDate",
+                    "req": false,
+                    "type": "Timestamp"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "trialEnd",
+                    "name": "trialEnd",
+                    "req": false,
+                    "type": "Timestamp"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "coupon",
+                    "name": "coupon",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "reactivate",
+                    "name": "reactivate",
+                    "req": false,
+                    "type": "Boolean"
                 },
                 {
                     "is_multi": true,
@@ -1450,6 +1485,13 @@
                     "name": "addonUnitPrice",
                     "req": false,
                     "type": "Integer"
+                },
+                {
+                    "is_multi": true,
+                    "method_name": "addonId",
+                    "name": "addonId",
+                    "req": false,
+                    "type": "String"
                 },
                 {
                     "is_multi": false,
@@ -1660,140 +1702,6 @@
                     ],
                     "req": false,
                     "type": "Enum"
-                },
-                {
-                    "is_multi": false,
-                    "method_name": "paymentMethodGateway",
-                    "name": "paymentMethodGateway",
-                    "possible_values": [
-                        "CHARGEBEE",
-                        "STRIPE",
-                        "WEPAY",
-                        "BRAINTREE",
-                        "AUTHORIZE_NET",
-                        "PAYPAL_PRO",
-                        "PIN",
-                        "EWAY",
-                        "EWAY_RAPID",
-                        "WORLDPAY",
-                        "BALANCED_PAYMENTS",
-                        "BEANSTREAM",
-                        "BLUEPAY",
-                        "ELAVON",
-                        "FIRST_DATA_GLOBAL",
-                        "HDFC",
-                        "MIGS",
-                        "NMI",
-                        "OGONE",
-                        "PAYMILL",
-                        "PAYPAL_PAYFLOW_PRO",
-                        "SAGE_PAY",
-                        "TCO",
-                        "WIRECARD",
-                        "AMAZON_PAYMENTS",
-                        "PAYPAL_EXPRESS_CHECKOUT",
-                        "GOCARDLESS",
-                        "ADYEN",
-                        "NOT_APPLICABLE",
-                        "_UNKNOWN"
-                    ],
-                    "req": false,
-                    "type": "Enum"
-                },
-                {
-                    "is_multi": false,
-                    "method_name": "cardGateway",
-                    "name": "cardGateway",
-                    "possible_values": [
-                        "CHARGEBEE",
-                        "STRIPE",
-                        "WEPAY",
-                        "BRAINTREE",
-                        "AUTHORIZE_NET",
-                        "PAYPAL_PRO",
-                        "PIN",
-                        "EWAY",
-                        "EWAY_RAPID",
-                        "WORLDPAY",
-                        "BALANCED_PAYMENTS",
-                        "BEANSTREAM",
-                        "BLUEPAY",
-                        "ELAVON",
-                        "FIRST_DATA_GLOBAL",
-                        "HDFC",
-                        "MIGS",
-                        "NMI",
-                        "OGONE",
-                        "PAYMILL",
-                        "PAYPAL_PAYFLOW_PRO",
-                        "SAGE_PAY",
-                        "TCO",
-                        "WIRECARD",
-                        "AMAZON_PAYMENTS",
-                        "PAYPAL_EXPRESS_CHECKOUT",
-                        "GOCARDLESS",
-                        "ADYEN",
-                        "NOT_APPLICABLE",
-                        "_UNKNOWN"
-                    ],
-                    "req": false,
-                    "type": "Enum"
-                },
-                {
-                    "is_multi": false,
-                    "method_name": "cardTmpToken",
-                    "name": "cardTmpToken",
-                    "req": false,
-                    "type": "String"
-                },
-                {
-                    "is_multi": false,
-                    "method_name": "cardIpAddress",
-                    "name": "cardIpAddress",
-                    "req": false,
-                    "type": "String"
-                },
-                {
-                    "is_multi": false,
-                    "method_name": "metaData",
-                    "name": "metaData",
-                    "req": false,
-                    "type": "JSONObject"
-                },
-                {
-                    "is_multi": false,
-                    "method_name": "invoiceNotes",
-                    "name": "invoiceNotes",
-                    "req": false,
-                    "type": "String"
-                },
-                {
-                    "is_multi": false,
-                    "method_name": "poNumber",
-                    "name": "poNumber",
-                    "req": false,
-                    "type": "String"
-                },
-                {
-                    "is_multi": false,
-                    "method_name": "couponIds",
-                    "name": "couponIds",
-                    "req": false,
-                    "type": "String[]"
-                },
-                {
-                    "is_multi": false,
-                    "method_name": "couponIds",
-                    "name": "couponIds",
-                    "req": false,
-                    "type": "List"
-                },
-                {
-                    "is_multi": false,
-                    "method_name": "billingCycles",
-                    "name": "billingCycles",
-                    "req": false,
-                    "type": "Integer"
                 },
                 {
                     "is_multi": false,
@@ -1931,6 +1839,98 @@
                     "name": "cardBillingCountry",
                     "req": false,
                     "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "paymentMethodGateway",
+                    "name": "paymentMethodGateway",
+                    "possible_values": [
+                        "CHARGEBEE",
+                        "STRIPE",
+                        "WEPAY",
+                        "BRAINTREE",
+                        "AUTHORIZE_NET",
+                        "PAYPAL_PRO",
+                        "PIN",
+                        "EWAY",
+                        "EWAY_RAPID",
+                        "WORLDPAY",
+                        "BALANCED_PAYMENTS",
+                        "BEANSTREAM",
+                        "BLUEPAY",
+                        "ELAVON",
+                        "FIRST_DATA_GLOBAL",
+                        "HDFC",
+                        "MIGS",
+                        "NMI",
+                        "OGONE",
+                        "PAYMILL",
+                        "PAYPAL_PAYFLOW_PRO",
+                        "SAGE_PAY",
+                        "TCO",
+                        "WIRECARD",
+                        "AMAZON_PAYMENTS",
+                        "PAYPAL_EXPRESS_CHECKOUT",
+                        "GOCARDLESS",
+                        "ADYEN",
+                        "NOT_APPLICABLE",
+                        "_UNKNOWN"
+                    ],
+                    "req": false,
+                    "type": "Enum"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "cardGateway",
+                    "name": "cardGateway",
+                    "possible_values": [
+                        "CHARGEBEE",
+                        "STRIPE",
+                        "WEPAY",
+                        "BRAINTREE",
+                        "AUTHORIZE_NET",
+                        "PAYPAL_PRO",
+                        "PIN",
+                        "EWAY",
+                        "EWAY_RAPID",
+                        "WORLDPAY",
+                        "BALANCED_PAYMENTS",
+                        "BEANSTREAM",
+                        "BLUEPAY",
+                        "ELAVON",
+                        "FIRST_DATA_GLOBAL",
+                        "HDFC",
+                        "MIGS",
+                        "NMI",
+                        "OGONE",
+                        "PAYMILL",
+                        "PAYPAL_PAYFLOW_PRO",
+                        "SAGE_PAY",
+                        "TCO",
+                        "WIRECARD",
+                        "AMAZON_PAYMENTS",
+                        "PAYPAL_EXPRESS_CHECKOUT",
+                        "GOCARDLESS",
+                        "ADYEN",
+                        "NOT_APPLICABLE",
+                        "_UNKNOWN"
+                    ],
+                    "req": false,
+                    "type": "Enum"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "cardTmpToken",
+                    "name": "cardTmpToken",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "cardIpAddress",
+                    "name": "cardIpAddress",
+                    "req": false,
+                    "type": "String"
                 }
             ],
             "static_method_name": "update",
@@ -1984,52 +1984,17 @@
                 },
                 {
                     "is_multi": false,
-                    "method_name": "planId",
-                    "name": "planId",
+                    "method_name": "couponIds",
+                    "name": "couponIds",
                     "req": false,
-                    "type": "String"
+                    "type": "String[]"
                 },
                 {
                     "is_multi": false,
-                    "method_name": "setupFee",
-                    "name": "setupFee",
+                    "method_name": "couponIds",
+                    "name": "couponIds",
                     "req": false,
-                    "type": "Integer"
-                },
-                {
-                    "is_multi": false,
-                    "method_name": "coupon",
-                    "name": "coupon",
-                    "req": false,
-                    "type": "String"
-                },
-                {
-                    "is_multi": false,
-                    "method_name": "trialEnd",
-                    "name": "trialEnd",
-                    "req": false,
-                    "type": "Timestamp"
-                },
-                {
-                    "is_multi": false,
-                    "method_name": "planQuantity",
-                    "name": "planQuantity",
-                    "req": false,
-                    "type": "Integer"
-                },
-                {
-                    "is_multi": false,
-                    "method_name": "planUnitPrice",
-                    "name": "planUnitPrice",
-                    "req": false,
-                    "type": "Integer"
-                },
-                {
-                    "is_multi": false,
-                    "method_name": "startDate",
-                    "name": "startDate",
-                    "req": false,
-                    "type": "Timestamp"
+                    "type": "List"
                 },
                 {
                     "is_multi": false,
@@ -2065,9 +2030,98 @@
                     "type": "Timestamp"
                 },
                 {
-                    "is_multi": true,
-                    "method_name": "addonId",
-                    "name": "addonId",
+                    "is_multi": false,
+                    "method_name": "billingCycles",
+                    "name": "billingCycles",
+                    "req": false,
+                    "type": "Integer"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "invoiceNotes",
+                    "name": "invoiceNotes",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "metaData",
+                    "name": "metaData",
+                    "req": false,
+                    "type": "JSONObject"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "autoCollection",
+                    "name": "autoCollection",
+                    "possible_values": [
+                        "ON",
+                        "OFF",
+                        "_UNKNOWN"
+                    ],
+                    "req": false,
+                    "type": "Enum"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "paymentSourceId",
+                    "name": "paymentSourceId",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "poNumber",
+                    "name": "poNumber",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "planId",
+                    "name": "planId",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "planQuantity",
+                    "name": "planQuantity",
+                    "req": false,
+                    "type": "Integer"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "planUnitPrice",
+                    "name": "planUnitPrice",
+                    "req": false,
+                    "type": "Integer"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "setupFee",
+                    "name": "setupFee",
+                    "req": false,
+                    "type": "Integer"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "startDate",
+                    "name": "startDate",
+                    "req": false,
+                    "type": "Timestamp"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "trialEnd",
+                    "name": "trialEnd",
+                    "req": false,
+                    "type": "Timestamp"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "coupon",
+                    "name": "coupon",
                     "req": false,
                     "type": "String"
                 },
@@ -2084,6 +2138,13 @@
                     "name": "addonUnitPrice",
                     "req": false,
                     "type": "Integer"
+                },
+                {
+                    "is_multi": true,
+                    "method_name": "addonId",
+                    "name": "addonId",
+                    "req": false,
+                    "type": "String"
                 },
                 {
                     "is_multi": false,
@@ -2189,67 +2250,6 @@
                     ],
                     "req": false,
                     "type": "Enum"
-                },
-                {
-                    "is_multi": false,
-                    "method_name": "paymentSourceId",
-                    "name": "paymentSourceId",
-                    "req": false,
-                    "type": "String"
-                },
-                {
-                    "is_multi": false,
-                    "method_name": "metaData",
-                    "name": "metaData",
-                    "req": false,
-                    "type": "JSONObject"
-                },
-                {
-                    "is_multi": false,
-                    "method_name": "autoCollection",
-                    "name": "autoCollection",
-                    "possible_values": [
-                        "ON",
-                        "OFF",
-                        "_UNKNOWN"
-                    ],
-                    "req": false,
-                    "type": "Enum"
-                },
-                {
-                    "is_multi": false,
-                    "method_name": "invoiceNotes",
-                    "name": "invoiceNotes",
-                    "req": false,
-                    "type": "String"
-                },
-                {
-                    "is_multi": false,
-                    "method_name": "poNumber",
-                    "name": "poNumber",
-                    "req": false,
-                    "type": "String"
-                },
-                {
-                    "is_multi": false,
-                    "method_name": "couponIds",
-                    "name": "couponIds",
-                    "req": false,
-                    "type": "String[]"
-                },
-                {
-                    "is_multi": false,
-                    "method_name": "couponIds",
-                    "name": "couponIds",
-                    "req": false,
-                    "type": "List"
-                },
-                {
-                    "is_multi": false,
-                    "method_name": "billingCycles",
-                    "name": "billingCycles",
-                    "req": false,
-                    "type": "Integer"
                 }
             ],
             "static_method_name": "createForCustomer",
@@ -2268,59 +2268,17 @@
                 },
                 {
                     "is_multi": false,
-                    "method_name": "planId",
-                    "name": "planId",
+                    "method_name": "couponIds",
+                    "name": "couponIds",
                     "req": false,
-                    "type": "String"
+                    "type": "List"
                 },
                 {
                     "is_multi": false,
-                    "method_name": "setupFee",
-                    "name": "setupFee",
+                    "method_name": "couponIds",
+                    "name": "couponIds",
                     "req": false,
-                    "type": "Integer"
-                },
-                {
-                    "is_multi": false,
-                    "method_name": "coupon",
-                    "name": "coupon",
-                    "req": false,
-                    "type": "String"
-                },
-                {
-                    "is_multi": false,
-                    "method_name": "trialEnd",
-                    "name": "trialEnd",
-                    "req": false,
-                    "type": "Timestamp"
-                },
-                {
-                    "is_multi": false,
-                    "method_name": "planQuantity",
-                    "name": "planQuantity",
-                    "req": false,
-                    "type": "Integer"
-                },
-                {
-                    "is_multi": false,
-                    "method_name": "planUnitPrice",
-                    "name": "planUnitPrice",
-                    "req": false,
-                    "type": "Integer"
-                },
-                {
-                    "is_multi": false,
-                    "method_name": "startDate",
-                    "name": "startDate",
-                    "req": false,
-                    "type": "Timestamp"
-                },
-                {
-                    "is_multi": false,
-                    "method_name": "affiliateToken",
-                    "name": "affiliateToken",
-                    "req": false,
-                    "type": "String"
+                    "type": "String[]"
                 },
                 {
                     "is_multi": false,
@@ -2492,9 +2450,112 @@
                     "type": "Boolean"
                 },
                 {
-                    "is_multi": true,
-                    "method_name": "addonId",
-                    "name": "addonId",
+                    "is_multi": false,
+                    "method_name": "customerId",
+                    "name": "customerId",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "billingCycles",
+                    "name": "billingCycles",
+                    "req": false,
+                    "type": "Integer"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "invoiceNotes",
+                    "name": "invoiceNotes",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "metaData",
+                    "name": "metaData",
+                    "req": false,
+                    "type": "JSONObject"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "autoCollection",
+                    "name": "autoCollection",
+                    "possible_values": [
+                        "ON",
+                        "OFF",
+                        "_UNKNOWN"
+                    ],
+                    "req": false,
+                    "type": "Enum"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "createdFromIp",
+                    "name": "createdFromIp",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "poNumber",
+                    "name": "poNumber",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "planId",
+                    "name": "planId",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "planQuantity",
+                    "name": "planQuantity",
+                    "req": false,
+                    "type": "Integer"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "planUnitPrice",
+                    "name": "planUnitPrice",
+                    "req": false,
+                    "type": "Integer"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "setupFee",
+                    "name": "setupFee",
+                    "req": false,
+                    "type": "Integer"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "startDate",
+                    "name": "startDate",
+                    "req": false,
+                    "type": "Timestamp"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "trialEnd",
+                    "name": "trialEnd",
+                    "req": false,
+                    "type": "Timestamp"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "affiliateToken",
+                    "name": "affiliateToken",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "coupon",
+                    "name": "coupon",
                     "req": false,
                     "type": "String"
                 },
@@ -2511,6 +2572,13 @@
                     "name": "addonUnitPrice",
                     "req": false,
                     "type": "Integer"
+                },
+                {
+                    "is_multi": true,
+                    "method_name": "addonId",
+                    "name": "addonId",
+                    "req": false,
+                    "type": "String"
                 },
                 {
                     "is_multi": false,
@@ -2724,166 +2792,6 @@
                 },
                 {
                     "is_multi": false,
-                    "method_name": "paymentMethodGateway",
-                    "name": "paymentMethodGateway",
-                    "possible_values": [
-                        "CHARGEBEE",
-                        "STRIPE",
-                        "WEPAY",
-                        "BRAINTREE",
-                        "AUTHORIZE_NET",
-                        "PAYPAL_PRO",
-                        "PIN",
-                        "EWAY",
-                        "EWAY_RAPID",
-                        "WORLDPAY",
-                        "BALANCED_PAYMENTS",
-                        "BEANSTREAM",
-                        "BLUEPAY",
-                        "ELAVON",
-                        "FIRST_DATA_GLOBAL",
-                        "HDFC",
-                        "MIGS",
-                        "NMI",
-                        "OGONE",
-                        "PAYMILL",
-                        "PAYPAL_PAYFLOW_PRO",
-                        "SAGE_PAY",
-                        "TCO",
-                        "WIRECARD",
-                        "AMAZON_PAYMENTS",
-                        "PAYPAL_EXPRESS_CHECKOUT",
-                        "GOCARDLESS",
-                        "ADYEN",
-                        "NOT_APPLICABLE",
-                        "_UNKNOWN"
-                    ],
-                    "req": false,
-                    "type": "Enum"
-                },
-                {
-                    "is_multi": false,
-                    "method_name": "cardGateway",
-                    "name": "cardGateway",
-                    "possible_values": [
-                        "CHARGEBEE",
-                        "STRIPE",
-                        "WEPAY",
-                        "BRAINTREE",
-                        "AUTHORIZE_NET",
-                        "PAYPAL_PRO",
-                        "PIN",
-                        "EWAY",
-                        "EWAY_RAPID",
-                        "WORLDPAY",
-                        "BALANCED_PAYMENTS",
-                        "BEANSTREAM",
-                        "BLUEPAY",
-                        "ELAVON",
-                        "FIRST_DATA_GLOBAL",
-                        "HDFC",
-                        "MIGS",
-                        "NMI",
-                        "OGONE",
-                        "PAYMILL",
-                        "PAYPAL_PAYFLOW_PRO",
-                        "SAGE_PAY",
-                        "TCO",
-                        "WIRECARD",
-                        "AMAZON_PAYMENTS",
-                        "PAYPAL_EXPRESS_CHECKOUT",
-                        "GOCARDLESS",
-                        "ADYEN",
-                        "NOT_APPLICABLE",
-                        "_UNKNOWN"
-                    ],
-                    "req": false,
-                    "type": "Enum"
-                },
-                {
-                    "is_multi": false,
-                    "method_name": "cardTmpToken",
-                    "name": "cardTmpToken",
-                    "req": false,
-                    "type": "String"
-                },
-                {
-                    "is_multi": false,
-                    "method_name": "cardIpAddress",
-                    "name": "cardIpAddress",
-                    "req": false,
-                    "type": "String"
-                },
-                {
-                    "is_multi": false,
-                    "method_name": "customerId",
-                    "name": "customerId",
-                    "req": false,
-                    "type": "String"
-                },
-                {
-                    "is_multi": false,
-                    "method_name": "metaData",
-                    "name": "metaData",
-                    "req": false,
-                    "type": "JSONObject"
-                },
-                {
-                    "is_multi": false,
-                    "method_name": "autoCollection",
-                    "name": "autoCollection",
-                    "possible_values": [
-                        "ON",
-                        "OFF",
-                        "_UNKNOWN"
-                    ],
-                    "req": false,
-                    "type": "Enum"
-                },
-                {
-                    "is_multi": false,
-                    "method_name": "createdFromIp",
-                    "name": "createdFromIp",
-                    "req": false,
-                    "type": "String"
-                },
-                {
-                    "is_multi": false,
-                    "method_name": "invoiceNotes",
-                    "name": "invoiceNotes",
-                    "req": false,
-                    "type": "String"
-                },
-                {
-                    "is_multi": false,
-                    "method_name": "poNumber",
-                    "name": "poNumber",
-                    "req": false,
-                    "type": "String"
-                },
-                {
-                    "is_multi": false,
-                    "method_name": "couponIds",
-                    "name": "couponIds",
-                    "req": false,
-                    "type": "String[]"
-                },
-                {
-                    "is_multi": false,
-                    "method_name": "couponIds",
-                    "name": "couponIds",
-                    "req": false,
-                    "type": "List"
-                },
-                {
-                    "is_multi": false,
-                    "method_name": "billingCycles",
-                    "name": "billingCycles",
-                    "req": false,
-                    "type": "Integer"
-                },
-                {
-                    "is_multi": false,
                     "method_name": "cardCvv",
                     "name": "cardCvv",
                     "req": false,
@@ -3016,6 +2924,98 @@
                     "is_multi": false,
                     "method_name": "cardBillingCountry",
                     "name": "cardBillingCountry",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "paymentMethodGateway",
+                    "name": "paymentMethodGateway",
+                    "possible_values": [
+                        "CHARGEBEE",
+                        "STRIPE",
+                        "WEPAY",
+                        "BRAINTREE",
+                        "AUTHORIZE_NET",
+                        "PAYPAL_PRO",
+                        "PIN",
+                        "EWAY",
+                        "EWAY_RAPID",
+                        "WORLDPAY",
+                        "BALANCED_PAYMENTS",
+                        "BEANSTREAM",
+                        "BLUEPAY",
+                        "ELAVON",
+                        "FIRST_DATA_GLOBAL",
+                        "HDFC",
+                        "MIGS",
+                        "NMI",
+                        "OGONE",
+                        "PAYMILL",
+                        "PAYPAL_PAYFLOW_PRO",
+                        "SAGE_PAY",
+                        "TCO",
+                        "WIRECARD",
+                        "AMAZON_PAYMENTS",
+                        "PAYPAL_EXPRESS_CHECKOUT",
+                        "GOCARDLESS",
+                        "ADYEN",
+                        "NOT_APPLICABLE",
+                        "_UNKNOWN"
+                    ],
+                    "req": false,
+                    "type": "Enum"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "cardGateway",
+                    "name": "cardGateway",
+                    "possible_values": [
+                        "CHARGEBEE",
+                        "STRIPE",
+                        "WEPAY",
+                        "BRAINTREE",
+                        "AUTHORIZE_NET",
+                        "PAYPAL_PRO",
+                        "PIN",
+                        "EWAY",
+                        "EWAY_RAPID",
+                        "WORLDPAY",
+                        "BALANCED_PAYMENTS",
+                        "BEANSTREAM",
+                        "BLUEPAY",
+                        "ELAVON",
+                        "FIRST_DATA_GLOBAL",
+                        "HDFC",
+                        "MIGS",
+                        "NMI",
+                        "OGONE",
+                        "PAYMILL",
+                        "PAYPAL_PAYFLOW_PRO",
+                        "SAGE_PAY",
+                        "TCO",
+                        "WIRECARD",
+                        "AMAZON_PAYMENTS",
+                        "PAYPAL_EXPRESS_CHECKOUT",
+                        "GOCARDLESS",
+                        "ADYEN",
+                        "NOT_APPLICABLE",
+                        "_UNKNOWN"
+                    ],
+                    "req": false,
+                    "type": "Enum"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "cardTmpToken",
+                    "name": "cardTmpToken",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "cardIpAddress",
+                    "name": "cardIpAddress",
                     "req": false,
                     "type": "String"
                 }

@@ -106,17 +106,17 @@
                 },
                 {
                     "is_multi": false,
-                    "method_name": "transactionDate",
-                    "name": "transactionDate",
-                    "req": false,
-                    "type": "Timestamp"
-                },
-                {
-                    "is_multi": false,
                     "method_name": "transactionReferenceNumber",
                     "name": "transactionReferenceNumber",
                     "req": false,
                     "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "transactionDate",
+                    "name": "transactionDate",
+                    "req": false,
+                    "type": "Timestamp"
                 },
                 {
                     "is_multi": false,
@@ -235,17 +235,17 @@
                 },
                 {
                     "is_multi": false,
-                    "method_name": "transactionDate",
-                    "name": "transactionDate",
-                    "req": false,
-                    "type": "Timestamp"
-                },
-                {
-                    "is_multi": false,
                     "method_name": "transactionReferenceNumber",
                     "name": "transactionReferenceNumber",
                     "req": false,
                     "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "transactionDate",
+                    "name": "transactionDate",
+                    "req": false,
+                    "type": "Timestamp"
                 },
                 {
                     "is_multi": false,
@@ -301,17 +301,17 @@
             "arguments": [
                 {
                     "is_multi": false,
-                    "method_name": "paymentSourceId",
-                    "name": "paymentSourceId",
-                    "req": false,
-                    "type": "String"
-                },
-                {
-                    "is_multi": false,
                     "method_name": "amount",
                     "name": "amount",
                     "req": false,
                     "type": "Integer"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "paymentSourceId",
+                    "name": "paymentSourceId",
+                    "req": false,
+                    "type": "String"
                 }
             ],
             "static_method_name": "collectPayment",
@@ -321,13 +321,6 @@
         {
             "action_name": "Invoice.addAddonCharge",
             "arguments": [
-                {
-                    "is_multi": false,
-                    "method_name": "addonId",
-                    "name": "addonId",
-                    "req": false,
-                    "type": "String"
-                },
                 {
                     "is_multi": false,
                     "method_name": "addonQuantity",
@@ -355,6 +348,13 @@
                     "name": "lineItemDateTo",
                     "req": false,
                     "type": "Timestamp"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "addonId",
+                    "name": "addonId",
+                    "req": false,
+                    "type": "String"
                 }
             ],
             "static_method_name": "addAddonCharge",
@@ -364,20 +364,6 @@
         {
             "action_name": "Invoice.addCharge",
             "arguments": [
-                {
-                    "is_multi": false,
-                    "method_name": "lineItemDateFrom",
-                    "name": "lineItemDateFrom",
-                    "req": false,
-                    "type": "Timestamp"
-                },
-                {
-                    "is_multi": false,
-                    "method_name": "lineItemDateTo",
-                    "name": "lineItemDateTo",
-                    "req": false,
-                    "type": "Timestamp"
-                },
                 {
                     "is_multi": false,
                     "method_name": "amount",
@@ -391,6 +377,20 @@
                     "name": "description",
                     "req": false,
                     "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "lineItemDateFrom",
+                    "name": "lineItemDateFrom",
+                    "req": false,
+                    "type": "Timestamp"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "lineItemDateTo",
+                    "name": "lineItemDateTo",
+                    "req": false,
+                    "type": "Timestamp"
                 }
             ],
             "static_method_name": "addCharge",
@@ -450,18 +450,72 @@
                     "type": "String"
                 },
                 {
-                    "is_multi": true,
-                    "method_name": "noteNote",
-                    "name": "noteNote",
+                    "is_multi": false,
+                    "method_name": "customerId",
+                    "name": "customerId",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "subscriptionId",
+                    "name": "subscriptionId",
                     "req": false,
                     "type": "String"
                 },
                 {
                     "is_multi": true,
-                    "method_name": "taxRate",
-                    "name": "taxRate",
+                    "method_name": "discountAmount",
+                    "name": "discountAmount",
                     "req": false,
-                    "type": "Double"
+                    "type": "Integer"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "vatNumber",
+                    "name": "vatNumber",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "netTermDays",
+                    "name": "netTermDays",
+                    "req": false,
+                    "type": "Integer"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "priceType",
+                    "name": "priceType",
+                    "possible_values": [
+                        "TAX_EXCLUSIVE",
+                        "TAX_INCLUSIVE",
+                        "_UNKNOWN"
+                    ],
+                    "req": false,
+                    "type": "Enum"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "dueDate",
+                    "name": "dueDate",
+                    "req": false,
+                    "type": "Timestamp"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "poNumber",
+                    "name": "poNumber",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": true,
+                    "method_name": "taxName",
+                    "name": "taxName",
+                    "req": false,
+                    "type": "String"
                 },
                 {
                     "is_multi": true,
@@ -486,10 +540,10 @@
                 },
                 {
                     "is_multi": true,
-                    "method_name": "taxName",
-                    "name": "taxName",
+                    "method_name": "taxRate",
+                    "name": "taxRate",
                     "req": false,
-                    "type": "String"
+                    "type": "Double"
                 },
                 {
                     "is_multi": false,
@@ -991,72 +1045,11 @@
                     "type": "String"
                 },
                 {
-                    "is_multi": false,
-                    "method_name": "customerId",
-                    "name": "customerId",
-                    "req": false,
-                    "type": "String"
-                },
-                {
-                    "is_multi": false,
-                    "method_name": "subscriptionId",
-                    "name": "subscriptionId",
-                    "req": false,
-                    "type": "String"
-                },
-                {
                     "is_multi": true,
-                    "method_name": "discountAmount",
-                    "name": "discountAmount",
-                    "req": false,
-                    "type": "Integer"
-                },
-                {
-                    "is_multi": false,
-                    "method_name": "vatNumber",
-                    "name": "vatNumber",
+                    "method_name": "noteNote",
+                    "name": "noteNote",
                     "req": false,
                     "type": "String"
-                },
-                {
-                    "is_multi": false,
-                    "method_name": "netTermDays",
-                    "name": "netTermDays",
-                    "req": false,
-                    "type": "Integer"
-                },
-                {
-                    "is_multi": false,
-                    "method_name": "poNumber",
-                    "name": "poNumber",
-                    "req": false,
-                    "type": "String"
-                },
-                {
-                    "is_multi": false,
-                    "method_name": "dueDate",
-                    "name": "dueDate",
-                    "req": false,
-                    "type": "Timestamp"
-                },
-                {
-                    "is_multi": false,
-                    "method_name": "priceType",
-                    "name": "priceType",
-                    "possible_values": [
-                        "TAX_EXCLUSIVE",
-                        "TAX_INCLUSIVE",
-                        "_UNKNOWN"
-                    ],
-                    "req": false,
-                    "type": "Enum"
-                },
-                {
-                    "is_multi": false,
-                    "method_name": "total",
-                    "name": "total",
-                    "req": false,
-                    "type": "Integer"
                 },
                 {
                     "is_multi": false,
@@ -1064,6 +1057,13 @@
                     "name": "date",
                     "req": false,
                     "type": "Timestamp"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "total",
+                    "name": "total",
+                    "req": false,
+                    "type": "Integer"
                 },
                 {
                     "is_multi": false,
@@ -1080,15 +1080,36 @@
             "arguments": [
                 {
                     "is_multi": false,
-                    "method_name": "coupon",
-                    "name": "coupon",
+                    "method_name": "customerId",
+                    "name": "customerId",
                     "req": false,
                     "type": "String"
                 },
                 {
                     "is_multi": false,
-                    "method_name": "addonId",
-                    "name": "addonId",
+                    "method_name": "subscriptionId",
+                    "name": "subscriptionId",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "paymentSourceId",
+                    "name": "paymentSourceId",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "poNumber",
+                    "name": "poNumber",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "coupon",
+                    "name": "coupon",
                     "req": false,
                     "type": "String"
                 },
@@ -1108,29 +1129,8 @@
                 },
                 {
                     "is_multi": false,
-                    "method_name": "paymentSourceId",
-                    "name": "paymentSourceId",
-                    "req": false,
-                    "type": "String"
-                },
-                {
-                    "is_multi": false,
-                    "method_name": "customerId",
-                    "name": "customerId",
-                    "req": false,
-                    "type": "String"
-                },
-                {
-                    "is_multi": false,
-                    "method_name": "subscriptionId",
-                    "name": "subscriptionId",
-                    "req": false,
-                    "type": "String"
-                },
-                {
-                    "is_multi": false,
-                    "method_name": "poNumber",
-                    "name": "poNumber",
+                    "method_name": "addonId",
+                    "name": "addonId",
                     "req": false,
                     "type": "String"
                 }
@@ -1142,17 +1142,10 @@
             "arguments": [
                 {
                     "is_multi": false,
-                    "method_name": "coupon",
-                    "name": "coupon",
+                    "method_name": "amount",
+                    "name": "amount",
                     "req": false,
-                    "type": "String"
-                },
-                {
-                    "is_multi": false,
-                    "method_name": "paymentSourceId",
-                    "name": "paymentSourceId",
-                    "req": false,
-                    "type": "String"
+                    "type": "Integer"
                 },
                 {
                     "is_multi": false,
@@ -1170,13 +1163,6 @@
                 },
                 {
                     "is_multi": false,
-                    "method_name": "amount",
-                    "name": "amount",
-                    "req": false,
-                    "type": "Integer"
-                },
-                {
-                    "is_multi": false,
                     "method_name": "description",
                     "name": "description",
                     "req": false,
@@ -1184,8 +1170,22 @@
                 },
                 {
                     "is_multi": false,
+                    "method_name": "paymentSourceId",
+                    "name": "paymentSourceId",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
                     "method_name": "poNumber",
                     "name": "poNumber",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "coupon",
+                    "name": "coupon",
                     "req": false,
                     "type": "String"
                 },
@@ -1204,15 +1204,29 @@
             "arguments": [
                 {
                     "is_multi": false,
-                    "method_name": "coupon",
-                    "name": "coupon",
+                    "method_name": "customerId",
+                    "name": "customerId",
                     "req": false,
                     "type": "String"
                 },
                 {
-                    "is_multi": true,
-                    "method_name": "addonId",
-                    "name": "addonId",
+                    "is_multi": false,
+                    "method_name": "paymentSourceId",
+                    "name": "paymentSourceId",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "poNumber",
+                    "name": "poNumber",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "coupon",
+                    "name": "coupon",
                     "req": false,
                     "type": "String"
                 },
@@ -1229,6 +1243,13 @@
                     "name": "addonUnitPrice",
                     "req": false,
                     "type": "Integer"
+                },
+                {
+                    "is_multi": true,
+                    "method_name": "addonId",
+                    "name": "addonId",
+                    "req": false,
+                    "type": "String"
                 },
                 {
                     "is_multi": false,
@@ -1346,27 +1367,6 @@
                     "is_multi": true,
                     "method_name": "chargeDescription",
                     "name": "chargeDescription",
-                    "req": false,
-                    "type": "String"
-                },
-                {
-                    "is_multi": false,
-                    "method_name": "paymentSourceId",
-                    "name": "paymentSourceId",
-                    "req": false,
-                    "type": "String"
-                },
-                {
-                    "is_multi": false,
-                    "method_name": "customerId",
-                    "name": "customerId",
-                    "req": false,
-                    "type": "String"
-                },
-                {
-                    "is_multi": false,
-                    "method_name": "poNumber",
-                    "name": "poNumber",
                     "req": false,
                     "type": "String"
                 },
