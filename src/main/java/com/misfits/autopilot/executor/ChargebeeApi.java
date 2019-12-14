@@ -8,6 +8,8 @@ import com.chargebee.v2.models.Invoice;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonParser;
+import com.misfits.autopilot.models.entity.Action;
+import org.springframework.stereotype.Component;
 
 import java.io.File;
 import java.io.FileReader;
@@ -17,14 +19,11 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+@Component
 public class ChargebeeApi {
 
 
-    public void postApi(String entityName, JSONObject action) throws Exception {
-
-        if (!action.has("actionName")) {
-            return;
-        }
+    public void postApi(String entityName, Action action, JSONObject webhookEvent) throws Exception {
 
         JSONObject entityMeta = getEntityMeta(entityName);
         String className = entityMeta.getString("class_name");
@@ -33,12 +32,12 @@ public class ChargebeeApi {
 
         ObjectMapper mapper = new ObjectMapper();
         Map<String, String> inputArgumentMap = getInputParamMap(action);
-        Map<String, List<MultiInput>> multiInputArgumentMap = getMultiInputParamMap(action);
-        JSONObject actionMeta = getActionMeta(actionsMeta, action.getString("actionName"));
+//        Map<String, List<MultiInput>> multiInputArgumentMap = getMultiInputParamMap(action);
+        JSONObject actionMeta = getActionMeta(actionsMeta, action.getName());
         if(actionMeta == null){
             return ;
         }
-        sendRequest(inputArgumentMap,multiInputArgumentMap, actionMeta, className);
+        sendRequest(inputArgumentMap,null, actionMeta, className);
 
 
 //        Invoice.charge();?
@@ -136,9 +135,9 @@ public class ChargebeeApi {
         return obj;
     }
 
-    private Map<String, String> getInputParamMap(JSONObject action) throws Exception {
+    private Map<String, String> getInputParamMap(Action action) throws Exception {
 
-        JSONArray arr = action.getJSONArray("attributes");
+        JSONArray arr = new JSONArray(action.getApiParameters());
 
         Map<String, String> inputParamMap = new HashMap<>();
         for (int i = 0; i < arr.length(); i++) {
@@ -347,7 +346,7 @@ public class ChargebeeApi {
 
         ChargebeeApi sd = new ChargebeeApi();
 //        sd.test();
-        sd.postApi("Invoice",new JSONObject(multiObj));
+//        sd.postApi("Invoice",new JSONObject(multiObj));
     }
 
     private class MultiInput {

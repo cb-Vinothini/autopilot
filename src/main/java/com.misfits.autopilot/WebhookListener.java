@@ -2,10 +2,8 @@ package com.misfits.autopilot;
 
 import com.chargebee.org.json.JSONException;
 import com.chargebee.org.json.JSONObject;
-import com.misfits.autopilot.models.entity.Criteria;
-import com.misfits.autopilot.models.entity.CriteriaGroup;
-import com.misfits.autopilot.models.entity.Hook;
-import com.misfits.autopilot.models.entity.Workflow;
+import com.misfits.autopilot.executor.ChargebeeApi;
+import com.misfits.autopilot.models.entity.*;
 import com.misfits.autopilot.models.repositories.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Example;
@@ -20,18 +18,21 @@ public class WebhookListener {
 
     @Autowired
     WorkflowRepository workflowRepo;
-
     @Autowired
     HookRepository hookRepository;
-
     @Autowired
     CriteriaRepository criteriaRepository;
-
     @Autowired
     CriteriaGroupRepository criteriaGroupRepository;
+    @Autowired
+    ActionRepository actionRepository;
+    @Autowired
+    ActionGroupRepository actionGroupRepository;
+    @Autowired
+    ChargebeeApi actionCall;
 
     @RequestMapping(value = "/listener", method= RequestMethod.POST)
-    public ResponseEntity listener(@RequestBody String event) throws JSONException {
+    public ResponseEntity listener(@RequestBody String event) throws Exception {
         JSONObject webhookEvent = new JSONObject(event);
         String eventType = webhookEvent.getString("event_type");
         List<Workflow> wfs = workflowRepo.findAll();
@@ -41,7 +42,18 @@ public class WebhookListener {
                 findHook.setWorkflowId(wf.getId());
                 List<Hook> hooks = hookRepository.findAll(Example.of(findHook));
                 if(hooks.stream().anyMatch(hook -> hook.getEventType().name().equals(eventType))){
-                    criteria(wf, webhookEvent);
+                    if(criteria(wf, webhookEvent)){
+                        ActionGroup findActionGroup = new ActionGroup();
+                        findActionGroup.setWorkflowId(wf.getId());
+                        List<ActionGroup> actionGroups = actionGroupRepository.findAll(Example.of(findActionGroup));
+                        for(ActionGroup group : actionGroups){
+                            Optional<Action> action = actionRepository.findById(group.getActionId());
+                            if(action.isPresent()){
+                                Action act = action.get();
+                                actionCall.postApi(act.getName().split("\\.")[0], act, webhookEvent);
+                            }
+                        }
+                    }
                 }
             }
         }

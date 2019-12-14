@@ -132,6 +132,10 @@ public class Criteria {
         public static boolean perform(Operator operator, JSONObject value, Object obj, Object prevObj) throws JSONException {
             if(operator.equals(equals)){
                 return value.getString("value").equals((String)obj);
+            } else if(operator.equals(between)) {
+                int from = value.getInt("from");
+                int to = value.getInt("to");
+                return ((int)obj) > from && ((int)obj) > to;
             }
             return false;
         }
