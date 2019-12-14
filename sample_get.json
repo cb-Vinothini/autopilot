@@ -1257,9 +1257,9 @@
         ],
         "entityName": "CUSTOMER",
         "trigger": [
-            "customer_created",
-            "customer_changed",
-            "customer_deleted"
+            "CUSTOMER_CREATED",
+            "CUSTOMER_CHANGED",
+            "CUSTOMER_DELETED"
         ]
     },
     {
@@ -3304,19 +3304,19 @@
         ],
         "entityName": "SUBSCRIPTION",
         "trigger": [
-            "subscription_created",
-            "subscription_started",
-            "subscription_trial_ending",
-            "subscription_activated",
-            "subscription_changed",
-            "subscription_cancellation_scheduled",
-            "subscription_cancelling",
-            "subscription_cancelled",
-            "subscription_reactivated",
-            "subscription_renewed",
-            "subscription_scheduled_cancellation_removed",
-            "subscription_shipping_address_updated",
-            "subscription_deleted"
+            "SUBSCRIPTION_CREATED",
+            "SUBSCRIPTION_STARTED",
+            "SUBSCRIPTION_TRIAL_ENDING",
+            "SUBSCRIPTION_ACTIVATED",
+            "SUBSCRIPTION_CHANGED",
+            "SUBSCRIPTION_CANCELLATION_SCHEDULED",
+            "SUBSCRIPTION_CANCELLING",
+            "SUBSCRIPTION_CANCELLED",
+            "SUBSCRIPTION_REACTIVATED",
+            "SUBSCRIPTION_RENEWED",
+            "SUBSCRIPTION_SCHEDULED_CANCELLATION_REMOVED",
+            "SUBSCRIPTION_SHIPPING_ADDRESS_UPDATED",
+            "SUBSCRIPTION_DELETED"
         ]
     },
     {
@@ -4158,10 +4158,10 @@
         ],
         "entityName": "INVOICE",
         "trigger": [
-            "invoice_created",
-            "invoice_generated",
-            "invoice_updated",
-            "invoice_deleted"
+            "INVOICE_CREATED",
+            "INVOICE_GENERATED",
+            "INVOICE_UPDATED",
+            "INVOICE_DELETED"
         ]
     }
 ]

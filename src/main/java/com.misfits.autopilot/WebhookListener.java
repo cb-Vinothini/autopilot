@@ -76,10 +76,16 @@ public class WebhookListener {
                     String resourceName = (String) iterator.next();
                     if(resourceName.startsWith(resAttr.get(0))){
                         JSONObject res = entities.getJSONObject(resourceName);
-                        JSONObject prevRes = res.getJSONObject("prev_version").getJSONObject(resourceName);
+                        JSONObject prevRes = null;
+                        if(res.optJSONObject("prev_version") != null) {
+                            prevRes = res.getJSONObject("prev_version").getJSONObject(resourceName);
+                        }
                         for(String att : resAttr.subList(1, resAttr.size())){
                             Object obj = res.opt(att);
-                            Object prevObj = prevRes.opt(att);
+                            Object prevObj = null;
+                            if(prevRes != null) {
+                                prevObj = prevRes.opt(att);
+                            }
                             if((obj == null && prevObj != null) ||
                                     (obj != null && prevObj == null) ||
                                     (!obj.equals(prevObj))) {

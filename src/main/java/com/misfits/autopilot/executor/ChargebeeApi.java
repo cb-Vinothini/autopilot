@@ -1,6 +1,7 @@
 package com.misfits.autopilot.executor;
 
 import com.chargebee.org.json.JSONArray;
+import com.chargebee.org.json.JSONException;
 import com.chargebee.org.json.JSONObject;
 import com.chargebee.v2.Environment;
 import com.chargebee.v2.Result;
@@ -14,10 +15,7 @@ import org.springframework.stereotype.Component;
 import java.io.File;
 import java.io.FileReader;
 import java.lang.reflect.Method;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 @Component
 public class ChargebeeApi {
@@ -37,7 +35,7 @@ public class ChargebeeApi {
         if(actionMeta == null){
             return ;
         }
-        sendRequest(inputArgumentMap,null, actionMeta, className);
+        sendRequest(inputArgumentMap,null, actionMeta, className, webhookEvent);
 
 
 //        Invoice.charge();?
@@ -63,17 +61,18 @@ public class ChargebeeApi {
         return null;
     }
 
-    private void sendRequest(Map<String, String> inputArgumentMap, Map<String, List<MultiInput>> multiInputArgumentMap, JSONObject actionMeta, String className) throws Exception {
+    private void sendRequest(Map<String, String> inputArgumentMap, Map<String, List<MultiInput>> multiInputArgumentMap, JSONObject actionMeta, String className, JSONObject webhookEvent) throws Exception {
 
         System.setProperty("com.chargebee.api.domain.suffix", "localcb.in:8080");
         System.setProperty("com.chargebee.api.protocol", "http");
 
-        Environment.configure("mannar-test","test___dev__vMVROChoJ0hkCFSX4zzlEQ3EOffCcdiTB");
+        Environment.configure("mannar-test","test___dev__cdIdhFqOFWAFihKMbxdjlij0sP4BMdNfy");
 
         Class c = Class.forName(className);
 
 
-        Object obj = invokeStaticMethod(c, actionMeta.getString("static_method_name"), getParamType(actionMeta.optString("type")), inputArgumentMap.get(actionMeta.optString("static_param_name")));
+        String argMethod = paramArgs(actionMeta.getString("static_method_name"), webhookEvent);
+        Object obj = invokeStaticMethod(c, actionMeta.getString("static_method_name"), getParamType(actionMeta.optString("type")), argMethod);
 
         c = obj.getClass();
         JSONArray args = actionMeta.getJSONArray("arguments");
@@ -98,6 +97,20 @@ public class ChargebeeApi {
 
     }
 
+    public String paramArgs(String methodName, JSONObject webhookEvent) throws JSONException {
+        JSONObject entities = webhookEvent.getJSONObject("entities");
+        if(methodName.equals("addChargeAtTermEnd")){
+            Iterator iterator = entities.keys();
+            while(iterator.hasNext()) {
+                String resourceName = (String) iterator.next();
+                if (resourceName.startsWith("subscription")) {
+                    JSONObject res = entities.getJSONObject(resourceName);
+                    return res.getString("id");
+                }
+            }
+        }
+        return null;
+    }
 
     private Object invokeStaticMethod(Class c, String methodName, Class<?> parameterType, Object val) throws Exception {
         Method m;
@@ -107,7 +120,7 @@ public class ChargebeeApi {
             m = c.getDeclaredMethod(methodName, parameterType);
         }
 //        Method m = c.getDeclaredMethod(methodName, parameterType == null ? new Class[]{} : parameterType);
-        return m.invoke(val);
+        return m.invoke(null, val);
     }
 
 
