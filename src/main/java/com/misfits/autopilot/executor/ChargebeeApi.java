@@ -12,7 +12,9 @@ import com.google.gson.JsonParser;
 import java.io.File;
 import java.io.FileReader;
 import java.lang.reflect.Method;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class ChargebeeApi {
@@ -20,7 +22,7 @@ public class ChargebeeApi {
 
     public void postApi(String entityName, JSONObject action) throws Exception {
 
-        if (!action.has("action_name")) {
+        if (!action.has("actionName")) {
             return;
         }
 
@@ -31,8 +33,8 @@ public class ChargebeeApi {
 
         ObjectMapper mapper = new ObjectMapper();
         Map<String, String> inputArgumentMap = getInputParamMap(action);
-        Map<Integer,Map<String, String>> multiInputArgumentMap = getMultiInputParamMap(action);
-        JSONObject actionMeta = getActionMeta(actionsMeta, action.getString("action_name"));
+        Map<String, List<MultiInput>> multiInputArgumentMap = getMultiInputParamMap(action);
+        JSONObject actionMeta = getActionMeta(actionsMeta, action.getString("actionName"));
         if(actionMeta == null){
             return ;
         }
@@ -42,26 +44,12 @@ public class ChargebeeApi {
 //        Invoice.charge();?
 
 //com.chargebee.v2.models.i
-        Result result = Invoice.charge()
-                .subscriptionId("active")
-                .amount(1000)
-                .description("Support Charge")
-                .request();
+//        Result result = Invoice.charge()
+//                .subscriptionId("active")
+//                .amount(1000)
+//                .description("Support Charge")
+//                .request();
 
-        Class c = Class.forName("com.chargebee.v2.models.Invoice");
-
-        Method charge = c.getDeclaredMethod("charge", new Class[]{});
-//        Object obj = c.newInstance();
-        Object obj = charge.invoke(null);
-        c = obj.getClass();
-        charge = c.getDeclaredMethod("subscriptionId", new Class[]{String.class});
-        obj = charge.invoke(obj, "active");
-        charge = c.getDeclaredMethod("amount", new Class[]{Integer.class});
-        obj = charge.invoke(obj, 1000);
-        charge = c.getDeclaredMethod("description", new Class[]{String.class});
-        obj = charge.invoke(obj, "no desc");
-        charge = c.getMethod("request", new Class[]{});
-        charge.invoke(obj);
 
 
     }
@@ -76,7 +64,7 @@ public class ChargebeeApi {
         return null;
     }
 
-    private void sendRequest(Map<String, String> inputArgumentMap,Map<Integer,Map<String, String>> multiInputArgumentMap, JSONObject actionMeta, String className) throws Exception {
+    private void sendRequest(Map<String, String> inputArgumentMap, Map<String, List<MultiInput>> multiInputArgumentMap, JSONObject actionMeta, String className) throws Exception {
 
         System.setProperty("com.chargebee.api.domain.suffix", "localcb.in:8080");
         System.setProperty("com.chargebee.api.protocol", "http");
@@ -84,15 +72,23 @@ public class ChargebeeApi {
         Environment.configure("mannar-test","test___dev__vMVROChoJ0hkCFSX4zzlEQ3EOffCcdiTB");
 
         Class c = Class.forName(className);
-        Object obj = invokeStaticMethod(c, actionMeta.getString("static_method_name"), getParamType(actionMeta.getString("type")), inputArgumentMap.get(actionMeta.getString("static_param_name")));
 
+
+        Object obj = invokeStaticMethod(c, actionMeta.getString("static_method_name"), getParamType(actionMeta.optString("type")), inputArgumentMap.get(actionMeta.optString("static_param_name")));
+
+        c = obj.getClass();
         JSONArray args = actionMeta.getJSONArray("arguments");
         for (int i = 0; i < args.length(); i++) {
             JSONObject arg = args.getJSONObject(i);
             if (arg.optBoolean("is_multi")) {
-
+                if(multiInputArgumentMap.get(arg.getString("name")) != null) {
+//                    multiInputArgumentMap.get(arg.getString("name"));
+                    invokeMultiInputMethod(obj,c,arg.getString("method_name"),getParamType(arg.getString("type")),multiInputArgumentMap.get(arg.getString("name")));
+                }
             } else {
-                obj = invokeMethod(obj, c, arg.getString("method_name"), getParamType(arg.getString("type")), inputArgumentMap.get(arg.getString("name")));
+                if(inputArgumentMap.get(arg.getString("name")) != null) {
+                    obj = invokeMethod(obj, c, arg.getString("method_name"), getParamType(arg.getString("type")), inputArgumentMap.get(arg.getString("name")));
+                }
             }
         }
 
@@ -105,19 +101,39 @@ public class ChargebeeApi {
 
 
     private Object invokeStaticMethod(Class c, String methodName, Class<?> parameterType, Object val) throws Exception {
-        Method m = c.getDeclaredMethod(methodName, parameterType);
+        Method m;
+        if(parameterType == null) {
+            m = c.getDeclaredMethod(methodName,  new Class[]{} );
+        } else {
+            m = c.getDeclaredMethod(methodName, parameterType);
+        }
+//        Method m = c.getDeclaredMethod(methodName, parameterType == null ? new Class[]{} : parameterType);
         return m.invoke(val);
     }
 
 
     private Object invokeMethod(Object obj, Class c, String paramName, Class<?> parameterType, Object val) throws Exception {
         Method m = c.getDeclaredMethod(paramName, parameterType);
-        return m.invoke(obj, val);
+        return m.invoke(obj, getParamValue(parameterType,val));
     }
 
-    private Object invokeMultiInputMethod(Object obj, Class c, String paramName, Class<?> parameterType, Object val) throws Exception {
-        Method m = c.getDeclaredMethod(paramName, parameterType);
-        return m.invoke(obj, val);
+    private Object invokeMultiInputMethod(Object obj, Class c, String paramName, Class<?> parameterType,List<MultiInput> multiInputs) throws Exception {
+
+        Method m;
+        for(MultiInput multiInput : multiInputs){
+            Class<?> params[] = new Class[2];
+            params[0] = Integer.TYPE;
+            params[1] =parameterType;
+             m = c.getDeclaredMethod(paramName, params);
+             Object objs[] = new Object[2];
+            objs[0]= multiInput.index;
+            objs[1]=getParamValue(parameterType,multiInput.value);
+            obj = m.invoke(obj, objs);
+        }
+
+//        Method m = c.getDeclaredMethod(paramName, parameterType);
+
+        return obj;
     }
 
     private Map<String, String> getInputParamMap(JSONObject action) throws Exception {
@@ -133,8 +149,8 @@ public class ChargebeeApi {
     }
 
 
-    private Map<Integer, Map<String, String>> getMultiInputParamMap(JSONObject action) throws Exception {
-        Map<Integer, Map<String, String>> inputParamMap = new HashMap<>();
+    private Map<String, List<MultiInput>> getMultiInputParamMap(JSONObject action) throws Exception {
+        Map<String, List<MultiInput>> multiList = new HashMap<>();
         if(action.has("multiAttribute")) {
             JSONArray arr = action.optJSONArray("multiAttribute");
 
@@ -144,18 +160,22 @@ public class ChargebeeApi {
                     JSONArray fields = obj.getJSONArray("fields");
                     for (int j = 0; j < fields.length(); j++) {
                         JSONObject field = fields.getJSONObject(j);
-                        if (inputParamMap.containsKey(i)) {
-                            inputParamMap.get(i).put(field.getString("name"), field.getString("value"));
+
+                        if (multiList.containsKey(field.getString("name"))) {
+
+                            MultiInput multiInput = new MultiInput(multiList.get(field.getString("name")).size(),field.getString("name"),field.getString("value"));
+                            multiList.get(field.getString("name")).add(multiInput);
                         } else {
-                            Map<String, String> map = new HashMap<>();
-                            map.put(field.getString("name"), field.getString("value"));
-                            inputParamMap.put(i, map);
+                            MultiInput multiInput = new MultiInput(0,field.getString("name"),field.getString("value"));
+                            List<MultiInput> list = new ArrayList<>();
+                            list.add(multiInput);
+                            multiList.put(field.getString("name"),list);
                         }
                     }
                 }
             }
         }
-        return inputParamMap;
+        return multiList;
     }
 
 
@@ -170,6 +190,10 @@ public class ChargebeeApi {
 
 
     private Class<?> getParamType(String type) {
+        if(type == null){
+            return null;
+        }
+
         switch (type.toLowerCase()) {
             case "string":
             case "enum":
@@ -185,22 +209,157 @@ public class ChargebeeApi {
         return null;
     }
 
+    private Object getParamValue(Class<?> parameterType, Object val) {
+        if(val == null){
+            return null;
+        }
+
+        String value = (String) val;
+
+        if(parameterType.equals(String.class)) {
+            return value;
+        } else if(parameterType.equals(Integer.class)) {
+            return Integer.valueOf(value);
+        } else if(parameterType.equals(Long.class)) {
+            return Long.valueOf(value);
+        } else if(parameterType.equals(Boolean.class)) {
+            return Boolean.valueOf(value);
+        }
+        return null;
+    }
+
+    public void test() throws Exception {
+        System.setProperty("com.chargebee.api.domain.suffix", "localcb.in:8080");
+        System.setProperty("com.chargebee.api.protocol", "http");
+
+        Environment.configure("mannar-test","test___dev__vMVROChoJ0hkCFSX4zzlEQ3EOffCcdiTB");
+        Class c = Class.forName("com.chargebee.v2.models.Invoice");
+
+        Method charge = c.getDeclaredMethod("charge", new Class[]{});
+//        Object obj = c.newInstance();
+        Object obj = charge.invoke(null);
+        c = obj.getClass();
+        charge = c.getDeclaredMethod("subscriptionId", String.class);
+        obj = charge.invoke(obj, "active");
+        charge = c.getDeclaredMethod("amount", Integer.class);
+        obj = charge.invoke(obj, 1000);
+        charge = c.getDeclaredMethod("description", String.class);
+        obj = charge.invoke(obj, "no desc");
+        charge = c.getMethod("request", null);
+        charge.invoke(obj);
+
+    }
+
+    public void multiTest() throws Exception {
+        System.setProperty("com.chargebee.api.domain.suffix", "localcb.in:8080");
+        System.setProperty("com.chargebee.api.protocol", "http");
+
+        Environment.configure("mannar-test","test___dev__vMVROChoJ0hkCFSX4zzlEQ3EOffCcdiTB");
+        Class c = Class.forName("com.chargebee.v2.models.Invoice");
+
+        Method charge = c.getDeclaredMethod("charge", new Class[]{});
+//        Object obj = c.newInstance();
+        Object obj = charge.invoke(null);
+        c = obj.getClass();
+        charge = c.getDeclaredMethod("subscriptionId", String.class);
+        obj = charge.invoke(obj, "active");
+        charge = c.getDeclaredMethod("amount", Integer.class);
+        obj = charge.invoke(obj, 1000);
+        charge = c.getDeclaredMethod("description", String.class);
+        obj = charge.invoke(obj, "no desc");
+        charge = c.getMethod("request", null);
+        charge.invoke(obj);
+
+    }
+
     public static void main(String[] args) throws Exception{
         String obj ="{\n" +
-                "\t\"action_name\": \"Invoice.charge\",\n" +
-                "\t\"attributes\": [{\n" +
-                "\t\t\t\"name\": \"amount\",\n" +
-                "\t\t\t\"value\": 100\n" +
-                "\t\t},\n" +
-                "\t\t{\n" +
-                "\t\t\t\"name\": \"description\",\n" +
-                "\t\t\t\"value\": \"string\"\n" +
-                "\t\t}\n" +
-                "\t]\n" +
-                "}";
+                "    \"actionName\": \"Invoice.charge\",\n" +
+                "    \"attributes\": [\n" +
+                "      {\n" +
+                "        \"name\": \"amount\",\n" +
+                "        \"value\": \"100\"\n" +
+                "      },\n" +
+                "      {\n" +
+                "        \"name\": \"description\",\n" +
+                "        \"value\": \"test\"\n" +
+                "      },\n" +
+                "      {\n" +
+                "        \"name\": \"subscriptionId\",\n" +
+                "        \"value\": \"active\"\n" +
+                "      }\n" +
+                "    ]\n" +
+                "   \n" +
+                "  }";
+
+        String multiObj = "{\n" +
+                "    \"actionName\": \"Invoice.create\",\n" +
+                "    \"attributes\": [\n" +
+                "      {\n" +
+                "        \"name\": \"customerId\",\n" +
+                "        \"value\": \"active\"\n" +
+                "      },\n" +
+                "      \n" +
+                "      {\n" +
+                "        \"name\": \"shippingAddressFirstName\",\n" +
+                "        \"value\": \"Karthick\"\n" +
+                "      },\n" +
+                "      \n" +
+                "      {\n" +
+                "        \"name\": \"shippingAddressLastName\",\n" +
+                "        \"value\": \"active\"\n" +
+                "      },\n" +
+                "      {\n" +
+                "        \"name\": \"currencyCode\",\n" +
+                "        \"value\": \"USD\"\n" +
+                "      }\n" +
+                "\n" +
+                "    ],\n" +
+                "\n" +
+                "\"multiAttribute\": [\n" +
+                "      {\n" +
+                "        \"fields\": [\n" +
+                "          {\n" +
+                "            \"name\": \"chargeAmount\",\n" +
+                "            \"value\": \"100\"\n" +
+                "          },\n" +
+                "          {\n" +
+                "            \"name\": \"chargeDescription\",\n" +
+                "            \"value\": \"test2\"\n" +
+                "          }\n" +
+                "        ]\n" +
+                "      },{\n" +
+                "        \"fields\": [\n" +
+                "          {\n" +
+                "            \"name\": \"chargeAmount\",\n" +
+                "            \"value\": \"100\"\n" +
+                "          },\n" +
+                "          {\n" +
+                "            \"name\": \"chargeDescription\",\n" +
+                "            \"value\": \"test2\"\n" +
+                "          }\n" +
+                "        ]\n" +
+                "      }\n" +
+                "    ]\n" +
+                "   \n" +
+                "  }";
 
 
         ChargebeeApi sd = new ChargebeeApi();
-        sd.postApi("Invoice",new JSONObject(obj));
+//        sd.test();
+        sd.postApi("Invoice",new JSONObject(multiObj));
+    }
+
+    private class MultiInput {
+
+        int index;
+        String name;
+        String value;
+
+        public MultiInput(int index, String name, String value) {
+            this.index = index;
+            this.name = name;
+            this.value = value;
+        }
     }
 }
