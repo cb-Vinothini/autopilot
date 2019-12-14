@@ -3,6 +3,8 @@ package com.misfits.autopilot.models.entity;
 import com.chargebee.org.json.JSONArray;
 import com.chargebee.org.json.JSONException;
 import com.chargebee.org.json.JSONObject;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.google.gson.Gson;
 import io.swagger.annotations.ApiModelProperty;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.Type;
@@ -10,6 +12,7 @@ import org.hibernate.annotations.UpdateTimestamp;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -22,6 +25,7 @@ public class Action {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @ApiModelProperty(hidden = true)
+    @JsonIgnore
     private Long id;
 
     @Column(name="api_name", nullable = false)
@@ -30,14 +34,17 @@ public class Action {
 
     @Column(name="api_parameters", nullable = false)
     @Type(type="text")
+    @JsonIgnore
     @ApiModelProperty(example = "[{\"name\":\"amount\",\"value\":\"300\"},{\"name\":\"description\",\"value\":\"Shipping Charge\"}]")
     private String apiParameters;
 
     @CreationTimestamp
+    @JsonIgnore
     @Column(name="created_at", nullable = false)
     private LocalDateTime createdAt;
 
     @UpdateTimestamp
+    @JsonIgnore
     @Column(name="modified_at", nullable = false)
     private LocalDateTime modifiedAt;
 
@@ -94,5 +101,16 @@ public class Action {
             attr.put(new JSONObject().put("name", attribute.getName()).put("value", attribute.getValue()));
         }
         apiParameters = attr.toString();
+    }
+
+    public void reConvertValues() throws Exception {
+        List<Attribute> attributes = new ArrayList<>();
+        JSONArray array = new JSONArray(apiParameters);
+        for(int i=0; i<array.length();i++) {
+            String obj = array.getString(i);
+            Attribute attr = new Gson().fromJson(obj, Attribute.class);
+            attributes.add(attr);
+        }
+        this.attributes = attributes;
     }
 }

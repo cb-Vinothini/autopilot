@@ -2,7 +2,9 @@ package com.misfits.autopilot.controller;
 
 import com.chargebee.org.json.JSONException;
 import com.chargebee.org.json.JSONObject;
+import com.google.gson.Gson;
 import com.misfits.autopilot.convertors.ApiModelBody;
+import com.misfits.autopilot.convertors.ApiModelResponseBody;
 import com.misfits.autopilot.models.entity.*;
 import com.misfits.autopilot.models.repositories.*;
 import io.swagger.annotations.Api;
@@ -14,6 +16,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -36,16 +39,71 @@ public class WorkflowController {
     @Autowired
     CriteriaGroupRepository criteriaGroupRepository;
 
+    @RequestMapping(value = "/", method= RequestMethod.GET)
+    @ApiOperation("Get a workflow")
+    public ResponseEntity<List<ApiModelResponseBody>> listWorkflow(@PathVariable long id) throws JSONException {
+        List<ApiModelResponseBody> responseBodies = new ArrayList<>();
+        for(Workflow wfs : workflowRepo.findAll()) {
+            ApiModelResponseBody body = new ApiModelResponseBody();
+            responseBodies.add(body);
+        }
+        return new ResponseEntity(responseBodies, HttpStatus.OK);
+    }
+
     @RequestMapping(value = "/{id}", method= RequestMethod.GET)
     @ApiOperation("Get a workflow")
-    public ResponseEntity<Workflow> getWorkflow(@PathVariable long id) throws JSONException {
-        JSONObject workflow = new JSONObject();
-        return new ResponseEntity(workflow.toString(2), HttpStatus.OK);
+    public ResponseEntity<ApiModelResponseBody> getWorkflow(@PathVariable long id) throws Exception {
+        Optional<Workflow> wf = workflowRepo.findById(id);
+        if(!wf.isPresent()) {
+            return new ResponseEntity("Workflow not present", HttpStatus.NOT_FOUND);
+        }
+        Workflow workflow = wf.get();
+        ApiModelResponseBody body = new ApiModelResponseBody();
+        body.setName(workflow.getName());
+        body.setDesc(workflow.getDescription());
+        body.setType(workflow.getType());
+        body.setEntityName(workflow.getEntityType());
+        body.setStatus(workflow.getStatus());
+
+        Hook findHook = new Hook();
+        findHook.setWorkflowId(workflow.getId());
+        List<Hook> hooks = hookRepository.findAll(Example.of(findHook));
+        body.setTriggers(hooks);
+
+        CriteriaGroup findCriteriaGroup = new CriteriaGroup();
+        findCriteriaGroup.setWorkflowId(workflow.getId());
+        List<CriteriaGroup> criteriaGroups = criteriaGroupRepository.findAll(Example.of(findCriteriaGroup));
+        List<Criteria> criteriaList = new ArrayList<>();
+        for(CriteriaGroup criteriaGroup : criteriaGroups) {
+            Optional<Criteria> criteria = criteriaRepository.findById(criteriaGroup.getCriteriaId());
+            if(criteria.isPresent()) {
+                Criteria cr = criteria.get();
+                cr.reConvert();
+                criteriaList.add(cr);
+            }
+        }
+        body.setCriterias(criteriaList);
+
+        ActionGroup findActionGroup = new ActionGroup();
+        findActionGroup.setWorkflowId(workflow.getId());
+        List<ActionGroup> actionGroups = actionGroupRepository.findAll(Example.of(findActionGroup));
+        List<Action> actionList = new ArrayList<>();
+        for(ActionGroup actionGroup : actionGroups) {
+            Optional<Action> action = actionRepository.findById(actionGroup.getActionId());
+            if(action.isPresent()) {
+                Action act = action.get();
+                act.reConvertValues();
+                actionList.add(act);
+            }
+        }
+        body.setActions(actionList);
+
+        return new ResponseEntity(body, HttpStatus.OK);
     }
 
     @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
     @ApiOperation("Delete a workflow")
-    public ResponseEntity<Workflow> deleteWorkflow(@PathVariable long id) {
+    public ResponseEntity<ApiModelBody> deleteWorkflow(@PathVariable long id) {
         Optional<Workflow> wf = workflowRepo.findById(id);
         if(!wf.isPresent()) {
             return new ResponseEntity("Workflow not present", HttpStatus.NOT_FOUND);
@@ -76,7 +134,7 @@ public class WorkflowController {
     @ApiOperation("Add a workflow")
     public ResponseEntity<ApiModelBody> saveProduct(@RequestBody ApiModelBody modelBody) throws Exception {
         save(modelBody);
-        return new ResponseEntity("Workflow has been created successfully", HttpStatus.OK);
+        return new ResponseEntity(modelBody, HttpStatus.OK);
     }
 
     public void save(ApiModelBody modelBody) throws Exception {

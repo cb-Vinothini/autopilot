@@ -27,7 +27,6 @@ public class ApiModelBody {
     private List<EventType> triggers;
 
     private List<Criteria> criterias;
-    private ActionGroup actionGroup;
     public Workflow workflow;
     private List<Hook> hooks = new LinkedList<>();
     private Action action;
@@ -96,7 +95,6 @@ public class ApiModelBody {
     public void setType(Workflow.Type type) {
         this.type = type;
     }
-
 
     public EntityType getEntityName() {
         return entityName;
