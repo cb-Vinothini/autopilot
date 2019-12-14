@@ -1,1 +1,184 @@
-{"actions":[{"static_method_name":"retrieve","action_name":"CreditNote.retrieve","arguments":[{"method_name":"comment","name":"comment","type":"String","req":false,"is_multi":false}]},{"static_method_name":"retrieve","action_name":"CreditNote.retrieve","arguments":[{"method_name":"comment","name":"comment","type":"String","req":false,"is_multi":false}]},{"static_method_name":"retrieve","action_name":"CreditNote.retrieve","arguments":[{"method_name":"transactionAmount","name":"transactionAmount","type":"Integer","req":false,"is_multi":false},{"method_name":"transactionPaymentMethod","possible_values":["CARD","CASH","CHECK","CHARGEBACK","BANK_TRANSFER","AMAZON_PAYMENTS","PAYPAL_EXPRESS_CHECKOUT","DIRECT_DEBIT","ALIPAY","UNIONPAY","APPLE_PAY","OTHER","_UNKNOWN"],"name":"transactionPaymentMethod","type":"Enum","req":false,"is_multi":false},{"method_name":"transactionReferenceNumber","name":"transactionReferenceNumber","type":"String","req":false,"is_multi":false},{"method_name":"transactionDate","name":"transactionDate","type":"Timestamp","req":false,"is_multi":false},{"method_name":"comment","name":"comment","type":"String","req":false,"is_multi":false}]},{"static_method_name":"retrieve","action_name":"CreditNote.retrieve","arguments":[{"method_name":"type","possible_values":["ADJUSTMENT","REFUNDABLE","_UNKNOWN"],"name":"type","type":"Enum","req":false,"is_multi":false},{"method_name":"lineItemDescription","name":"lineItemDescription","type":"String","req":false,"is_multi":true},{"method_name":"lineItemUnitAmount","name":"lineItemUnitAmount","type":"Integer","req":false,"is_multi":true},{"method_name":"lineItemQuantity","name":"lineItemQuantity","type":"Integer","req":false,"is_multi":true},{"method_name":"referenceInvoiceId","name":"referenceInvoiceId","type":"String","req":false,"is_multi":false},{"method_name":"reasonCode","possible_values":["WRITE_OFF","SUBSCRIPTION_CHANGE","SUBSCRIPTION_CANCELLATION","CHARGEBACK","PRODUCT_UNSATISFACTORY","SERVICE_UNSATISFACTORY","ORDER_CHANGE","ORDER_CANCELLATION","WAIVER","OTHER","FRAUDULENT","_UNKNOWN"],"name":"reasonCode","type":"Enum","req":false,"is_multi":false},{"method_name":"lineItemReferenceLineItemId","name":"lineItemReferenceLineItemId","type":"String","req":false,"is_multi":true},{"method_name":"customerNotes","name":"customerNotes","type":"String","req":false,"is_multi":false},{"method_name":"total","name":"total","type":"Integer","req":false,"is_multi":false},{"method_name":"date","name":"date","type":"Timestamp","req":false,"is_multi":false}]}],"class_name":"com.chargebee.v2.models.CreditNote"}
+{
+    "actions": [
+        {
+            "action_name": "CreditNote.delete",
+            "arguments": [{
+                "is_multi": false,
+                "method_name": "comment",
+                "name": "comment",
+                "req": false,
+                "type": "String"
+            }],
+            "static_method_name": "delete",
+            "static_param_name": "delete",
+            "type": "String"
+        },
+        {
+            "action_name": "CreditNote.voidCreditNote",
+            "arguments": [{
+                "is_multi": false,
+                "method_name": "comment",
+                "name": "comment",
+                "req": false,
+                "type": "String"
+            }],
+            "static_method_name": "voidCreditNote",
+            "static_param_name": "voidCreditNote",
+            "type": "String"
+        },
+        {
+            "action_name": "CreditNote.recordRefund",
+            "arguments": [
+                {
+                    "is_multi": false,
+                    "method_name": "transactionAmount",
+                    "name": "transactionAmount",
+                    "req": false,
+                    "type": "Integer"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "transactionPaymentMethod",
+                    "name": "transactionPaymentMethod",
+                    "possible_values": [
+                        "CARD",
+                        "CASH",
+                        "CHECK",
+                        "CHARGEBACK",
+                        "BANK_TRANSFER",
+                        "AMAZON_PAYMENTS",
+                        "PAYPAL_EXPRESS_CHECKOUT",
+                        "DIRECT_DEBIT",
+                        "ALIPAY",
+                        "UNIONPAY",
+                        "APPLE_PAY",
+                        "OTHER",
+                        "_UNKNOWN"
+                    ],
+                    "req": false,
+                    "type": "Enum"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "transactionDate",
+                    "name": "transactionDate",
+                    "req": false,
+                    "type": "Timestamp"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "transactionReferenceNumber",
+                    "name": "transactionReferenceNumber",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "comment",
+                    "name": "comment",
+                    "req": false,
+                    "type": "String"
+                }
+            ],
+            "static_method_name": "recordRefund",
+            "static_param_name": "recordRefund",
+            "type": "String"
+        },
+        {
+            "action_name": "CreditNote.create",
+            "arguments": [
+                {
+                    "is_multi": false,
+                    "method_name": "type",
+                    "name": "type",
+                    "possible_values": [
+                        "ADJUSTMENT",
+                        "REFUNDABLE",
+                        "_UNKNOWN"
+                    ],
+                    "req": false,
+                    "type": "Enum"
+                },
+                {
+                    "is_multi": true,
+                    "method_name": "lineItemReferenceLineItemId",
+                    "name": "lineItemReferenceLineItemId",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "customerNotes",
+                    "name": "customerNotes",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": true,
+                    "method_name": "lineItemDescription",
+                    "name": "lineItemDescription",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": true,
+                    "method_name": "lineItemUnitAmount",
+                    "name": "lineItemUnitAmount",
+                    "req": false,
+                    "type": "Integer"
+                },
+                {
+                    "is_multi": true,
+                    "method_name": "lineItemQuantity",
+                    "name": "lineItemQuantity",
+                    "req": false,
+                    "type": "Integer"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "referenceInvoiceId",
+                    "name": "referenceInvoiceId",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "reasonCode",
+                    "name": "reasonCode",
+                    "possible_values": [
+                        "WRITE_OFF",
+                        "SUBSCRIPTION_CHANGE",
+                        "SUBSCRIPTION_CANCELLATION",
+                        "CHARGEBACK",
+                        "PRODUCT_UNSATISFACTORY",
+                        "SERVICE_UNSATISFACTORY",
+                        "ORDER_CHANGE",
+                        "ORDER_CANCELLATION",
+                        "WAIVER",
+                        "OTHER",
+                        "FRAUDULENT",
+                        "_UNKNOWN"
+                    ],
+                    "req": false,
+                    "type": "Enum"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "total",
+                    "name": "total",
+                    "req": false,
+                    "type": "Integer"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "date",
+                    "name": "date",
+                    "req": false,
+                    "type": "Timestamp"
+                }
+            ],
+            "static_method_name": "create"
+        }
+    ],
+    "class_name": "com.chargebee.v2.models.CreditNote"
+}

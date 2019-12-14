@@ -1,1 +1,239 @@
-{"actions":[{"static_method_name":"unarchive","action_name":"Coupon.unarchive","arguments":[{"method_name":"id","name":"id","type":"String","req":false,"is_multi":false},{"method_name":"idAtFromSite","name":"idAtFromSite","type":"String","req":false,"is_multi":false},{"method_name":"forSiteMerging","name":"forSiteMerging","type":"Boolean","req":false,"is_multi":false},{"method_name":"fromSite","name":"fromSite","type":"String","req":false,"is_multi":false}]},{"static_method_name":"unarchive","action_name":"Coupon.unarchive","arguments":[{"method_name":"name","name":"name","type":"String","req":false,"is_multi":false},{"method_name":"status","possible_values":["ACTIVE","EXPIRED","ARCHIVED","DELETED","_UNKNOWN"],"name":"status","type":"Enum","req":false,"is_multi":false},{"method_name":"id","name":"id","type":"String","req":false,"is_multi":false},{"method_name":"addonIds","name":"addonIds","type":"String[]","req":false,"is_multi":false},{"method_name":"addonIds","name":"addonIds","type":"List","req":false,"is_multi":false},{"method_name":"applyOn","possible_values":["INVOICE_AMOUNT","SPECIFIED_ITEMS_TOTAL","EACH_SPECIFIED_ITEM","EACH_UNIT_OF_SPECIFIED_ITEMS","_UNKNOWN"],"name":"applyOn","type":"Enum","req":false,"is_multi":false},{"method_name":"planIds","name":"planIds","type":"List","req":false,"is_multi":false},{"method_name":"planIds","name":"planIds","type":"String[]","req":false,"is_multi":false},{"method_name":"discountType","possible_values":["FIXED_AMOUNT","PERCENTAGE","OFFER_QUANTITY","_UNKNOWN"],"name":"discountType","type":"Enum","req":false,"is_multi":false},{"method_name":"discountPercentage","name":"discountPercentage","type":"Double","req":false,"is_multi":false},{"method_name":"discountAmount","name":"discountAmount","type":"Integer","req":false,"is_multi":false},{"method_name":"discountQuantity","name":"discountQuantity","type":"Integer","req":false,"is_multi":false},{"method_name":"durationType","possible_values":["ONE_TIME","FOREVER","LIMITED_PERIOD","_UNKNOWN"],"name":"durationType","type":"Enum","req":false,"is_multi":false},{"method_name":"durationMonth","name":"durationMonth","type":"Integer","req":false,"is_multi":false},{"method_name":"validTill","name":"validTill","type":"Timestamp","req":false,"is_multi":false},{"method_name":"maxRedemptions","name":"maxRedemptions","type":"Integer","req":false,"is_multi":false},{"method_name":"planConstraint","possible_values":["NONE","ALL","SPECIFIC","NOT_APPLICABLE","_UNKNOWN"],"name":"planConstraint","type":"Enum","req":false,"is_multi":false},{"method_name":"addonConstraint","possible_values":["NONE","ALL","SPECIFIC","NOT_APPLICABLE","_UNKNOWN"],"name":"addonConstraint","type":"Enum","req":false,"is_multi":false},{"method_name":"metaData","name":"metaData","type":"JSONObject","req":false,"is_multi":false},{"method_name":"invoiceName","name":"invoiceName","type":"String","req":false,"is_multi":false},{"method_name":"invoiceNotes","name":"invoiceNotes","type":"String","req":false,"is_multi":false},{"method_name":"currencyCode","name":"currencyCode","type":"String","req":false,"is_multi":false}]}],"class_name":"com.chargebee.v2.models.Coupon"}
+{
+    "actions": [
+        {
+            "action_name": "Coupon.copy",
+            "arguments": [
+                {
+                    "is_multi": false,
+                    "method_name": "id",
+                    "name": "id",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "fromSite",
+                    "name": "fromSite",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "idAtFromSite",
+                    "name": "idAtFromSite",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "forSiteMerging",
+                    "name": "forSiteMerging",
+                    "req": false,
+                    "type": "Boolean"
+                }
+            ],
+            "static_method_name": "copy"
+        },
+        {
+            "action_name": "Coupon.create",
+            "arguments": [
+                {
+                    "is_multi": false,
+                    "method_name": "name",
+                    "name": "name",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "status",
+                    "name": "status",
+                    "possible_values": [
+                        "ACTIVE",
+                        "EXPIRED",
+                        "ARCHIVED",
+                        "DELETED",
+                        "_UNKNOWN"
+                    ],
+                    "req": false,
+                    "type": "Enum"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "id",
+                    "name": "id",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "invoiceName",
+                    "name": "invoiceName",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "metaData",
+                    "name": "metaData",
+                    "req": false,
+                    "type": "JSONObject"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "discountAmount",
+                    "name": "discountAmount",
+                    "req": false,
+                    "type": "Integer"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "invoiceNotes",
+                    "name": "invoiceNotes",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "applyOn",
+                    "name": "applyOn",
+                    "possible_values": [
+                        "INVOICE_AMOUNT",
+                        "SPECIFIED_ITEMS_TOTAL",
+                        "EACH_SPECIFIED_ITEM",
+                        "EACH_UNIT_OF_SPECIFIED_ITEMS",
+                        "_UNKNOWN"
+                    ],
+                    "req": false,
+                    "type": "Enum"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "discountType",
+                    "name": "discountType",
+                    "possible_values": [
+                        "FIXED_AMOUNT",
+                        "PERCENTAGE",
+                        "OFFER_QUANTITY",
+                        "_UNKNOWN"
+                    ],
+                    "req": false,
+                    "type": "Enum"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "discountPercentage",
+                    "name": "discountPercentage",
+                    "req": false,
+                    "type": "Double"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "discountQuantity",
+                    "name": "discountQuantity",
+                    "req": false,
+                    "type": "Integer"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "durationType",
+                    "name": "durationType",
+                    "possible_values": [
+                        "ONE_TIME",
+                        "FOREVER",
+                        "LIMITED_PERIOD",
+                        "_UNKNOWN"
+                    ],
+                    "req": false,
+                    "type": "Enum"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "durationMonth",
+                    "name": "durationMonth",
+                    "req": false,
+                    "type": "Integer"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "validTill",
+                    "name": "validTill",
+                    "req": false,
+                    "type": "Timestamp"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "maxRedemptions",
+                    "name": "maxRedemptions",
+                    "req": false,
+                    "type": "Integer"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "planConstraint",
+                    "name": "planConstraint",
+                    "possible_values": [
+                        "NONE",
+                        "ALL",
+                        "SPECIFIC",
+                        "NOT_APPLICABLE",
+                        "_UNKNOWN"
+                    ],
+                    "req": false,
+                    "type": "Enum"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "addonConstraint",
+                    "name": "addonConstraint",
+                    "possible_values": [
+                        "NONE",
+                        "ALL",
+                        "SPECIFIC",
+                        "NOT_APPLICABLE",
+                        "_UNKNOWN"
+                    ],
+                    "req": false,
+                    "type": "Enum"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "planIds",
+                    "name": "planIds",
+                    "req": false,
+                    "type": "List"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "planIds",
+                    "name": "planIds",
+                    "req": false,
+                    "type": "String[]"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "addonIds",
+                    "name": "addonIds",
+                    "req": false,
+                    "type": "String[]"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "addonIds",
+                    "name": "addonIds",
+                    "req": false,
+                    "type": "List"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "currencyCode",
+                    "name": "currencyCode",
+                    "req": false,
+                    "type": "String"
+                }
+            ],
+            "static_method_name": "create"
+        }
+    ],
+    "class_name": "com.chargebee.v2.models.Coupon"
+}

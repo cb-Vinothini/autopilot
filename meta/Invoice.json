@@ -1,1 +1,1385 @@
-{"actions":[{"static_method_name":"retrieve","action_name":"Invoice.retrieve","arguments":[{"method_name":"comment","name":"comment","type":"String","req":false,"is_multi":false}]},{"static_method_name":"retrieve","action_name":"Invoice.retrieve","arguments":[{"method_name":"comment","name":"comment","type":"String","req":false,"is_multi":false}]},{"static_method_name":"retrieve","action_name":"Invoice.retrieve","arguments":[{"method_name":"comment","name":"comment","type":"String","req":false,"is_multi":false}]},{"static_method_name":"retrieve","action_name":"Invoice.retrieve","arguments":[{"method_name":"creditNoteId","name":"creditNoteId","type":"String","req":false,"is_multi":false}]},{"static_method_name":"retrieve","action_name":"Invoice.retrieve","arguments":[{"method_name":"transactionId","name":"transactionId","type":"String","req":false,"is_multi":false}]},{"static_method_name":"retrieve","action_name":"Invoice.retrieve","arguments":[{"method_name":"creditNoteReasonCode","possible_values":["WRITE_OFF","SUBSCRIPTION_CHANGE","SUBSCRIPTION_CANCELLATION","CHARGEBACK","PRODUCT_UNSATISFACTORY","SERVICE_UNSATISFACTORY","ORDER_CHANGE","ORDER_CANCELLATION","WAIVER","OTHER","FRAUDULENT","_UNKNOWN"],"name":"creditNoteReasonCode","type":"Enum","req":false,"is_multi":false},{"method_name":"customerNotes","name":"customerNotes","type":"String","req":false,"is_multi":false},{"method_name":"transactionAmount","name":"transactionAmount","type":"Integer","req":false,"is_multi":false},{"method_name":"transactionPaymentMethod","possible_values":["CARD","CASH","CHECK","CHARGEBACK","BANK_TRANSFER","AMAZON_PAYMENTS","PAYPAL_EXPRESS_CHECKOUT","DIRECT_DEBIT","ALIPAY","UNIONPAY","APPLE_PAY","OTHER","_UNKNOWN"],"name":"transactionPaymentMethod","type":"Enum","req":false,"is_multi":false},{"method_name":"transactionReferenceNumber","name":"transactionReferenceNumber","type":"String","req":false,"is_multi":false},{"method_name":"transactionDate","name":"transactionDate","type":"Timestamp","req":false,"is_multi":false},{"method_name":"comment","name":"comment","type":"String","req":false,"is_multi":false}]},{"static_method_name":"retrieve","action_name":"Invoice.retrieve","arguments":[{"method_name":"creditNoteReasonCode","possible_values":["WRITE_OFF","SUBSCRIPTION_CHANGE","SUBSCRIPTION_CANCELLATION","CHARGEBACK","PRODUCT_UNSATISFACTORY","SERVICE_UNSATISFACTORY","ORDER_CHANGE","ORDER_CANCELLATION","WAIVER","OTHER","FRAUDULENT","_UNKNOWN"],"name":"creditNoteReasonCode","type":"Enum","req":false,"is_multi":false},{"method_name":"refundAmount","name":"refundAmount","type":"Integer","req":false,"is_multi":false},{"method_name":"customerNotes","name":"customerNotes","type":"String","req":false,"is_multi":false},{"method_name":"comment","name":"comment","type":"String","req":false,"is_multi":false}]},{"static_method_name":"retrieve","action_name":"Invoice.retrieve","arguments":[{"method_name":"transactionIdAtGateway","name":"transactionIdAtGateway","type":"String","req":false,"is_multi":false},{"method_name":"transactionStatus","possible_values":["IN_PROGRESS","SUCCESS","VOIDED","FAILURE","TIMEOUT","NEEDS_ATTENTION","_UNKNOWN"],"name":"transactionStatus","type":"Enum","req":false,"is_multi":false},{"method_name":"transactionErrorCode","name":"transactionErrorCode","type":"String","req":false,"is_multi":false},{"method_name":"transactionErrorText","name":"transactionErrorText","type":"String","req":false,"is_multi":false},{"method_name":"transactionAmount","name":"transactionAmount","type":"Integer","req":false,"is_multi":false},{"method_name":"transactionPaymentMethod","possible_values":["CARD","CASH","CHECK","CHARGEBACK","BANK_TRANSFER","AMAZON_PAYMENTS","PAYPAL_EXPRESS_CHECKOUT","DIRECT_DEBIT","ALIPAY","UNIONPAY","APPLE_PAY","OTHER","_UNKNOWN"],"name":"transactionPaymentMethod","type":"Enum","req":false,"is_multi":false},{"method_name":"transactionReferenceNumber","name":"transactionReferenceNumber","type":"String","req":false,"is_multi":false},{"method_name":"transactionDate","name":"transactionDate","type":"Timestamp","req":false,"is_multi":false},{"method_name":"comment","name":"comment","type":"String","req":false,"is_multi":false}]},{"static_method_name":"retrieve","action_name":"Invoice.retrieve","arguments":[{"method_name":"amount","name":"amount","type":"Integer","req":false,"is_multi":false},{"method_name":"paymentSourceId","name":"paymentSourceId","type":"String","req":false,"is_multi":false}]},{"static_method_name":"retrieve","action_name":"Invoice.retrieve","arguments":[{"method_name":"addonId","name":"addonId","type":"String","req":false,"is_multi":false},{"method_name":"addonQuantity","name":"addonQuantity","type":"Integer","req":false,"is_multi":false},{"method_name":"addonUnitPrice","name":"addonUnitPrice","type":"Integer","req":false,"is_multi":false},{"method_name":"lineItemDateFrom","name":"lineItemDateFrom","type":"Timestamp","req":false,"is_multi":false},{"method_name":"lineItemDateTo","name":"lineItemDateTo","type":"Timestamp","req":false,"is_multi":false}]},{"static_method_name":"retrieve","action_name":"Invoice.retrieve","arguments":[{"method_name":"lineItemDateFrom","name":"lineItemDateFrom","type":"Timestamp","req":false,"is_multi":false},{"method_name":"lineItemDateTo","name":"lineItemDateTo","type":"Timestamp","req":false,"is_multi":false},{"method_name":"amount","name":"amount","type":"Integer","req":false,"is_multi":false},{"method_name":"description","name":"description","type":"String","req":false,"is_multi":false}]},{"static_method_name":"retrieve","action_name":"Invoice.retrieve","arguments":[{"method_name":"creditNoteId","name":"creditNoteId","type":"String","req":false,"is_multi":true}]},{"static_method_name":"retrieve","action_name":"Invoice.retrieve","arguments":[{"method_name":"transactionId","name":"transactionId","type":"String","req":false,"is_multi":true}]},{"static_method_name":"retrieve","action_name":"Invoice.retrieve","arguments":[{"method_name":"status","possible_values":["PAID","POSTED","PAYMENT_DUE","NOT_PAID","VOIDED","PENDING","_UNKNOWN"],"name":"status","type":"Enum","req":false,"is_multi":false},{"method_name":"id","name":"id","type":"String","req":false,"is_multi":false},{"method_name":"dueDate","name":"dueDate","type":"Timestamp","req":false,"is_multi":false},{"method_name":"taxName","name":"taxName","type":"String","req":false,"is_multi":true},{"method_name":"noteNote","name":"noteNote","type":"String","req":false,"is_multi":true},{"method_name":"roundOff","name":"roundOff","type":"Integer","req":false,"is_multi":false},{"method_name":"taxRate","name":"taxRate","type":"Double","req":false,"is_multi":true},{"method_name":"taxOverrideReason","possible_values":["ID_EXEMPT","CUSTOMER_EXEMPT","_UNKNOWN"],"name":"taxOverrideReason","type":"Enum","req":false,"is_multi":false},{"method_name":"useForProration","name":"useForProration","type":"Boolean","req":false,"is_multi":false},{"method_name":"billingAddressFirstName","name":"billingAddressFirstName","type":"String","req":false,"is_multi":false},{"method_name":"billingAddressLastName","name":"billingAddressLastName","type":"String","req":false,"is_multi":false},{"method_name":"billingAddressEmail","name":"billingAddressEmail","type":"String","req":false,"is_multi":false},{"method_name":"billingAddressCompany","name":"billingAddressCompany","type":"String","req":false,"is_multi":false},{"method_name":"billingAddressPhone","name":"billingAddressPhone","type":"String","req":false,"is_multi":false},{"method_name":"billingAddressLine1","name":"billingAddressLine1","type":"String","req":false,"is_multi":false},{"method_name":"billingAddressLine2","name":"billingAddressLine2","type":"String","req":false,"is_multi":false},{"method_name":"billingAddressLine3","name":"billingAddressLine3","type":"String","req":false,"is_multi":false},{"method_name":"billingAddressCity","name":"billingAddressCity","type":"String","req":false,"is_multi":false},{"method_name":"billingAddressStateCode","name":"billingAddressStateCode","type":"String","req":false,"is_multi":false},{"method_name":"billingAddressState","name":"billingAddressState","type":"String","req":false,"is_multi":false},{"method_name":"billingAddressZip","name":"billingAddressZip","type":"String","req":false,"is_multi":false},{"method_name":"billingAddressCountry","name":"billingAddressCountry","type":"String","req":false,"is_multi":false},{"method_name":"billingAddressValidationStatus","possible_values":["NOT_VALIDATED","VALID","PARTIALLY_VALID","INVALID","_UNKNOWN"],"name":"billingAddressValidationStatus","type":"Enum","req":false,"is_multi":false},{"method_name":"shippingAddressFirstName","name":"shippingAddressFirstName","type":"String","req":false,"is_multi":false},{"method_name":"shippingAddressLastName","name":"shippingAddressLastName","type":"String","req":false,"is_multi":false},{"method_name":"shippingAddressEmail","name":"shippingAddressEmail","type":"String","req":false,"is_multi":false},{"method_name":"shippingAddressCompany","name":"shippingAddressCompany","type":"String","req":false,"is_multi":false},{"method_name":"shippingAddressPhone","name":"shippingAddressPhone","type":"String","req":false,"is_multi":false},{"method_name":"shippingAddressLine1","name":"shippingAddressLine1","type":"String","req":false,"is_multi":false},{"method_name":"shippingAddressLine2","name":"shippingAddressLine2","type":"String","req":false,"is_multi":false},{"method_name":"shippingAddressLine3","name":"shippingAddressLine3","type":"String","req":false,"is_multi":false},{"method_name":"shippingAddressCity","name":"shippingAddressCity","type":"String","req":false,"is_multi":false},{"method_name":"shippingAddressStateCode","name":"shippingAddressStateCode","type":"String","req":false,"is_multi":false},{"method_name":"shippingAddressState","name":"shippingAddressState","type":"String","req":false,"is_multi":false},{"method_name":"shippingAddressZip","name":"shippingAddressZip","type":"String","req":false,"is_multi":false},{"method_name":"shippingAddressCountry","name":"shippingAddressCountry","type":"String","req":false,"is_multi":false},{"method_name":"shippingAddressValidationStatus","possible_values":["NOT_VALIDATED","VALID","PARTIALLY_VALID","INVALID","_UNKNOWN"],"name":"shippingAddressValidationStatus","type":"Enum","req":false,"is_multi":false},{"method_name":"lineItemDescription","name":"lineItemDescription","type":"String","req":false,"is_multi":true},{"method_name":"lineItemUnitAmount","name":"lineItemUnitAmount","type":"Integer","req":false,"is_multi":true},{"method_name":"lineItemQuantity","name":"lineItemQuantity","type":"Integer","req":false,"is_multi":true},{"method_name":"lineItemAmount","name":"lineItemAmount","type":"Integer","req":false,"is_multi":true},{"method_name":"lineItemEntityType","possible_values":["PLAN_SETUP","PLAN","ADDON","ADHOC","_UNKNOWN"],"name":"lineItemEntityType","type":"Enum","req":false,"is_multi":true},{"method_name":"lineItemEntityId","name":"lineItemEntityId","type":"String","req":false,"is_multi":true},{"method_name":"lineItemItemLevelDiscount1EntityId","name":"lineItemItemLevelDiscount1EntityId","type":"String","req":false,"is_multi":true},{"method_name":"lineItemItemLevelDiscount1Amount","name":"lineItemItemLevelDiscount1Amount","type":"Integer","req":false,"is_multi":true},{"method_name":"lineItemItemLevelDiscount2EntityId","name":"lineItemItemLevelDiscount2EntityId","type":"String","req":false,"is_multi":true},{"method_name":"lineItemItemLevelDiscount2Amount","name":"lineItemItemLevelDiscount2Amount","type":"Integer","req":false,"is_multi":true},{"method_name":"lineItemTax1Name","name":"lineItemTax1Name","type":"String","req":false,"is_multi":true},{"method_name":"lineItemTax1Amount","name":"lineItemTax1Amount","type":"Integer","req":false,"is_multi":true},{"method_name":"lineItemTax2Name","name":"lineItemTax2Name","type":"String","req":false,"is_multi":true},{"method_name":"lineItemTax2Amount","name":"lineItemTax2Amount","type":"Integer","req":false,"is_multi":true},{"method_name":"lineItemTax3Name","name":"lineItemTax3Name","type":"String","req":false,"is_multi":true},{"method_name":"lineItemTax3Amount","name":"lineItemTax3Amount","type":"Integer","req":false,"is_multi":true},{"method_name":"lineItemTax4Name","name":"lineItemTax4Name","type":"String","req":false,"is_multi":true},{"method_name":"lineItemTax4Amount","name":"lineItemTax4Amount","type":"Integer","req":false,"is_multi":true},{"method_name":"discountEntityType","possible_values":["ITEM_LEVEL_COUPON","DOCUMENT_LEVEL_COUPON","PROMOTIONAL_CREDITS","PRORATED_CREDITS","_UNKNOWN"],"name":"discountEntityType","type":"Enum","req":false,"is_multi":true},{"method_name":"discountEntityId","name":"discountEntityId","type":"String","req":false,"is_multi":true},{"method_name":"discountDescription","name":"discountDescription","type":"String","req":false,"is_multi":true},{"method_name":"taxAmount","name":"taxAmount","type":"Integer","req":false,"is_multi":true},{"method_name":"taxDescription","name":"taxDescription","type":"String","req":false,"is_multi":true},{"method_name":"taxJurisType","possible_values":["COUNTRY","STATE","COUNTY","CITY","SPECIAL","OTHER","_UNKNOWN"],"name":"taxJurisType","type":"Enum","req":false,"is_multi":true},{"method_name":"taxJurisName","name":"taxJurisName","type":"String","req":false,"is_multi":true},{"method_name":"taxJurisCode","name":"taxJurisCode","type":"String","req":false,"is_multi":true},{"method_name":"paymentAmount","name":"paymentAmount","type":"Integer","req":false,"is_multi":true},{"method_name":"paymentPaymentMethod","possible_values":["CARD","CASH","CHECK","CHARGEBACK","BANK_TRANSFER","AMAZON_PAYMENTS","PAYPAL_EXPRESS_CHECKOUT","DIRECT_DEBIT","ALIPAY","UNIONPAY","APPLE_PAY","OTHER","_UNKNOWN"],"name":"paymentPaymentMethod","type":"Enum","req":false,"is_multi":true},{"method_name":"paymentDate","name":"paymentDate","type":"Timestamp","req":false,"is_multi":true},{"method_name":"paymentReferenceNumber","name":"paymentReferenceNumber","type":"String","req":false,"is_multi":true},{"method_name":"noteEntityType","possible_values":["PLAN","ADDON","COUPON","SUBSCRIPTION","CUSTOMER","_UNKNOWN"],"name":"noteEntityType","type":"Enum","req":false,"is_multi":true},{"method_name":"noteEntityId","name":"noteEntityId","type":"String","req":false,"is_multi":true},{"method_name":"subscriptionId","name":"subscriptionId","type":"String","req":false,"is_multi":false},{"method_name":"vatNumber","name":"vatNumber","type":"String","req":false,"is_multi":false},{"method_name":"priceType","possible_values":["TAX_EXCLUSIVE","TAX_INCLUSIVE","_UNKNOWN"],"name":"priceType","type":"Enum","req":false,"is_multi":false},{"method_name":"discountAmount","name":"discountAmount","type":"Integer","req":false,"is_multi":true},{"method_name":"netTermDays","name":"netTermDays","type":"Integer","req":false,"is_multi":false},{"method_name":"customerId","name":"customerId","type":"String","req":false,"is_multi":false},{"method_name":"lineItemDateFrom","name":"lineItemDateFrom","type":"Timestamp","req":false,"is_multi":true},{"method_name":"lineItemDateTo","name":"lineItemDateTo","type":"Timestamp","req":false,"is_multi":true},{"method_name":"poNumber","name":"poNumber","type":"String","req":false,"is_multi":false},{"method_name":"total","name":"total","type":"Integer","req":false,"is_multi":false},{"method_name":"date","name":"date","type":"Timestamp","req":false,"is_multi":false},{"method_name":"currencyCode","name":"currencyCode","type":"String","req":false,"is_multi":false}]},{"static_method_name":"retrieve","action_name":"Invoice.retrieve","arguments":[{"method_name":"subscriptionId","name":"subscriptionId","type":"String","req":false,"is_multi":false},{"method_name":"addonId","name":"addonId","type":"String","req":false,"is_multi":false},{"method_name":"customerId","name":"customerId","type":"String","req":false,"is_multi":false},{"method_name":"addonQuantity","name":"addonQuantity","type":"Integer","req":false,"is_multi":false},{"method_name":"addonUnitPrice","name":"addonUnitPrice","type":"Integer","req":false,"is_multi":false},{"method_name":"poNumber","name":"poNumber","type":"String","req":false,"is_multi":false},{"method_name":"paymentSourceId","name":"paymentSourceId","type":"String","req":false,"is_multi":false},{"method_name":"coupon","name":"coupon","type":"String","req":false,"is_multi":false}]},{"static_method_name":"retrieve","action_name":"Invoice.retrieve","arguments":[{"method_name":"subscriptionId","name":"subscriptionId","type":"String","req":false,"is_multi":false},{"method_name":"customerId","name":"customerId","type":"String","req":false,"is_multi":false},{"method_name":"poNumber","name":"poNumber","type":"String","req":false,"is_multi":false},{"method_name":"amount","name":"amount","type":"Integer","req":false,"is_multi":false},{"method_name":"description","name":"description","type":"String","req":false,"is_multi":false},{"method_name":"paymentSourceId","name":"paymentSourceId","type":"String","req":false,"is_multi":false},{"method_name":"coupon","name":"coupon","type":"String","req":false,"is_multi":false},{"method_name":"currencyCode","name":"currencyCode","type":"String","req":false,"is_multi":false}]},{"static_method_name":"retrieve","action_name":"Invoice.retrieve","arguments":[{"method_name":"shippingAddressFirstName","name":"shippingAddressFirstName","type":"String","req":false,"is_multi":false},{"method_name":"shippingAddressLastName","name":"shippingAddressLastName","type":"String","req":false,"is_multi":false},{"method_name":"shippingAddressEmail","name":"shippingAddressEmail","type":"String","req":false,"is_multi":false},{"method_name":"shippingAddressCompany","name":"shippingAddressCompany","type":"String","req":false,"is_multi":false},{"method_name":"shippingAddressPhone","name":"shippingAddressPhone","type":"String","req":false,"is_multi":false},{"method_name":"shippingAddressLine1","name":"shippingAddressLine1","type":"String","req":false,"is_multi":false},{"method_name":"shippingAddressLine2","name":"shippingAddressLine2","type":"String","req":false,"is_multi":false},{"method_name":"shippingAddressLine3","name":"shippingAddressLine3","type":"String","req":false,"is_multi":false},{"method_name":"shippingAddressCity","name":"shippingAddressCity","type":"String","req":false,"is_multi":false},{"method_name":"shippingAddressStateCode","name":"shippingAddressStateCode","type":"String","req":false,"is_multi":false},{"method_name":"shippingAddressState","name":"shippingAddressState","type":"String","req":false,"is_multi":false},{"method_name":"shippingAddressZip","name":"shippingAddressZip","type":"String","req":false,"is_multi":false},{"method_name":"shippingAddressCountry","name":"shippingAddressCountry","type":"String","req":false,"is_multi":false},{"method_name":"shippingAddressValidationStatus","possible_values":["NOT_VALIDATED","VALID","PARTIALLY_VALID","INVALID","_UNKNOWN"],"name":"shippingAddressValidationStatus","type":"Enum","req":false,"is_multi":false},{"method_name":"addonId","name":"addonId","type":"String","req":false,"is_multi":true},{"method_name":"customerId","name":"customerId","type":"String","req":false,"is_multi":false},{"method_name":"addonQuantity","name":"addonQuantity","type":"Integer","req":false,"is_multi":true},{"method_name":"addonUnitPrice","name":"addonUnitPrice","type":"Integer","req":false,"is_multi":true},{"method_name":"chargeAmount","name":"chargeAmount","type":"Integer","req":false,"is_multi":true},{"method_name":"chargeDescription","name":"chargeDescription","type":"String","req":false,"is_multi":true},{"method_name":"poNumber","name":"poNumber","type":"String","req":false,"is_multi":false},{"method_name":"paymentSourceId","name":"paymentSourceId","type":"String","req":false,"is_multi":false},{"method_name":"coupon","name":"coupon","type":"String","req":false,"is_multi":false},{"method_name":"currencyCode","name":"currencyCode","type":"String","req":false,"is_multi":false}]}],"class_name":"com.chargebee.v2.models.Invoice"}
+{
+    "actions": [
+        {
+            "action_name": "Invoice.delete",
+            "arguments": [{
+                "is_multi": false,
+                "method_name": "comment",
+                "name": "comment",
+                "req": false,
+                "type": "String"
+            }],
+            "static_method_name": "delete",
+            "static_param_name": "delete",
+            "type": "String"
+        },
+        {
+            "action_name": "Invoice.writeOff",
+            "arguments": [{
+                "is_multi": false,
+                "method_name": "comment",
+                "name": "comment",
+                "req": false,
+                "type": "String"
+            }],
+            "static_method_name": "writeOff",
+            "static_param_name": "writeOff",
+            "type": "String"
+        },
+        {
+            "action_name": "Invoice.voidInvoice",
+            "arguments": [{
+                "is_multi": false,
+                "method_name": "comment",
+                "name": "comment",
+                "req": false,
+                "type": "String"
+            }],
+            "static_method_name": "voidInvoice",
+            "static_param_name": "voidInvoice",
+            "type": "String"
+        },
+        {
+            "action_name": "Invoice.removeCreditNote",
+            "arguments": [{
+                "is_multi": false,
+                "method_name": "creditNoteId",
+                "name": "creditNoteId",
+                "req": false,
+                "type": "String"
+            }],
+            "static_method_name": "removeCreditNote",
+            "static_param_name": "removeCreditNote",
+            "type": "String"
+        },
+        {
+            "action_name": "Invoice.removePayment",
+            "arguments": [{
+                "is_multi": false,
+                "method_name": "transactionId",
+                "name": "transactionId",
+                "req": false,
+                "type": "String"
+            }],
+            "static_method_name": "removePayment",
+            "static_param_name": "removePayment",
+            "type": "String"
+        },
+        {
+            "action_name": "Invoice.recordRefund",
+            "arguments": [
+                {
+                    "is_multi": false,
+                    "method_name": "customerNotes",
+                    "name": "customerNotes",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "transactionAmount",
+                    "name": "transactionAmount",
+                    "req": false,
+                    "type": "Integer"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "transactionPaymentMethod",
+                    "name": "transactionPaymentMethod",
+                    "possible_values": [
+                        "CARD",
+                        "CASH",
+                        "CHECK",
+                        "CHARGEBACK",
+                        "BANK_TRANSFER",
+                        "AMAZON_PAYMENTS",
+                        "PAYPAL_EXPRESS_CHECKOUT",
+                        "DIRECT_DEBIT",
+                        "ALIPAY",
+                        "UNIONPAY",
+                        "APPLE_PAY",
+                        "OTHER",
+                        "_UNKNOWN"
+                    ],
+                    "req": false,
+                    "type": "Enum"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "transactionDate",
+                    "name": "transactionDate",
+                    "req": false,
+                    "type": "Timestamp"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "transactionReferenceNumber",
+                    "name": "transactionReferenceNumber",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "creditNoteReasonCode",
+                    "name": "creditNoteReasonCode",
+                    "possible_values": [
+                        "WRITE_OFF",
+                        "SUBSCRIPTION_CHANGE",
+                        "SUBSCRIPTION_CANCELLATION",
+                        "CHARGEBACK",
+                        "PRODUCT_UNSATISFACTORY",
+                        "SERVICE_UNSATISFACTORY",
+                        "ORDER_CHANGE",
+                        "ORDER_CANCELLATION",
+                        "WAIVER",
+                        "OTHER",
+                        "FRAUDULENT",
+                        "_UNKNOWN"
+                    ],
+                    "req": false,
+                    "type": "Enum"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "comment",
+                    "name": "comment",
+                    "req": false,
+                    "type": "String"
+                }
+            ],
+            "static_method_name": "recordRefund",
+            "static_param_name": "recordRefund",
+            "type": "String"
+        },
+        {
+            "action_name": "Invoice.refund",
+            "arguments": [
+                {
+                    "is_multi": false,
+                    "method_name": "customerNotes",
+                    "name": "customerNotes",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "creditNoteReasonCode",
+                    "name": "creditNoteReasonCode",
+                    "possible_values": [
+                        "WRITE_OFF",
+                        "SUBSCRIPTION_CHANGE",
+                        "SUBSCRIPTION_CANCELLATION",
+                        "CHARGEBACK",
+                        "PRODUCT_UNSATISFACTORY",
+                        "SERVICE_UNSATISFACTORY",
+                        "ORDER_CHANGE",
+                        "ORDER_CANCELLATION",
+                        "WAIVER",
+                        "OTHER",
+                        "FRAUDULENT",
+                        "_UNKNOWN"
+                    ],
+                    "req": false,
+                    "type": "Enum"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "refundAmount",
+                    "name": "refundAmount",
+                    "req": false,
+                    "type": "Integer"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "comment",
+                    "name": "comment",
+                    "req": false,
+                    "type": "String"
+                }
+            ],
+            "static_method_name": "refund",
+            "static_param_name": "refund",
+            "type": "String"
+        },
+        {
+            "action_name": "Invoice.recordPayment",
+            "arguments": [
+                {
+                    "is_multi": false,
+                    "method_name": "transactionAmount",
+                    "name": "transactionAmount",
+                    "req": false,
+                    "type": "Integer"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "transactionPaymentMethod",
+                    "name": "transactionPaymentMethod",
+                    "possible_values": [
+                        "CARD",
+                        "CASH",
+                        "CHECK",
+                        "CHARGEBACK",
+                        "BANK_TRANSFER",
+                        "AMAZON_PAYMENTS",
+                        "PAYPAL_EXPRESS_CHECKOUT",
+                        "DIRECT_DEBIT",
+                        "ALIPAY",
+                        "UNIONPAY",
+                        "APPLE_PAY",
+                        "OTHER",
+                        "_UNKNOWN"
+                    ],
+                    "req": false,
+                    "type": "Enum"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "transactionDate",
+                    "name": "transactionDate",
+                    "req": false,
+                    "type": "Timestamp"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "transactionReferenceNumber",
+                    "name": "transactionReferenceNumber",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "transactionIdAtGateway",
+                    "name": "transactionIdAtGateway",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "transactionStatus",
+                    "name": "transactionStatus",
+                    "possible_values": [
+                        "IN_PROGRESS",
+                        "SUCCESS",
+                        "VOIDED",
+                        "FAILURE",
+                        "TIMEOUT",
+                        "NEEDS_ATTENTION",
+                        "_UNKNOWN"
+                    ],
+                    "req": false,
+                    "type": "Enum"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "transactionErrorCode",
+                    "name": "transactionErrorCode",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "transactionErrorText",
+                    "name": "transactionErrorText",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "comment",
+                    "name": "comment",
+                    "req": false,
+                    "type": "String"
+                }
+            ],
+            "static_method_name": "recordPayment",
+            "static_param_name": "recordPayment",
+            "type": "String"
+        },
+        {
+            "action_name": "Invoice.collectPayment",
+            "arguments": [
+                {
+                    "is_multi": false,
+                    "method_name": "paymentSourceId",
+                    "name": "paymentSourceId",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "amount",
+                    "name": "amount",
+                    "req": false,
+                    "type": "Integer"
+                }
+            ],
+            "static_method_name": "collectPayment",
+            "static_param_name": "collectPayment",
+            "type": "String"
+        },
+        {
+            "action_name": "Invoice.addAddonCharge",
+            "arguments": [
+                {
+                    "is_multi": false,
+                    "method_name": "addonId",
+                    "name": "addonId",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "addonQuantity",
+                    "name": "addonQuantity",
+                    "req": false,
+                    "type": "Integer"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "addonUnitPrice",
+                    "name": "addonUnitPrice",
+                    "req": false,
+                    "type": "Integer"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "lineItemDateFrom",
+                    "name": "lineItemDateFrom",
+                    "req": false,
+                    "type": "Timestamp"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "lineItemDateTo",
+                    "name": "lineItemDateTo",
+                    "req": false,
+                    "type": "Timestamp"
+                }
+            ],
+            "static_method_name": "addAddonCharge",
+            "static_param_name": "addAddonCharge",
+            "type": "String"
+        },
+        {
+            "action_name": "Invoice.addCharge",
+            "arguments": [
+                {
+                    "is_multi": false,
+                    "method_name": "lineItemDateFrom",
+                    "name": "lineItemDateFrom",
+                    "req": false,
+                    "type": "Timestamp"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "lineItemDateTo",
+                    "name": "lineItemDateTo",
+                    "req": false,
+                    "type": "Timestamp"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "amount",
+                    "name": "amount",
+                    "req": false,
+                    "type": "Integer"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "description",
+                    "name": "description",
+                    "req": false,
+                    "type": "String"
+                }
+            ],
+            "static_method_name": "addCharge",
+            "static_param_name": "addCharge",
+            "type": "String"
+        },
+        {
+            "action_name": "Invoice.applyCredits",
+            "arguments": [{
+                "is_multi": true,
+                "method_name": "creditNoteId",
+                "name": "creditNoteId",
+                "req": false,
+                "type": "String"
+            }],
+            "static_method_name": "applyCredits",
+            "static_param_name": "applyCredits",
+            "type": "String"
+        },
+        {
+            "action_name": "Invoice.applyPayments",
+            "arguments": [{
+                "is_multi": true,
+                "method_name": "transactionId",
+                "name": "transactionId",
+                "req": false,
+                "type": "String"
+            }],
+            "static_method_name": "applyPayments",
+            "static_param_name": "applyPayments",
+            "type": "String"
+        },
+        {
+            "action_name": "Invoice.importInvoice",
+            "arguments": [
+                {
+                    "is_multi": false,
+                    "method_name": "status",
+                    "name": "status",
+                    "possible_values": [
+                        "PAID",
+                        "POSTED",
+                        "PAYMENT_DUE",
+                        "NOT_PAID",
+                        "VOIDED",
+                        "PENDING",
+                        "_UNKNOWN"
+                    ],
+                    "req": false,
+                    "type": "Enum"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "id",
+                    "name": "id",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": true,
+                    "method_name": "noteNote",
+                    "name": "noteNote",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": true,
+                    "method_name": "taxRate",
+                    "name": "taxRate",
+                    "req": false,
+                    "type": "Double"
+                },
+                {
+                    "is_multi": true,
+                    "method_name": "lineItemDateFrom",
+                    "name": "lineItemDateFrom",
+                    "req": false,
+                    "type": "Timestamp"
+                },
+                {
+                    "is_multi": true,
+                    "method_name": "lineItemDateTo",
+                    "name": "lineItemDateTo",
+                    "req": false,
+                    "type": "Timestamp"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "roundOff",
+                    "name": "roundOff",
+                    "req": false,
+                    "type": "Integer"
+                },
+                {
+                    "is_multi": true,
+                    "method_name": "taxName",
+                    "name": "taxName",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "taxOverrideReason",
+                    "name": "taxOverrideReason",
+                    "possible_values": [
+                        "ID_EXEMPT",
+                        "CUSTOMER_EXEMPT",
+                        "_UNKNOWN"
+                    ],
+                    "req": false,
+                    "type": "Enum"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "useForProration",
+                    "name": "useForProration",
+                    "req": false,
+                    "type": "Boolean"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "billingAddressFirstName",
+                    "name": "billingAddressFirstName",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "billingAddressLastName",
+                    "name": "billingAddressLastName",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "billingAddressEmail",
+                    "name": "billingAddressEmail",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "billingAddressCompany",
+                    "name": "billingAddressCompany",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "billingAddressPhone",
+                    "name": "billingAddressPhone",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "billingAddressLine1",
+                    "name": "billingAddressLine1",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "billingAddressLine2",
+                    "name": "billingAddressLine2",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "billingAddressLine3",
+                    "name": "billingAddressLine3",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "billingAddressCity",
+                    "name": "billingAddressCity",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "billingAddressStateCode",
+                    "name": "billingAddressStateCode",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "billingAddressState",
+                    "name": "billingAddressState",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "billingAddressZip",
+                    "name": "billingAddressZip",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "billingAddressCountry",
+                    "name": "billingAddressCountry",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "billingAddressValidationStatus",
+                    "name": "billingAddressValidationStatus",
+                    "possible_values": [
+                        "NOT_VALIDATED",
+                        "VALID",
+                        "PARTIALLY_VALID",
+                        "INVALID",
+                        "_UNKNOWN"
+                    ],
+                    "req": false,
+                    "type": "Enum"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "shippingAddressFirstName",
+                    "name": "shippingAddressFirstName",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "shippingAddressLastName",
+                    "name": "shippingAddressLastName",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "shippingAddressEmail",
+                    "name": "shippingAddressEmail",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "shippingAddressCompany",
+                    "name": "shippingAddressCompany",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "shippingAddressPhone",
+                    "name": "shippingAddressPhone",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "shippingAddressLine1",
+                    "name": "shippingAddressLine1",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "shippingAddressLine2",
+                    "name": "shippingAddressLine2",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "shippingAddressLine3",
+                    "name": "shippingAddressLine3",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "shippingAddressCity",
+                    "name": "shippingAddressCity",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "shippingAddressStateCode",
+                    "name": "shippingAddressStateCode",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "shippingAddressState",
+                    "name": "shippingAddressState",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "shippingAddressZip",
+                    "name": "shippingAddressZip",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "shippingAddressCountry",
+                    "name": "shippingAddressCountry",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "shippingAddressValidationStatus",
+                    "name": "shippingAddressValidationStatus",
+                    "possible_values": [
+                        "NOT_VALIDATED",
+                        "VALID",
+                        "PARTIALLY_VALID",
+                        "INVALID",
+                        "_UNKNOWN"
+                    ],
+                    "req": false,
+                    "type": "Enum"
+                },
+                {
+                    "is_multi": true,
+                    "method_name": "lineItemDescription",
+                    "name": "lineItemDescription",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": true,
+                    "method_name": "lineItemUnitAmount",
+                    "name": "lineItemUnitAmount",
+                    "req": false,
+                    "type": "Integer"
+                },
+                {
+                    "is_multi": true,
+                    "method_name": "lineItemQuantity",
+                    "name": "lineItemQuantity",
+                    "req": false,
+                    "type": "Integer"
+                },
+                {
+                    "is_multi": true,
+                    "method_name": "lineItemAmount",
+                    "name": "lineItemAmount",
+                    "req": false,
+                    "type": "Integer"
+                },
+                {
+                    "is_multi": true,
+                    "method_name": "lineItemEntityType",
+                    "name": "lineItemEntityType",
+                    "possible_values": [
+                        "PLAN_SETUP",
+                        "PLAN",
+                        "ADDON",
+                        "ADHOC",
+                        "_UNKNOWN"
+                    ],
+                    "req": false,
+                    "type": "Enum"
+                },
+                {
+                    "is_multi": true,
+                    "method_name": "lineItemEntityId",
+                    "name": "lineItemEntityId",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": true,
+                    "method_name": "lineItemItemLevelDiscount1EntityId",
+                    "name": "lineItemItemLevelDiscount1EntityId",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": true,
+                    "method_name": "lineItemItemLevelDiscount1Amount",
+                    "name": "lineItemItemLevelDiscount1Amount",
+                    "req": false,
+                    "type": "Integer"
+                },
+                {
+                    "is_multi": true,
+                    "method_name": "lineItemItemLevelDiscount2EntityId",
+                    "name": "lineItemItemLevelDiscount2EntityId",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": true,
+                    "method_name": "lineItemItemLevelDiscount2Amount",
+                    "name": "lineItemItemLevelDiscount2Amount",
+                    "req": false,
+                    "type": "Integer"
+                },
+                {
+                    "is_multi": true,
+                    "method_name": "lineItemTax1Name",
+                    "name": "lineItemTax1Name",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": true,
+                    "method_name": "lineItemTax1Amount",
+                    "name": "lineItemTax1Amount",
+                    "req": false,
+                    "type": "Integer"
+                },
+                {
+                    "is_multi": true,
+                    "method_name": "lineItemTax2Name",
+                    "name": "lineItemTax2Name",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": true,
+                    "method_name": "lineItemTax2Amount",
+                    "name": "lineItemTax2Amount",
+                    "req": false,
+                    "type": "Integer"
+                },
+                {
+                    "is_multi": true,
+                    "method_name": "lineItemTax3Name",
+                    "name": "lineItemTax3Name",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": true,
+                    "method_name": "lineItemTax3Amount",
+                    "name": "lineItemTax3Amount",
+                    "req": false,
+                    "type": "Integer"
+                },
+                {
+                    "is_multi": true,
+                    "method_name": "lineItemTax4Name",
+                    "name": "lineItemTax4Name",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": true,
+                    "method_name": "lineItemTax4Amount",
+                    "name": "lineItemTax4Amount",
+                    "req": false,
+                    "type": "Integer"
+                },
+                {
+                    "is_multi": true,
+                    "method_name": "discountEntityType",
+                    "name": "discountEntityType",
+                    "possible_values": [
+                        "ITEM_LEVEL_COUPON",
+                        "DOCUMENT_LEVEL_COUPON",
+                        "PROMOTIONAL_CREDITS",
+                        "PRORATED_CREDITS",
+                        "_UNKNOWN"
+                    ],
+                    "req": false,
+                    "type": "Enum"
+                },
+                {
+                    "is_multi": true,
+                    "method_name": "discountEntityId",
+                    "name": "discountEntityId",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": true,
+                    "method_name": "discountDescription",
+                    "name": "discountDescription",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": true,
+                    "method_name": "taxAmount",
+                    "name": "taxAmount",
+                    "req": false,
+                    "type": "Integer"
+                },
+                {
+                    "is_multi": true,
+                    "method_name": "taxDescription",
+                    "name": "taxDescription",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": true,
+                    "method_name": "taxJurisType",
+                    "name": "taxJurisType",
+                    "possible_values": [
+                        "COUNTRY",
+                        "STATE",
+                        "COUNTY",
+                        "CITY",
+                        "SPECIAL",
+                        "OTHER",
+                        "_UNKNOWN"
+                    ],
+                    "req": false,
+                    "type": "Enum"
+                },
+                {
+                    "is_multi": true,
+                    "method_name": "taxJurisName",
+                    "name": "taxJurisName",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": true,
+                    "method_name": "taxJurisCode",
+                    "name": "taxJurisCode",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": true,
+                    "method_name": "paymentAmount",
+                    "name": "paymentAmount",
+                    "req": false,
+                    "type": "Integer"
+                },
+                {
+                    "is_multi": true,
+                    "method_name": "paymentPaymentMethod",
+                    "name": "paymentPaymentMethod",
+                    "possible_values": [
+                        "CARD",
+                        "CASH",
+                        "CHECK",
+                        "CHARGEBACK",
+                        "BANK_TRANSFER",
+                        "AMAZON_PAYMENTS",
+                        "PAYPAL_EXPRESS_CHECKOUT",
+                        "DIRECT_DEBIT",
+                        "ALIPAY",
+                        "UNIONPAY",
+                        "APPLE_PAY",
+                        "OTHER",
+                        "_UNKNOWN"
+                    ],
+                    "req": false,
+                    "type": "Enum"
+                },
+                {
+                    "is_multi": true,
+                    "method_name": "paymentDate",
+                    "name": "paymentDate",
+                    "req": false,
+                    "type": "Timestamp"
+                },
+                {
+                    "is_multi": true,
+                    "method_name": "paymentReferenceNumber",
+                    "name": "paymentReferenceNumber",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": true,
+                    "method_name": "noteEntityType",
+                    "name": "noteEntityType",
+                    "possible_values": [
+                        "PLAN",
+                        "ADDON",
+                        "COUPON",
+                        "SUBSCRIPTION",
+                        "CUSTOMER",
+                        "_UNKNOWN"
+                    ],
+                    "req": false,
+                    "type": "Enum"
+                },
+                {
+                    "is_multi": true,
+                    "method_name": "noteEntityId",
+                    "name": "noteEntityId",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "customerId",
+                    "name": "customerId",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "subscriptionId",
+                    "name": "subscriptionId",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": true,
+                    "method_name": "discountAmount",
+                    "name": "discountAmount",
+                    "req": false,
+                    "type": "Integer"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "vatNumber",
+                    "name": "vatNumber",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "netTermDays",
+                    "name": "netTermDays",
+                    "req": false,
+                    "type": "Integer"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "poNumber",
+                    "name": "poNumber",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "dueDate",
+                    "name": "dueDate",
+                    "req": false,
+                    "type": "Timestamp"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "priceType",
+                    "name": "priceType",
+                    "possible_values": [
+                        "TAX_EXCLUSIVE",
+                        "TAX_INCLUSIVE",
+                        "_UNKNOWN"
+                    ],
+                    "req": false,
+                    "type": "Enum"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "total",
+                    "name": "total",
+                    "req": false,
+                    "type": "Integer"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "date",
+                    "name": "date",
+                    "req": false,
+                    "type": "Timestamp"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "currencyCode",
+                    "name": "currencyCode",
+                    "req": false,
+                    "type": "String"
+                }
+            ],
+            "static_method_name": "importInvoice"
+        },
+        {
+            "action_name": "Invoice.chargeAddon",
+            "arguments": [
+                {
+                    "is_multi": false,
+                    "method_name": "coupon",
+                    "name": "coupon",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "addonId",
+                    "name": "addonId",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "addonQuantity",
+                    "name": "addonQuantity",
+                    "req": false,
+                    "type": "Integer"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "addonUnitPrice",
+                    "name": "addonUnitPrice",
+                    "req": false,
+                    "type": "Integer"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "paymentSourceId",
+                    "name": "paymentSourceId",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "customerId",
+                    "name": "customerId",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "subscriptionId",
+                    "name": "subscriptionId",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "poNumber",
+                    "name": "poNumber",
+                    "req": false,
+                    "type": "String"
+                }
+            ],
+            "static_method_name": "chargeAddon"
+        },
+        {
+            "action_name": "Invoice.charge",
+            "arguments": [
+                {
+                    "is_multi": false,
+                    "method_name": "coupon",
+                    "name": "coupon",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "paymentSourceId",
+                    "name": "paymentSourceId",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "customerId",
+                    "name": "customerId",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "subscriptionId",
+                    "name": "subscriptionId",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "amount",
+                    "name": "amount",
+                    "req": false,
+                    "type": "Integer"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "description",
+                    "name": "description",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "poNumber",
+                    "name": "poNumber",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "currencyCode",
+                    "name": "currencyCode",
+                    "req": false,
+                    "type": "String"
+                }
+            ],
+            "static_method_name": "charge"
+        },
+        {
+            "action_name": "Invoice.create",
+            "arguments": [
+                {
+                    "is_multi": false,
+                    "method_name": "coupon",
+                    "name": "coupon",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": true,
+                    "method_name": "addonId",
+                    "name": "addonId",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": true,
+                    "method_name": "addonQuantity",
+                    "name": "addonQuantity",
+                    "req": false,
+                    "type": "Integer"
+                },
+                {
+                    "is_multi": true,
+                    "method_name": "addonUnitPrice",
+                    "name": "addonUnitPrice",
+                    "req": false,
+                    "type": "Integer"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "shippingAddressFirstName",
+                    "name": "shippingAddressFirstName",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "shippingAddressLastName",
+                    "name": "shippingAddressLastName",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "shippingAddressEmail",
+                    "name": "shippingAddressEmail",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "shippingAddressCompany",
+                    "name": "shippingAddressCompany",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "shippingAddressPhone",
+                    "name": "shippingAddressPhone",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "shippingAddressLine1",
+                    "name": "shippingAddressLine1",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "shippingAddressLine2",
+                    "name": "shippingAddressLine2",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "shippingAddressLine3",
+                    "name": "shippingAddressLine3",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "shippingAddressCity",
+                    "name": "shippingAddressCity",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "shippingAddressStateCode",
+                    "name": "shippingAddressStateCode",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "shippingAddressState",
+                    "name": "shippingAddressState",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "shippingAddressZip",
+                    "name": "shippingAddressZip",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "shippingAddressCountry",
+                    "name": "shippingAddressCountry",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "shippingAddressValidationStatus",
+                    "name": "shippingAddressValidationStatus",
+                    "possible_values": [
+                        "NOT_VALIDATED",
+                        "VALID",
+                        "PARTIALLY_VALID",
+                        "INVALID",
+                        "_UNKNOWN"
+                    ],
+                    "req": false,
+                    "type": "Enum"
+                },
+                {
+                    "is_multi": true,
+                    "method_name": "chargeAmount",
+                    "name": "chargeAmount",
+                    "req": false,
+                    "type": "Integer"
+                },
+                {
+                    "is_multi": true,
+                    "method_name": "chargeDescription",
+                    "name": "chargeDescription",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "paymentSourceId",
+                    "name": "paymentSourceId",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "customerId",
+                    "name": "customerId",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "poNumber",
+                    "name": "poNumber",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "currencyCode",
+                    "name": "currencyCode",
+                    "req": false,
+                    "type": "String"
+                }
+            ],
+            "static_method_name": "create"
+        }
+    ],
+    "class_name": "com.chargebee.v2.models.Invoice"
+}
