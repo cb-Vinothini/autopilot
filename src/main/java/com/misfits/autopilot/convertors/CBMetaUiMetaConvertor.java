@@ -33,6 +33,9 @@ public class CBMetaUiMetaConvertor {
             JSONObject cbEntityObj = new JSONObject();
 
             JSONObject uiEntityObj = convert(cbActionObj, cbEntityObj, cbCriteriaObj, entityType);
+            if(uiEntityObj == null) {
+                continue;
+            }
             uiMetaJson.put(uiEntityObj);
         }
 
@@ -66,14 +69,14 @@ public class CBMetaUiMetaConvertor {
 
     private static JSONObject convert(JSONObject cbActionObj, JSONObject cbEntityObj, JSONObject cbCriteriaObj, EntityType entityType) throws JSONException {
         JSONObject uiEntityObj = new JSONObject();
+        JSONArray uiTriggers = getTriggers(entityType);
+        if(uiTriggers == null) {
+            return null;
+        }
         JSONArray cbActions = cbActionObj.getJSONArray("actions");
         JSONObject cbCriteria = cbCriteriaObj.getJSONObject(entityType.name().toLowerCase());
         JSONArray uiActions = convActionArray(cbActions);
         JSONArray uiCriteria = convCriteriaArray(cbCriteria, entityType.name());
-        JSONArray uiTriggers = new JSONArray();
-        uiTriggers.put("customer_created");
-        uiTriggers.put("customer_changed");
-        uiTriggers.put("customer_deleted");
 
         uiEntityObj.put("entityName", entityType.name());
         uiEntityObj.put("criterias", uiCriteria);
@@ -99,6 +102,7 @@ public class CBMetaUiMetaConvertor {
                 uiAttribute.put("name", cbArgument.getString("name"));
 //                uiAttribute.put("mandatory", cbArgument.getString("req"));
                 if(cbArgument.getBoolean("is_multi")) {
+                    System.out.println("\n\n\n" +cbArgument.getString("name") + " \n\n\n$$$$$$$$$$$$$");
                     // add multi attributes here
                 } else {
                     uiAttribute.put("type", convType(cbArgument.getString("name"), cbArgument.getString("type")));
@@ -207,6 +211,40 @@ public class CBMetaUiMetaConvertor {
 
     public static void main(String[] args) throws Exception {
         getCBMetaNconvert();
+    }
+
+    private static JSONArray getTriggers(EntityType type) {
+        JSONArray triggers = new JSONArray();
+        switch (type) {
+            case CUSTOMER:
+                triggers.put("CUSTOMER_CREATED".toLowerCase());
+                triggers.put("CUSTOMER_CHANGED".toLowerCase());
+                triggers.put("CUSTOMER_DELETED".toLowerCase());
+                return triggers;
+            case SUBSCRIPTION:
+                triggers.put("SUBSCRIPTION_CREATED".toLowerCase());
+                triggers.put("SUBSCRIPTION_STARTED".toLowerCase());
+                triggers.put("SUBSCRIPTION_TRIAL_ENDING".toLowerCase());
+                triggers.put("SUBSCRIPTION_ACTIVATED".toLowerCase());
+                triggers.put("SUBSCRIPTION_CHANGED".toLowerCase());
+                triggers.put("SUBSCRIPTION_CANCELLATION_SCHEDULED".toLowerCase());
+                triggers.put("SUBSCRIPTION_CANCELLING".toLowerCase());
+                triggers.put("SUBSCRIPTION_CANCELLED".toLowerCase());
+                triggers.put("SUBSCRIPTION_REACTIVATED".toLowerCase());
+                triggers.put("SUBSCRIPTION_RENEWED".toLowerCase());
+                triggers.put("SUBSCRIPTION_SCHEDULED_CANCELLATION_REMOVED".toLowerCase());
+                triggers.put("SUBSCRIPTION_SHIPPING_ADDRESS_UPDATED".toLowerCase());
+                triggers.put("SUBSCRIPTION_DELETED".toLowerCase());
+                return triggers;
+            case INVOICE:
+                triggers.put("INVOICE_CREATED".toLowerCase());
+                triggers.put("INVOICE_GENERATED".toLowerCase());
+                triggers.put("INVOICE_UPDATED".toLowerCase());
+                triggers.put("INVOICE_DELETED".toLowerCase());
+                return triggers;
+            default:
+                return null;
+        }
     }
 
 }
