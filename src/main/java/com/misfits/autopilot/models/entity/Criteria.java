@@ -1,7 +1,6 @@
 package com.misfits.autopilot.models.entity;
 
 
-import com.chargebee.models.enums.EntityType;
 import com.chargebee.org.json.JSONArray;
 import com.chargebee.org.json.JSONException;
 import com.chargebee.org.json.JSONObject;
@@ -129,23 +128,23 @@ public class Criteria {
         between("between", "between"),
         after("after", "is after"),
         before("before", "is before"),
-        notEmpty("not_empty", "is present"),
+        not_empty("not_empty", "is present"),
         empty("empty", "is not present"),
         equals("equals", "equals"),
-        notEquals("not_equals", "not equal to"),
-        lessThan("less_than", "less than"),
-        greaterThan("greater_than", "greater than"),
-        lessThanEqual("less_than_equal", "less than or equal"),
-        greaterThanEqual("greater_than_equal", "greater than or equal"),
+        not_equals("not_equals", "not equal to"),
+        less_than("less_than", "less than"),
+        greater_than("greater_than", "greater than"),
+        less_than_equal("less_than_equal", "less than or equal"),
+        greater_than_equal("greater_than_equal", "greater than or equal"),
         is("is", "is"),
-        isNot("is_not", "is not"),
+        is_not("is_not", "is not"),
         includes("includes", "includes"),
-        doesNotInclude("does_not_include", "does not include"),
-        containsOnly("contains_only", "contains only"),
+        does_not_include("does_not_include", "does not include"),
+        contains_only("contains_only", "contains only"),
         contains("contains", "contains"),
-        notContains("not_contains", "does not contain"),
-        doesNotContains("does_not_contains", "does not contain"),
-        startsWith("starts_with", "starts with");
+        not_contains("not_contains", "does not contain"),
+        does_not_contains("does_not_contains", "does not contain"),
+        starts_with("starts_with", "starts with");
 
         String name ;
         String displayName ;
@@ -157,11 +156,15 @@ public class Criteria {
 
         public static boolean perform(Operator operator, JSONObject value, Object obj, Object prevObj) throws JSONException {
             if(operator.equals(equals)){
-                return value.getString("value").equals((String)obj);
+                return value.getString("value").equals(obj.toString());
             } else if(operator.equals(between)) {
                 int from = value.getInt("from");
                 int to = value.getInt("to");
                 return ((int)obj) > from && ((int)obj) > to;
+            } else if(operator.equals(greater_than)){
+                return value.getInt("value") < Integer.valueOf(obj.toString());
+            } else if(operator.equals(less_than)){
+                return value.getInt("value") > Integer.valueOf(obj.toString());
             }
             return false;
         }

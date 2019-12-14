@@ -79,10 +79,10 @@ public class ChargebeeApi {
         for (int i = 0; i < args.length(); i++) {
             JSONObject arg = args.getJSONObject(i);
             if (arg.optBoolean("is_multi")) {
-                if(multiInputArgumentMap.get(arg.getString("name")) != null) {
-//                    multiInputArgumentMap.get(arg.getString("name"));
-                    invokeMultiInputMethod(obj,c,arg.getString("method_name"),getParamType(arg.getString("type")),multiInputArgumentMap.get(arg.getString("name")));
-                }
+//                if(multiInputArgumentMap.get(arg.getString("name")) != null) {
+////                    multiInputArgumentMap.get(arg.getString("name"));
+//                    invokeMultiInputMethod(obj,c,arg.getString("method_name"),getParamType(arg.getString("type")),multiInputArgumentMap.get(arg.getString("name")));
+//                }
             } else {
                 if(inputArgumentMap.get(arg.getString("name")) != null) {
                     obj = invokeMethod(obj, c, arg.getString("method_name"), getParamType(arg.getString("type")), inputArgumentMap.get(arg.getString("name")));
@@ -99,7 +99,7 @@ public class ChargebeeApi {
 
     public String paramArgs(String methodName, JSONObject webhookEvent) throws JSONException {
         JSONObject entities = webhookEvent.getJSONObject("entities");
-        if(methodName.equals("addChargeAtTermEnd")){
+        if(methodName.equals("addChargeAtTermEnd") || methodName.equals("cancel") || methodName.equals("update")){
             Iterator iterator = entities.keys();
             while(iterator.hasNext()) {
                 String resourceName = (String) iterator.next();
@@ -208,6 +208,7 @@ public class ChargebeeApi {
 
         switch (type.toLowerCase()) {
             case "string":
+                return String.class;
             case "enum":
                 return String.class;
             case "integer":
