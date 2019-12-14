@@ -32,6 +32,7 @@ public class ApiMetaGenerator {
 
         File file = new File("./meta/" + entityName + ".json");
         JSONObject jsonObject = new JSONObject();
+
         JSONArray actions = new JSONArray();
         Class[] entityInnerClasses = c.getEnclosingClass().getDeclaredClasses();
         for (Class entityInnerClass : entityInnerClasses) {
@@ -42,6 +43,12 @@ public class ApiMetaGenerator {
 
         if (actions.length() > 0) {
             jsonObject.put("actions", actions);
+            Class<?> enclosingClass = c.getEnclosingClass();
+            if (enclosingClass != null) {
+                jsonObject.put("class_name",enclosingClass.getName());
+            } else {
+                jsonObject.put("class_name",c.getName());
+            }
             System.out.println("printing meta file");
             System.out.println(jsonObject);
         }
@@ -62,6 +69,7 @@ public class ApiMetaGenerator {
             }
         }
         action.put("action_name", entityName + "." + actionName);
+        action.put("static_method_name", actionName);
         JSONArray args = new JSONArray();
         Method[] methods = entityInnerClass.getDeclaredMethods();
         for (Method m : methods) {
