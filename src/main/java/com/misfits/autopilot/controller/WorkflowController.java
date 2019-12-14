@@ -20,6 +20,7 @@ import java.util.Optional;
 @RestController
 @Api(value="/workflow", produces ="application/json")
 @RequestMapping("/workflow")
+@CrossOrigin(origins = "http://localhost:8080")
 public class WorkflowController {
 
     @Autowired
