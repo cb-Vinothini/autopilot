@@ -18,9 +18,9 @@ public class UiController {
 
     @RequestMapping(method = RequestMethod.GET)
     @ApiOperation("Get CB action meta")
-    public ResponseEntity<ApiModelBody> saveProduct() throws Exception {
+    public ResponseEntity<String> saveProduct() throws Exception {
         JSONArray uiMetaJson = CBMetaUiMetaConvertor.getCBMetaNconvert();
-        return new ResponseEntity(uiMetaJson, HttpStatus.OK);
+        return new ResponseEntity(uiMetaJson.toString(4), HttpStatus.OK);
     }
 
 }

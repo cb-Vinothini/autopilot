@@ -1,1 +1,3027 @@
-{"actions":[{"static_method_name":"overrideBillingProfile","action_name":"Subscription.overrideBillingProfile","arguments":[{"method_name":"autoCollection","possible_values":["ON","OFF","_UNKNOWN"],"name":"autoCollection","type":"Enum","req":false,"is_multi":false},{"method_name":"paymentSourceId","name":"paymentSourceId","type":"String","req":false,"is_multi":false}]},{"static_method_name":"importForCustomer","action_name":"Subscription.importForCustomer","arguments":[{"method_name":"status","possible_values":["FUTURE","IN_TRIAL","ACTIVE","NON_RENEWING","CANCELLED","_UNKNOWN"],"name":"status","type":"Enum","req":false,"is_multi":false},{"method_name":"id","name":"id","type":"String","req":false,"is_multi":false},{"method_name":"shippingAddressFirstName","name":"shippingAddressFirstName","type":"String","req":false,"is_multi":false},{"method_name":"shippingAddressLastName","name":"shippingAddressLastName","type":"String","req":false,"is_multi":false},{"method_name":"shippingAddressEmail","name":"shippingAddressEmail","type":"String","req":false,"is_multi":false},{"method_name":"shippingAddressCompany","name":"shippingAddressCompany","type":"String","req":false,"is_multi":false},{"method_name":"shippingAddressPhone","name":"shippingAddressPhone","type":"String","req":false,"is_multi":false},{"method_name":"shippingAddressLine1","name":"shippingAddressLine1","type":"String","req":false,"is_multi":false},{"method_name":"shippingAddressLine2","name":"shippingAddressLine2","type":"String","req":false,"is_multi":false},{"method_name":"shippingAddressLine3","name":"shippingAddressLine3","type":"String","req":false,"is_multi":false},{"method_name":"shippingAddressCity","name":"shippingAddressCity","type":"String","req":false,"is_multi":false},{"method_name":"shippingAddressStateCode","name":"shippingAddressStateCode","type":"String","req":false,"is_multi":false},{"method_name":"shippingAddressState","name":"shippingAddressState","type":"String","req":false,"is_multi":false},{"method_name":"shippingAddressZip","name":"shippingAddressZip","type":"String","req":false,"is_multi":false},{"method_name":"shippingAddressCountry","name":"shippingAddressCountry","type":"String","req":false,"is_multi":false},{"method_name":"shippingAddressValidationStatus","possible_values":["NOT_VALIDATED","VALID","PARTIALLY_VALID","INVALID","_UNKNOWN"],"name":"shippingAddressValidationStatus","type":"Enum","req":false,"is_multi":false},{"method_name":"autoCollection","possible_values":["ON","OFF","_UNKNOWN"],"name":"autoCollection","type":"Enum","req":false,"is_multi":false},{"method_name":"couponIds","name":"couponIds","type":"String[]","req":false,"is_multi":false},{"method_name":"couponIds","name":"couponIds","type":"List","req":false,"is_multi":false},{"method_name":"addonId","name":"addonId","type":"String","req":false,"is_multi":true},{"method_name":"addonQuantity","name":"addonQuantity","type":"Integer","req":false,"is_multi":true},{"method_name":"addonUnitPrice","name":"addonUnitPrice","type":"Integer","req":false,"is_multi":true},{"method_name":"poNumber","name":"poNumber","type":"String","req":false,"is_multi":false},{"method_name":"setupFee","name":"setupFee","type":"Integer","req":false,"is_multi":false},{"method_name":"metaData","name":"metaData","type":"JSONObject","req":false,"is_multi":false},{"method_name":"planId","name":"planId","type":"String","req":false,"is_multi":false},{"method_name":"billingCycles","name":"billingCycles","type":"Integer","req":false,"is_multi":false},{"method_name":"invoiceNotes","name":"invoiceNotes","type":"String","req":false,"is_multi":false},{"method_name":"planQuantity","name":"planQuantity","type":"Integer","req":false,"is_multi":false},{"method_name":"planUnitPrice","name":"planUnitPrice","type":"Integer","req":false,"is_multi":false},{"method_name":"startDate","name":"startDate","type":"Timestamp","req":false,"is_multi":false},{"method_name":"trialStart","name":"trialStart","type":"Timestamp","req":false,"is_multi":false},{"method_name":"trialEnd","name":"trialEnd","type":"Timestamp","req":false,"is_multi":false},{"method_name":"currentTermStart","name":"currentTermStart","type":"Timestamp","req":false,"is_multi":false},{"method_name":"currentTermEnd","name":"currentTermEnd","type":"Timestamp","req":false,"is_multi":false},{"method_name":"startedAt","name":"startedAt","type":"Timestamp","req":false,"is_multi":false},{"method_name":"cancelledAt","name":"cancelledAt","type":"Timestamp","req":false,"is_multi":false},{"method_name":"paymentSourceId","name":"paymentSourceId","type":"String","req":false,"is_multi":false}]},{"static_method_name":"importSubscription","action_name":"Subscription.importSubscription","arguments":[{"method_name":"status","possible_values":["FUTURE","IN_TRIAL","ACTIVE","NON_RENEWING","CANCELLED","_UNKNOWN"],"name":"status","type":"Enum","req":false,"is_multi":false},{"method_name":"id","name":"id","type":"String","req":false,"is_multi":false},{"method_name":"cardCvv","name":"cardCvv","type":"String","req":false,"is_multi":false},{"method_name":"cardBillingCountry","name":"cardBillingCountry","type":"String","req":false,"is_multi":false},{"method_name":"cardBillingZip","name":"cardBillingZip","type":"String","req":false,"is_multi":false},{"method_name":"cardBillingAddr2","name":"cardBillingAddr2","type":"String","req":false,"is_multi":false},{"method_name":"cardExpiryMonth","name":"cardExpiryMonth","type":"Integer","req":false,"is_multi":false},{"method_name":"cardExpiryYear","name":"cardExpiryYear","type":"Integer","req":false,"is_multi":false},{"method_name":"paymentMethodReferenceId","name":"paymentMethodReferenceId","type":"String","req":false,"is_multi":false},{"method_name":"paymentMethodType","possible_values":["CARD","PAYPAL_EXPRESS_CHECKOUT","AMAZON_PAYMENTS","DIRECT_DEBIT","GENERIC","ALIPAY","UNIONPAY","APPLE_PAY","_UNKNOWN"],"name":"paymentMethodType","type":"Enum","req":false,"is_multi":false},{"method_name":"cardBillingState","name":"cardBillingState","type":"String","req":false,"is_multi":false},{"method_name":"cardBillingAddr1","name":"cardBillingAddr1","type":"String","req":false,"is_multi":false},{"method_name":"billingAddressFirstName","name":"billingAddressFirstName","type":"String","req":false,"is_multi":false},{"method_name":"billingAddressLastName","name":"billingAddressLastName","type":"String","req":false,"is_multi":false},{"method_name":"billingAddressEmail","name":"billingAddressEmail","type":"String","req":false,"is_multi":false},{"method_name":"billingAddressCompany","name":"billingAddressCompany","type":"String","req":false,"is_multi":false},{"method_name":"billingAddressPhone","name":"billingAddressPhone","type":"String","req":false,"is_multi":false},{"method_name":"billingAddressLine1","name":"billingAddressLine1","type":"String","req":false,"is_multi":false},{"method_name":"billingAddressLine2","name":"billingAddressLine2","type":"String","req":false,"is_multi":false},{"method_name":"billingAddressLine3","name":"billingAddressLine3","type":"String","req":false,"is_multi":false},{"method_name":"billingAddressCity","name":"billingAddressCity","type":"String","req":false,"is_multi":false},{"method_name":"billingAddressStateCode","name":"billingAddressStateCode","type":"String","req":false,"is_multi":false},{"method_name":"billingAddressState","name":"billingAddressState","type":"String","req":false,"is_multi":false},{"method_name":"billingAddressZip","name":"billingAddressZip","type":"String","req":false,"is_multi":false},{"method_name":"billingAddressCountry","name":"billingAddressCountry","type":"String","req":false,"is_multi":false},{"method_name":"billingAddressValidationStatus","possible_values":["NOT_VALIDATED","VALID","PARTIALLY_VALID","INVALID","_UNKNOWN"],"name":"billingAddressValidationStatus","type":"Enum","req":false,"is_multi":false},{"method_name":"shippingAddressFirstName","name":"shippingAddressFirstName","type":"String","req":false,"is_multi":false},{"method_name":"shippingAddressLastName","name":"shippingAddressLastName","type":"String","req":false,"is_multi":false},{"method_name":"shippingAddressEmail","name":"shippingAddressEmail","type":"String","req":false,"is_multi":false},{"method_name":"shippingAddressCompany","name":"shippingAddressCompany","type":"String","req":false,"is_multi":false},{"method_name":"shippingAddressPhone","name":"shippingAddressPhone","type":"String","req":false,"is_multi":false},{"method_name":"shippingAddressLine1","name":"shippingAddressLine1","type":"String","req":false,"is_multi":false},{"method_name":"shippingAddressLine2","name":"shippingAddressLine2","type":"String","req":false,"is_multi":false},{"method_name":"shippingAddressLine3","name":"shippingAddressLine3","type":"String","req":false,"is_multi":false},{"method_name":"shippingAddressCity","name":"shippingAddressCity","type":"String","req":false,"is_multi":false},{"method_name":"shippingAddressStateCode","name":"shippingAddressStateCode","type":"String","req":false,"is_multi":false},{"method_name":"shippingAddressState","name":"shippingAddressState","type":"String","req":false,"is_multi":false},{"method_name":"shippingAddressZip","name":"shippingAddressZip","type":"String","req":false,"is_multi":false},{"method_name":"shippingAddressCountry","name":"shippingAddressCountry","type":"String","req":false,"is_multi":false},{"method_name":"shippingAddressValidationStatus","possible_values":["NOT_VALIDATED","VALID","PARTIALLY_VALID","INVALID","_UNKNOWN"],"name":"shippingAddressValidationStatus","type":"Enum","req":false,"is_multi":false},{"method_name":"cardNumber","name":"cardNumber","type":"String","req":false,"is_multi":false},{"method_name":"cardLastName","name":"cardLastName","type":"String","req":false,"is_multi":false},{"method_name":"cardFirstName","name":"cardFirstName","type":"String","req":false,"is_multi":false},{"method_name":"cardGatewayAccountId","name":"cardGatewayAccountId","type":"String","req":false,"is_multi":false},{"method_name":"cardBillingStateCode","name":"cardBillingStateCode","type":"String","req":false,"is_multi":false},{"method_name":"cardBillingCity","name":"cardBillingCity","type":"String","req":false,"is_multi":false},{"method_name":"paymentMethodGatewayAccountId","name":"paymentMethodGatewayAccountId","type":"String","req":false,"is_multi":false},{"method_name":"customerLastName","name":"customerLastName","type":"String","req":false,"is_multi":false},{"method_name":"customerEmail","name":"customerEmail","type":"String","req":false,"is_multi":false},{"method_name":"customerFirstName","name":"customerFirstName","type":"String","req":false,"is_multi":false},{"method_name":"customerPhone","name":"customerPhone","type":"String","req":false,"is_multi":false},{"method_name":"customerNetTermDays","name":"customerNetTermDays","type":"Integer","req":false,"is_multi":false},{"method_name":"customerLocale","name":"customerLocale","type":"String","req":false,"is_multi":false},{"method_name":"customerCompany","name":"customerCompany","type":"String","req":false,"is_multi":false},{"method_name":"customerTaxability","possible_values":["TAXABLE","EXEMPT","_UNKNOWN"],"name":"customerTaxability","type":"Enum","req":false,"is_multi":false},{"method_name":"autoCollection","possible_values":["ON","OFF","_UNKNOWN"],"name":"autoCollection","type":"Enum","req":false,"is_multi":false},{"method_name":"customerExemptNumber","name":"customerExemptNumber","type":"String","req":false,"is_multi":false},{"method_name":"customerAllowDirectDebit","name":"customerAllowDirectDebit","type":"Boolean","req":false,"is_multi":false},{"method_name":"couponIds","name":"couponIds","type":"String[]","req":false,"is_multi":false},{"method_name":"couponIds","name":"couponIds","type":"List","req":false,"is_multi":false},{"method_name":"customerEntityCode","possible_values":["A","B","C","D","E","F","G","H","I","J","K","L","N","P","Q","R","MED1","MED2","_UNKNOWN"],"name":"customerEntityCode","type":"Enum","req":false,"is_multi":false},{"method_name":"customerAutoCollection","possible_values":["ON","OFF","_UNKNOWN"],"name":"customerAutoCollection","type":"Enum","req":false,"is_multi":false},{"method_name":"customerVatNumber","name":"customerVatNumber","type":"String","req":false,"is_multi":false},{"method_name":"paymentMethodGateway","possible_values":["CHARGEBEE","STRIPE","WEPAY","BRAINTREE","AUTHORIZE_NET","PAYPAL_PRO","PIN","EWAY","EWAY_RAPID","WORLDPAY","BALANCED_PAYMENTS","BEANSTREAM","BLUEPAY","ELAVON","FIRST_DATA_GLOBAL","HDFC","MIGS","NMI","OGONE","PAYMILL","PAYPAL_PAYFLOW_PRO","SAGE_PAY","TCO","WIRECARD","AMAZON_PAYMENTS","PAYPAL_EXPRESS_CHECKOUT","GOCARDLESS","ADYEN","NOT_APPLICABLE","_UNKNOWN"],"name":"paymentMethodGateway","type":"Enum","req":false,"is_multi":false},{"method_name":"addonId","name":"addonId","type":"String","req":false,"is_multi":true},{"method_name":"customerId","name":"customerId","type":"String","req":false,"is_multi":false},{"method_name":"addonQuantity","name":"addonQuantity","type":"Integer","req":false,"is_multi":true},{"method_name":"addonUnitPrice","name":"addonUnitPrice","type":"Integer","req":false,"is_multi":true},{"method_name":"poNumber","name":"poNumber","type":"String","req":false,"is_multi":false},{"method_name":"cardGateway","possible_values":["CHARGEBEE","STRIPE","WEPAY","BRAINTREE","AUTHORIZE_NET","PAYPAL_PRO","PIN","EWAY","EWAY_RAPID","WORLDPAY","BALANCED_PAYMENTS","BEANSTREAM","BLUEPAY","ELAVON","FIRST_DATA_GLOBAL","HDFC","MIGS","NMI","OGONE","PAYMILL","PAYPAL_PAYFLOW_PRO","SAGE_PAY","TCO","WIRECARD","AMAZON_PAYMENTS","PAYPAL_EXPRESS_CHECKOUT","GOCARDLESS","ADYEN","NOT_APPLICABLE","_UNKNOWN"],"name":"cardGateway","type":"Enum","req":false,"is_multi":false},{"method_name":"setupFee","name":"setupFee","type":"Integer","req":false,"is_multi":false},{"method_name":"metaData","name":"metaData","type":"JSONObject","req":false,"is_multi":false},{"method_name":"planId","name":"planId","type":"String","req":false,"is_multi":false},{"method_name":"billingCycles","name":"billingCycles","type":"Integer","req":false,"is_multi":false},{"method_name":"invoiceNotes","name":"invoiceNotes","type":"String","req":false,"is_multi":false},{"method_name":"planQuantity","name":"planQuantity","type":"Integer","req":false,"is_multi":false},{"method_name":"planUnitPrice","name":"planUnitPrice","type":"Integer","req":false,"is_multi":false},{"method_name":"startDate","name":"startDate","type":"Timestamp","req":false,"is_multi":false},{"method_name":"trialStart","name":"trialStart","type":"Timestamp","req":false,"is_multi":false},{"method_name":"trialEnd","name":"trialEnd","type":"Timestamp","req":false,"is_multi":false},{"method_name":"currentTermStart","name":"currentTermStart","type":"Timestamp","req":false,"is_multi":false},{"method_name":"currentTermEnd","name":"currentTermEnd","type":"Timestamp","req":false,"is_multi":false},{"method_name":"startedAt","name":"startedAt","type":"Timestamp","req":false,"is_multi":false},{"method_name":"cancelledAt","name":"cancelledAt","type":"Timestamp","req":false,"is_multi":false},{"method_name":"affiliateToken","name":"affiliateToken","type":"String","req":false,"is_multi":false},{"method_name":"cardTmpToken","name":"cardTmpToken","type":"String","req":false,"is_multi":false}]},{"static_method_name":"chargeFutureRenewals","action_name":"Subscription.chargeFutureRenewals","arguments":[{"method_name":"termsToCharge","name":"termsToCharge","type":"Integer","req":false,"is_multi":false}]},{"static_method_name":"chargeAddonAtTermEnd","action_name":"Subscription.chargeAddonAtTermEnd","arguments":[{"method_name":"addonId","name":"addonId","type":"String","req":false,"is_multi":false},{"method_name":"addonQuantity","name":"addonQuantity","type":"Integer","req":false,"is_multi":false},{"method_name":"addonUnitPrice","name":"addonUnitPrice","type":"Integer","req":false,"is_multi":false}]},{"static_method_name":"addChargeAtTermEnd","action_name":"Subscription.addChargeAtTermEnd","arguments":[{"method_name":"amount","name":"amount","type":"Integer","req":false,"is_multi":false},{"method_name":"description","name":"description","type":"String","req":false,"is_multi":false}]},{"static_method_name":"reactivate","action_name":"Subscription.reactivate","arguments":[{"method_name":"reactivateFrom","name":"reactivateFrom","type":"Timestamp","req":false,"is_multi":false},{"method_name":"termsToCharge","name":"termsToCharge","type":"Integer","req":false,"is_multi":false},{"method_name":"billingAlignmentMode","possible_values":["IMMEDIATE","DELAYED","_UNKNOWN"],"name":"billingAlignmentMode","type":"Enum","req":false,"is_multi":false},{"method_name":"invoiceImmediately","name":"invoiceImmediately","type":"Boolean","req":false,"is_multi":false},{"method_name":"trialPeriodDays","name":"trialPeriodDays","type":"Integer","req":false,"is_multi":false},{"method_name":"billingCycles","name":"billingCycles","type":"Integer","req":false,"is_multi":false},{"method_name":"trialEnd","name":"trialEnd","type":"Timestamp","req":false,"is_multi":false}]},{"static_method_name":"removeScheduledChanges","action_name":"Subscription.removeScheduledChanges","arguments":[{"method_name":"endOfTerm","name":"endOfTerm","type":"Boolean","req":false,"is_multi":false},{"method_name":"creditOptionForCurrentTermCharges","possible_values":["NONE","PRORATE","FULL","_UNKNOWN"],"name":"creditOptionForCurrentTermCharges","type":"Enum","req":true,"is_multi":false},{"method_name":"unbilledChargesOption","possible_values":["INVOICE","DELETE","_UNKNOWN"],"name":"unbilledChargesOption","type":"Enum","req":true,"is_multi":false},{"method_name":"accountReceivablesHandling","possible_values":["NO_ACTION","SCHEDULE_PAYMENT_COLLECTION","WRITE_OFF","_UNKNOWN"],"name":"accountReceivablesHandling","type":"Enum","req":false,"is_multi":false},{"method_name":"refundableCreditsHandling","possible_values":["NO_ACTION","SCHEDULE_REFUND","_UNKNOWN"],"name":"refundableCreditsHandling","type":"Enum","req":false,"is_multi":false}]},{"static_method_name":"changeTermEnd","action_name":"Subscription.changeTermEnd","arguments":[{"method_name":"termEndsAt","name":"termEndsAt","type":"Timestamp","req":false,"is_multi":false},{"method_name":"invoiceImmediately","name":"invoiceImmediately","type":"Boolean","req":false,"is_multi":false},{"method_name":"prorate","name":"prorate","type":"Boolean","req":false,"is_multi":false}]},{"static_method_name":"removeScheduledChanges","action_name":"Subscription.removeScheduledChanges","arguments":[{"method_name":"cardCvv","name":"cardCvv","type":"String","req":false,"is_multi":false},{"method_name":"cardBillingCountry","name":"cardBillingCountry","type":"String","req":false,"is_multi":false},{"method_name":"cardBillingZip","name":"cardBillingZip","type":"String","req":false,"is_multi":false},{"method_name":"cardBillingAddr2","name":"cardBillingAddr2","type":"String","req":false,"is_multi":false},{"method_name":"cardExpiryMonth","name":"cardExpiryMonth","type":"Integer","req":false,"is_multi":false},{"method_name":"cardExpiryYear","name":"cardExpiryYear","type":"Integer","req":false,"is_multi":false},{"method_name":"paymentMethodReferenceId","name":"paymentMethodReferenceId","type":"String","req":false,"is_multi":false},{"method_name":"paymentMethodType","possible_values":["CARD","PAYPAL_EXPRESS_CHECKOUT","AMAZON_PAYMENTS","DIRECT_DEBIT","GENERIC","ALIPAY","UNIONPAY","APPLE_PAY","_UNKNOWN"],"name":"paymentMethodType","type":"Enum","req":false,"is_multi":false},{"method_name":"cardBillingState","name":"cardBillingState","type":"String","req":false,"is_multi":false},{"method_name":"cardBillingAddr1","name":"cardBillingAddr1","type":"String","req":false,"is_multi":false},{"method_name":"billingAddressFirstName","name":"billingAddressFirstName","type":"String","req":false,"is_multi":false},{"method_name":"billingAddressLastName","name":"billingAddressLastName","type":"String","req":false,"is_multi":false},{"method_name":"billingAddressEmail","name":"billingAddressEmail","type":"String","req":false,"is_multi":false},{"method_name":"billingAddressCompany","name":"billingAddressCompany","type":"String","req":false,"is_multi":false},{"method_name":"billingAddressPhone","name":"billingAddressPhone","type":"String","req":false,"is_multi":false},{"method_name":"billingAddressLine1","name":"billingAddressLine1","type":"String","req":false,"is_multi":false},{"method_name":"billingAddressLine2","name":"billingAddressLine2","type":"String","req":false,"is_multi":false},{"method_name":"billingAddressLine3","name":"billingAddressLine3","type":"String","req":false,"is_multi":false},{"method_name":"billingAddressCity","name":"billingAddressCity","type":"String","req":false,"is_multi":false},{"method_name":"billingAddressStateCode","name":"billingAddressStateCode","type":"String","req":false,"is_multi":false},{"method_name":"billingAddressState","name":"billingAddressState","type":"String","req":false,"is_multi":false},{"method_name":"billingAddressZip","name":"billingAddressZip","type":"String","req":false,"is_multi":false},{"method_name":"billingAddressCountry","name":"billingAddressCountry","type":"String","req":false,"is_multi":false},{"method_name":"billingAddressValidationStatus","possible_values":["NOT_VALIDATED","VALID","PARTIALLY_VALID","INVALID","_UNKNOWN"],"name":"billingAddressValidationStatus","type":"Enum","req":false,"is_multi":false},{"method_name":"shippingAddressFirstName","name":"shippingAddressFirstName","type":"String","req":false,"is_multi":false},{"method_name":"shippingAddressLastName","name":"shippingAddressLastName","type":"String","req":false,"is_multi":false},{"method_name":"shippingAddressEmail","name":"shippingAddressEmail","type":"String","req":false,"is_multi":false},{"method_name":"shippingAddressCompany","name":"shippingAddressCompany","type":"String","req":false,"is_multi":false},{"method_name":"shippingAddressPhone","name":"shippingAddressPhone","type":"String","req":false,"is_multi":false},{"method_name":"shippingAddressLine1","name":"shippingAddressLine1","type":"String","req":false,"is_multi":false},{"method_name":"shippingAddressLine2","name":"shippingAddressLine2","type":"String","req":false,"is_multi":false},{"method_name":"shippingAddressLine3","name":"shippingAddressLine3","type":"String","req":false,"is_multi":false},{"method_name":"shippingAddressCity","name":"shippingAddressCity","type":"String","req":false,"is_multi":false},{"method_name":"shippingAddressStateCode","name":"shippingAddressStateCode","type":"String","req":false,"is_multi":false},{"method_name":"shippingAddressState","name":"shippingAddressState","type":"String","req":false,"is_multi":false},{"method_name":"shippingAddressZip","name":"shippingAddressZip","type":"String","req":false,"is_multi":false},{"method_name":"shippingAddressCountry","name":"shippingAddressCountry","type":"String","req":false,"is_multi":false},{"method_name":"shippingAddressValidationStatus","possible_values":["NOT_VALIDATED","VALID","PARTIALLY_VALID","INVALID","_UNKNOWN"],"name":"shippingAddressValidationStatus","type":"Enum","req":false,"is_multi":false},{"method_name":"cardNumber","name":"cardNumber","type":"String","req":false,"is_multi":false},{"method_name":"cardLastName","name":"cardLastName","type":"String","req":false,"is_multi":false},{"method_name":"cardFirstName","name":"cardFirstName","type":"String","req":false,"is_multi":false},{"method_name":"cardGatewayAccountId","name":"cardGatewayAccountId","type":"String","req":false,"is_multi":false},{"method_name":"paymentMethodTmpToken","name":"paymentMethodTmpToken","type":"String","req":false,"is_multi":false},{"method_name":"cardBillingStateCode","name":"cardBillingStateCode","type":"String","req":false,"is_multi":false},{"method_name":"cardBillingCity","name":"cardBillingCity","type":"String","req":false,"is_multi":false},{"method_name":"paymentMethodGatewayAccountId","name":"paymentMethodGatewayAccountId","type":"String","req":false,"is_multi":false},{"method_name":"forceTermReset","name":"forceTermReset","type":"Boolean","req":false,"is_multi":false},{"method_name":"replaceCouponList","name":"replaceCouponList","type":"Boolean","req":false,"is_multi":false},{"method_name":"replaceAddonList","name":"replaceAddonList","type":"Boolean","req":false,"is_multi":false},{"method_name":"endOfTerm","name":"endOfTerm","type":"Boolean","req":false,"is_multi":false},{"method_name":"reactivateFrom","name":"reactivateFrom","type":"Timestamp","req":false,"is_multi":false},{"method_name":"termsToCharge","name":"termsToCharge","type":"Integer","req":false,"is_multi":false},{"method_name":"addonTrialEnd","name":"addonTrialEnd","type":"Timestamp","req":false,"is_multi":true},{"method_name":"customerRegisteredForGst","name":"customerRegisteredForGst","type":"Boolean","req":false,"is_multi":false},{"method_name":"billingAlignmentMode","possible_values":["IMMEDIATE","DELAYED","_UNKNOWN"],"name":"billingAlignmentMode","type":"Enum","req":false,"is_multi":false},{"method_name":"couponIds","name":"couponIds","type":"List","req":false,"is_multi":false},{"method_name":"couponIds","name":"couponIds","type":"String[]","req":false,"is_multi":false},{"method_name":"invoiceImmediately","name":"invoiceImmediately","type":"Boolean","req":false,"is_multi":false},{"method_name":"customerVatNumber","name":"customerVatNumber","type":"String","req":false,"is_multi":false},{"method_name":"prorate","name":"prorate","type":"Boolean","req":false,"is_multi":false},{"method_name":"paymentMethodGateway","possible_values":["CHARGEBEE","STRIPE","WEPAY","BRAINTREE","AUTHORIZE_NET","PAYPAL_PRO","PIN","EWAY","EWAY_RAPID","WORLDPAY","BALANCED_PAYMENTS","BEANSTREAM","BLUEPAY","ELAVON","FIRST_DATA_GLOBAL","HDFC","MIGS","NMI","OGONE","PAYMILL","PAYPAL_PAYFLOW_PRO","SAGE_PAY","TCO","WIRECARD","AMAZON_PAYMENTS","PAYPAL_EXPRESS_CHECKOUT","GOCARDLESS","ADYEN","NOT_APPLICABLE","_UNKNOWN"],"name":"paymentMethodGateway","type":"Enum","req":false,"is_multi":false},{"method_name":"addonId","name":"addonId","type":"String","req":false,"is_multi":true},{"method_name":"addonQuantity","name":"addonQuantity","type":"Integer","req":false,"is_multi":true},{"method_name":"addonUnitPrice","name":"addonUnitPrice","type":"Integer","req":false,"is_multi":true},{"method_name":"poNumber","name":"poNumber","type":"String","req":false,"is_multi":false},{"method_name":"cardIpAddress","name":"cardIpAddress","type":"String","req":false,"is_multi":false},{"method_name":"cardGateway","possible_values":["CHARGEBEE","STRIPE","WEPAY","BRAINTREE","AUTHORIZE_NET","PAYPAL_PRO","PIN","EWAY","EWAY_RAPID","WORLDPAY","BALANCED_PAYMENTS","BEANSTREAM","BLUEPAY","ELAVON","FIRST_DATA_GLOBAL","HDFC","MIGS","NMI","OGONE","PAYMILL","PAYPAL_PAYFLOW_PRO","SAGE_PAY","TCO","WIRECARD","AMAZON_PAYMENTS","PAYPAL_EXPRESS_CHECKOUT","GOCARDLESS","ADYEN","NOT_APPLICABLE","_UNKNOWN"],"name":"cardGateway","type":"Enum","req":false,"is_multi":false},{"method_name":"setupFee","name":"setupFee","type":"Integer","req":false,"is_multi":false},{"method_name":"metaData","name":"metaData","type":"JSONObject","req":false,"is_multi":false},{"method_name":"planId","name":"planId","type":"String","req":false,"is_multi":false},{"method_name":"billingCycles","name":"billingCycles","type":"Integer","req":false,"is_multi":false},{"method_name":"invoiceNotes","name":"invoiceNotes","type":"String","req":false,"is_multi":false},{"method_name":"planQuantity","name":"planQuantity","type":"Integer","req":false,"is_multi":false},{"method_name":"planUnitPrice","name":"planUnitPrice","type":"Integer","req":false,"is_multi":false},{"method_name":"startDate","name":"startDate","type":"Timestamp","req":false,"is_multi":false},{"method_name":"trialEnd","name":"trialEnd","type":"Timestamp","req":false,"is_multi":false},{"method_name":"coupon","name":"coupon","type":"String","req":false,"is_multi":false},{"method_name":"reactivate","name":"reactivate","type":"Boolean","req":false,"is_multi":false},{"method_name":"cardTmpToken","name":"cardTmpToken","type":"String","req":false,"is_multi":false}]},{"static_method_name":"removeCoupons","action_name":"Subscription.removeCoupons","arguments":[{"method_name":"couponIds","name":"couponIds","type":"String[]","req":false,"is_multi":false},{"method_name":"couponIds","name":"couponIds","type":"List","req":false,"is_multi":false}]},{"static_method_name":"removeScheduledCancellation","action_name":"Subscription.removeScheduledCancellation","arguments":[{"method_name":"billingCycles","name":"billingCycles","type":"Integer","req":false,"is_multi":false}]},{"static_method_name":"removeScheduledChanges","action_name":"Subscription.removeScheduledChanges","arguments":[{"method_name":"id","name":"id","type":"String","req":false,"is_multi":false},{"method_name":"shippingAddressFirstName","name":"shippingAddressFirstName","type":"String","req":false,"is_multi":false},{"method_name":"shippingAddressLastName","name":"shippingAddressLastName","type":"String","req":false,"is_multi":false},{"method_name":"shippingAddressEmail","name":"shippingAddressEmail","type":"String","req":false,"is_multi":false},{"method_name":"shippingAddressCompany","name":"shippingAddressCompany","type":"String","req":false,"is_multi":false},{"method_name":"shippingAddressPhone","name":"shippingAddressPhone","type":"String","req":false,"is_multi":false},{"method_name":"shippingAddressLine1","name":"shippingAddressLine1","type":"String","req":false,"is_multi":false},{"method_name":"shippingAddressLine2","name":"shippingAddressLine2","type":"String","req":false,"is_multi":false},{"method_name":"shippingAddressLine3","name":"shippingAddressLine3","type":"String","req":false,"is_multi":false},{"method_name":"shippingAddressCity","name":"shippingAddressCity","type":"String","req":false,"is_multi":false},{"method_name":"shippingAddressStateCode","name":"shippingAddressStateCode","type":"String","req":false,"is_multi":false},{"method_name":"shippingAddressState","name":"shippingAddressState","type":"String","req":false,"is_multi":false},{"method_name":"shippingAddressZip","name":"shippingAddressZip","type":"String","req":false,"is_multi":false},{"method_name":"shippingAddressCountry","name":"shippingAddressCountry","type":"String","req":false,"is_multi":false},{"method_name":"shippingAddressValidationStatus","possible_values":["NOT_VALIDATED","VALID","PARTIALLY_VALID","INVALID","_UNKNOWN"],"name":"shippingAddressValidationStatus","type":"Enum","req":false,"is_multi":false},{"method_name":"termsToCharge","name":"termsToCharge","type":"Integer","req":false,"is_multi":false},{"method_name":"autoCollection","possible_values":["ON","OFF","_UNKNOWN"],"name":"autoCollection","type":"Enum","req":false,"is_multi":false},{"method_name":"addonTrialEnd","name":"addonTrialEnd","type":"Timestamp","req":false,"is_multi":true},{"method_name":"billingAlignmentMode","possible_values":["IMMEDIATE","DELAYED","_UNKNOWN"],"name":"billingAlignmentMode","type":"Enum","req":false,"is_multi":false},{"method_name":"couponIds","name":"couponIds","type":"List","req":false,"is_multi":false},{"method_name":"couponIds","name":"couponIds","type":"String[]","req":false,"is_multi":false},{"method_name":"invoiceImmediately","name":"invoiceImmediately","type":"Boolean","req":false,"is_multi":false},{"method_name":"addonId","name":"addonId","type":"String","req":false,"is_multi":true},{"method_name":"addonQuantity","name":"addonQuantity","type":"Integer","req":false,"is_multi":true},{"method_name":"addonUnitPrice","name":"addonUnitPrice","type":"Integer","req":false,"is_multi":true},{"method_name":"poNumber","name":"poNumber","type":"String","req":false,"is_multi":false},{"method_name":"setupFee","name":"setupFee","type":"Integer","req":false,"is_multi":false},{"method_name":"metaData","name":"metaData","type":"JSONObject","req":false,"is_multi":false},{"method_name":"planId","name":"planId","type":"String","req":false,"is_multi":false},{"method_name":"billingCycles","name":"billingCycles","type":"Integer","req":false,"is_multi":false},{"method_name":"invoiceNotes","name":"invoiceNotes","type":"String","req":false,"is_multi":false},{"method_name":"planQuantity","name":"planQuantity","type":"Integer","req":false,"is_multi":false},{"method_name":"planUnitPrice","name":"planUnitPrice","type":"Integer","req":false,"is_multi":false},{"method_name":"startDate","name":"startDate","type":"Timestamp","req":false,"is_multi":false},{"method_name":"trialEnd","name":"trialEnd","type":"Timestamp","req":false,"is_multi":false},{"method_name":"paymentSourceId","name":"paymentSourceId","type":"String","req":false,"is_multi":false},{"method_name":"coupon","name":"coupon","type":"String","req":false,"is_multi":false}]},{"static_method_name":"removeScheduledChanges","action_name":"Subscription.removeScheduledChanges","arguments":[{"method_name":"id","name":"id","type":"String","req":false,"is_multi":false},{"method_name":"cardCvv","name":"cardCvv","type":"String","req":false,"is_multi":false},{"method_name":"cardBillingCountry","name":"cardBillingCountry","type":"String","req":false,"is_multi":false},{"method_name":"cardBillingZip","name":"cardBillingZip","type":"String","req":false,"is_multi":false},{"method_name":"cardBillingAddr2","name":"cardBillingAddr2","type":"String","req":false,"is_multi":false},{"method_name":"cardExpiryMonth","name":"cardExpiryMonth","type":"Integer","req":false,"is_multi":false},{"method_name":"cardExpiryYear","name":"cardExpiryYear","type":"Integer","req":false,"is_multi":false},{"method_name":"paymentMethodReferenceId","name":"paymentMethodReferenceId","type":"String","req":false,"is_multi":false},{"method_name":"paymentMethodType","possible_values":["CARD","PAYPAL_EXPRESS_CHECKOUT","AMAZON_PAYMENTS","DIRECT_DEBIT","GENERIC","ALIPAY","UNIONPAY","APPLE_PAY","_UNKNOWN"],"name":"paymentMethodType","type":"Enum","req":false,"is_multi":false},{"method_name":"cardBillingState","name":"cardBillingState","type":"String","req":false,"is_multi":false},{"method_name":"cardBillingAddr1","name":"cardBillingAddr1","type":"String","req":false,"is_multi":false},{"method_name":"billingAddressFirstName","name":"billingAddressFirstName","type":"String","req":false,"is_multi":false},{"method_name":"billingAddressLastName","name":"billingAddressLastName","type":"String","req":false,"is_multi":false},{"method_name":"billingAddressEmail","name":"billingAddressEmail","type":"String","req":false,"is_multi":false},{"method_name":"billingAddressCompany","name":"billingAddressCompany","type":"String","req":false,"is_multi":false},{"method_name":"billingAddressPhone","name":"billingAddressPhone","type":"String","req":false,"is_multi":false},{"method_name":"billingAddressLine1","name":"billingAddressLine1","type":"String","req":false,"is_multi":false},{"method_name":"billingAddressLine2","name":"billingAddressLine2","type":"String","req":false,"is_multi":false},{"method_name":"billingAddressLine3","name":"billingAddressLine3","type":"String","req":false,"is_multi":false},{"method_name":"billingAddressCity","name":"billingAddressCity","type":"String","req":false,"is_multi":false},{"method_name":"billingAddressStateCode","name":"billingAddressStateCode","type":"String","req":false,"is_multi":false},{"method_name":"billingAddressState","name":"billingAddressState","type":"String","req":false,"is_multi":false},{"method_name":"billingAddressZip","name":"billingAddressZip","type":"String","req":false,"is_multi":false},{"method_name":"billingAddressCountry","name":"billingAddressCountry","type":"String","req":false,"is_multi":false},{"method_name":"billingAddressValidationStatus","possible_values":["NOT_VALIDATED","VALID","PARTIALLY_VALID","INVALID","_UNKNOWN"],"name":"billingAddressValidationStatus","type":"Enum","req":false,"is_multi":false},{"method_name":"shippingAddressFirstName","name":"shippingAddressFirstName","type":"String","req":false,"is_multi":false},{"method_name":"shippingAddressLastName","name":"shippingAddressLastName","type":"String","req":false,"is_multi":false},{"method_name":"shippingAddressEmail","name":"shippingAddressEmail","type":"String","req":false,"is_multi":false},{"method_name":"shippingAddressCompany","name":"shippingAddressCompany","type":"String","req":false,"is_multi":false},{"method_name":"shippingAddressPhone","name":"shippingAddressPhone","type":"String","req":false,"is_multi":false},{"method_name":"shippingAddressLine1","name":"shippingAddressLine1","type":"String","req":false,"is_multi":false},{"method_name":"shippingAddressLine2","name":"shippingAddressLine2","type":"String","req":false,"is_multi":false},{"method_name":"shippingAddressLine3","name":"shippingAddressLine3","type":"String","req":false,"is_multi":false},{"method_name":"shippingAddressCity","name":"shippingAddressCity","type":"String","req":false,"is_multi":false},{"method_name":"shippingAddressStateCode","name":"shippingAddressStateCode","type":"String","req":false,"is_multi":false},{"method_name":"shippingAddressState","name":"shippingAddressState","type":"String","req":false,"is_multi":false},{"method_name":"shippingAddressZip","name":"shippingAddressZip","type":"String","req":false,"is_multi":false},{"method_name":"shippingAddressCountry","name":"shippingAddressCountry","type":"String","req":false,"is_multi":false},{"method_name":"shippingAddressValidationStatus","possible_values":["NOT_VALIDATED","VALID","PARTIALLY_VALID","INVALID","_UNKNOWN"],"name":"shippingAddressValidationStatus","type":"Enum","req":false,"is_multi":false},{"method_name":"cardNumber","name":"cardNumber","type":"String","req":false,"is_multi":false},{"method_name":"cardLastName","name":"cardLastName","type":"String","req":false,"is_multi":false},{"method_name":"cardFirstName","name":"cardFirstName","type":"String","req":false,"is_multi":false},{"method_name":"cardGatewayAccountId","name":"cardGatewayAccountId","type":"String","req":false,"is_multi":false},{"method_name":"paymentMethodTmpToken","name":"paymentMethodTmpToken","type":"String","req":false,"is_multi":false},{"method_name":"cardBillingStateCode","name":"cardBillingStateCode","type":"String","req":false,"is_multi":false},{"method_name":"cardBillingCity","name":"cardBillingCity","type":"String","req":false,"is_multi":false},{"method_name":"paymentMethodGatewayAccountId","name":"paymentMethodGatewayAccountId","type":"String","req":false,"is_multi":false},{"method_name":"customerLastName","name":"customerLastName","type":"String","req":false,"is_multi":false},{"method_name":"customerEmail","name":"customerEmail","type":"String","req":false,"is_multi":false},{"method_name":"customerFirstName","name":"customerFirstName","type":"String","req":false,"is_multi":false},{"method_name":"termsToCharge","name":"termsToCharge","type":"Integer","req":false,"is_multi":false},{"method_name":"customerPhone","name":"customerPhone","type":"String","req":false,"is_multi":false},{"method_name":"customerNetTermDays","name":"customerNetTermDays","type":"Integer","req":false,"is_multi":false},{"method_name":"customerLocale","name":"customerLocale","type":"String","req":false,"is_multi":false},{"method_name":"customerCompany","name":"customerCompany","type":"String","req":false,"is_multi":false},{"method_name":"customerTaxability","possible_values":["TAXABLE","EXEMPT","_UNKNOWN"],"name":"customerTaxability","type":"Enum","req":false,"is_multi":false},{"method_name":"autoCollection","possible_values":["ON","OFF","_UNKNOWN"],"name":"autoCollection","type":"Enum","req":false,"is_multi":false},{"method_name":"createdFromIp","name":"createdFromIp","type":"String","req":false,"is_multi":false},{"method_name":"customerExemptNumber","name":"customerExemptNumber","type":"String","req":false,"is_multi":false},{"method_name":"customerAllowDirectDebit","name":"customerAllowDirectDebit","type":"Boolean","req":false,"is_multi":false},{"method_name":"addonTrialEnd","name":"addonTrialEnd","type":"Timestamp","req":false,"is_multi":true},{"method_name":"customerRegisteredForGst","name":"customerRegisteredForGst","type":"Boolean","req":false,"is_multi":false},{"method_name":"billingAlignmentMode","possible_values":["IMMEDIATE","DELAYED","_UNKNOWN"],"name":"billingAlignmentMode","type":"Enum","req":false,"is_multi":false},{"method_name":"couponIds","name":"couponIds","type":"String[]","req":false,"is_multi":false},{"method_name":"couponIds","name":"couponIds","type":"List","req":false,"is_multi":false},{"method_name":"invoiceImmediately","name":"invoiceImmediately","type":"Boolean","req":false,"is_multi":false},{"method_name":"customerEntityCode","possible_values":["A","B","C","D","E","F","G","H","I","J","K","L","N","P","Q","R","MED1","MED2","_UNKNOWN"],"name":"customerEntityCode","type":"Enum","req":false,"is_multi":false},{"method_name":"customerAutoCollection","possible_values":["ON","OFF","_UNKNOWN"],"name":"customerAutoCollection","type":"Enum","req":false,"is_multi":false},{"method_name":"customerVatNumber","name":"customerVatNumber","type":"String","req":false,"is_multi":false},{"method_name":"customerConsolidatedInvoicing","name":"customerConsolidatedInvoicing","type":"Boolean","req":false,"is_multi":false},{"method_name":"paymentMethodGateway","possible_values":["CHARGEBEE","STRIPE","WEPAY","BRAINTREE","AUTHORIZE_NET","PAYPAL_PRO","PIN","EWAY","EWAY_RAPID","WORLDPAY","BALANCED_PAYMENTS","BEANSTREAM","BLUEPAY","ELAVON","FIRST_DATA_GLOBAL","HDFC","MIGS","NMI","OGONE","PAYMILL","PAYPAL_PAYFLOW_PRO","SAGE_PAY","TCO","WIRECARD","AMAZON_PAYMENTS","PAYPAL_EXPRESS_CHECKOUT","GOCARDLESS","ADYEN","NOT_APPLICABLE","_UNKNOWN"],"name":"paymentMethodGateway","type":"Enum","req":false,"is_multi":false},{"method_name":"addonId","name":"addonId","type":"String","req":false,"is_multi":true},{"method_name":"customerId","name":"customerId","type":"String","req":false,"is_multi":false},{"method_name":"addonQuantity","name":"addonQuantity","type":"Integer","req":false,"is_multi":true},{"method_name":"addonUnitPrice","name":"addonUnitPrice","type":"Integer","req":false,"is_multi":true},{"method_name":"poNumber","name":"poNumber","type":"String","req":false,"is_multi":false},{"method_name":"cardIpAddress","name":"cardIpAddress","type":"String","req":false,"is_multi":false},{"method_name":"cardGateway","possible_values":["CHARGEBEE","STRIPE","WEPAY","BRAINTREE","AUTHORIZE_NET","PAYPAL_PRO","PIN","EWAY","EWAY_RAPID","WORLDPAY","BALANCED_PAYMENTS","BEANSTREAM","BLUEPAY","ELAVON","FIRST_DATA_GLOBAL","HDFC","MIGS","NMI","OGONE","PAYMILL","PAYPAL_PAYFLOW_PRO","SAGE_PAY","TCO","WIRECARD","AMAZON_PAYMENTS","PAYPAL_EXPRESS_CHECKOUT","GOCARDLESS","ADYEN","NOT_APPLICABLE","_UNKNOWN"],"name":"cardGateway","type":"Enum","req":false,"is_multi":false},{"method_name":"setupFee","name":"setupFee","type":"Integer","req":false,"is_multi":false},{"method_name":"metaData","name":"metaData","type":"JSONObject","req":false,"is_multi":false},{"method_name":"planId","name":"planId","type":"String","req":false,"is_multi":false},{"method_name":"billingCycles","name":"billingCycles","type":"Integer","req":false,"is_multi":false},{"method_name":"invoiceNotes","name":"invoiceNotes","type":"String","req":false,"is_multi":false},{"method_name":"planQuantity","name":"planQuantity","type":"Integer","req":false,"is_multi":false},{"method_name":"planUnitPrice","name":"planUnitPrice","type":"Integer","req":false,"is_multi":false},{"method_name":"startDate","name":"startDate","type":"Timestamp","req":false,"is_multi":false},{"method_name":"trialEnd","name":"trialEnd","type":"Timestamp","req":false,"is_multi":false},{"method_name":"affiliateToken","name":"affiliateToken","type":"String","req":false,"is_multi":false},{"method_name":"coupon","name":"coupon","type":"String","req":false,"is_multi":false},{"method_name":"cardTmpToken","name":"cardTmpToken","type":"String","req":false,"is_multi":false}]}],"class_name":"com.chargebee.v2.models.Subscription"}
+{
+    "actions": [
+        {
+            "action_name": "Subscription.overrideBillingProfile",
+            "arguments": [
+                {
+                    "is_multi": false,
+                    "method_name": "autoCollection",
+                    "name": "autoCollection",
+                    "possible_values": [
+                        "ON",
+                        "OFF",
+                        "_UNKNOWN"
+                    ],
+                    "req": false,
+                    "type": "Enum"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "paymentSourceId",
+                    "name": "paymentSourceId",
+                    "req": false,
+                    "type": "String"
+                }
+            ],
+            "static_method_name": "overrideBillingProfile",
+            "static_param_name": "overrideBillingProfile",
+            "type": "String"
+        },
+        {
+            "action_name": "Subscription.importForCustomer",
+            "arguments": [
+                {
+                    "is_multi": false,
+                    "method_name": "status",
+                    "name": "status",
+                    "possible_values": [
+                        "FUTURE",
+                        "IN_TRIAL",
+                        "ACTIVE",
+                        "NON_RENEWING",
+                        "CANCELLED",
+                        "_UNKNOWN"
+                    ],
+                    "req": false,
+                    "type": "Enum"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "id",
+                    "name": "id",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "couponIds",
+                    "name": "couponIds",
+                    "req": false,
+                    "type": "String[]"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "couponIds",
+                    "name": "couponIds",
+                    "req": false,
+                    "type": "List"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "billingCycles",
+                    "name": "billingCycles",
+                    "req": false,
+                    "type": "Integer"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "invoiceNotes",
+                    "name": "invoiceNotes",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "metaData",
+                    "name": "metaData",
+                    "req": false,
+                    "type": "JSONObject"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "autoCollection",
+                    "name": "autoCollection",
+                    "possible_values": [
+                        "ON",
+                        "OFF",
+                        "_UNKNOWN"
+                    ],
+                    "req": false,
+                    "type": "Enum"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "paymentSourceId",
+                    "name": "paymentSourceId",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "poNumber",
+                    "name": "poNumber",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "planId",
+                    "name": "planId",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "planQuantity",
+                    "name": "planQuantity",
+                    "req": false,
+                    "type": "Integer"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "planUnitPrice",
+                    "name": "planUnitPrice",
+                    "req": false,
+                    "type": "Integer"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "setupFee",
+                    "name": "setupFee",
+                    "req": false,
+                    "type": "Integer"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "startDate",
+                    "name": "startDate",
+                    "req": false,
+                    "type": "Timestamp"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "trialStart",
+                    "name": "trialStart",
+                    "req": false,
+                    "type": "Timestamp"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "trialEnd",
+                    "name": "trialEnd",
+                    "req": false,
+                    "type": "Timestamp"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "currentTermStart",
+                    "name": "currentTermStart",
+                    "req": false,
+                    "type": "Timestamp"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "currentTermEnd",
+                    "name": "currentTermEnd",
+                    "req": false,
+                    "type": "Timestamp"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "startedAt",
+                    "name": "startedAt",
+                    "req": false,
+                    "type": "Timestamp"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "cancelledAt",
+                    "name": "cancelledAt",
+                    "req": false,
+                    "type": "Timestamp"
+                },
+                {
+                    "is_multi": true,
+                    "method_name": "addonQuantity",
+                    "name": "addonQuantity",
+                    "req": false,
+                    "type": "Integer"
+                },
+                {
+                    "is_multi": true,
+                    "method_name": "addonUnitPrice",
+                    "name": "addonUnitPrice",
+                    "req": false,
+                    "type": "Integer"
+                },
+                {
+                    "is_multi": true,
+                    "method_name": "addonId",
+                    "name": "addonId",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "shippingAddressFirstName",
+                    "name": "shippingAddressFirstName",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "shippingAddressLastName",
+                    "name": "shippingAddressLastName",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "shippingAddressEmail",
+                    "name": "shippingAddressEmail",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "shippingAddressCompany",
+                    "name": "shippingAddressCompany",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "shippingAddressPhone",
+                    "name": "shippingAddressPhone",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "shippingAddressLine1",
+                    "name": "shippingAddressLine1",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "shippingAddressLine2",
+                    "name": "shippingAddressLine2",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "shippingAddressLine3",
+                    "name": "shippingAddressLine3",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "shippingAddressCity",
+                    "name": "shippingAddressCity",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "shippingAddressStateCode",
+                    "name": "shippingAddressStateCode",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "shippingAddressState",
+                    "name": "shippingAddressState",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "shippingAddressZip",
+                    "name": "shippingAddressZip",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "shippingAddressCountry",
+                    "name": "shippingAddressCountry",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "shippingAddressValidationStatus",
+                    "name": "shippingAddressValidationStatus",
+                    "possible_values": [
+                        "NOT_VALIDATED",
+                        "VALID",
+                        "PARTIALLY_VALID",
+                        "INVALID",
+                        "_UNKNOWN"
+                    ],
+                    "req": false,
+                    "type": "Enum"
+                }
+            ],
+            "static_method_name": "importForCustomer",
+            "static_param_name": "importForCustomer",
+            "type": "String"
+        },
+        {
+            "action_name": "Subscription.importSubscription",
+            "arguments": [
+                {
+                    "is_multi": false,
+                    "method_name": "status",
+                    "name": "status",
+                    "possible_values": [
+                        "FUTURE",
+                        "IN_TRIAL",
+                        "ACTIVE",
+                        "NON_RENEWING",
+                        "CANCELLED",
+                        "_UNKNOWN"
+                    ],
+                    "req": false,
+                    "type": "Enum"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "id",
+                    "name": "id",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "couponIds",
+                    "name": "couponIds",
+                    "req": false,
+                    "type": "List"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "couponIds",
+                    "name": "couponIds",
+                    "req": false,
+                    "type": "String[]"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "customerEmail",
+                    "name": "customerEmail",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "customerFirstName",
+                    "name": "customerFirstName",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "customerLastName",
+                    "name": "customerLastName",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "customerCompany",
+                    "name": "customerCompany",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "customerTaxability",
+                    "name": "customerTaxability",
+                    "possible_values": [
+                        "TAXABLE",
+                        "EXEMPT",
+                        "_UNKNOWN"
+                    ],
+                    "req": false,
+                    "type": "Enum"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "customerLocale",
+                    "name": "customerLocale",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "customerEntityCode",
+                    "name": "customerEntityCode",
+                    "possible_values": [
+                        "A",
+                        "B",
+                        "C",
+                        "D",
+                        "E",
+                        "F",
+                        "G",
+                        "H",
+                        "I",
+                        "J",
+                        "K",
+                        "L",
+                        "N",
+                        "P",
+                        "Q",
+                        "R",
+                        "MED1",
+                        "MED2",
+                        "_UNKNOWN"
+                    ],
+                    "req": false,
+                    "type": "Enum"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "customerExemptNumber",
+                    "name": "customerExemptNumber",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "customerNetTermDays",
+                    "name": "customerNetTermDays",
+                    "req": false,
+                    "type": "Integer"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "customerPhone",
+                    "name": "customerPhone",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "customerAutoCollection",
+                    "name": "customerAutoCollection",
+                    "possible_values": [
+                        "ON",
+                        "OFF",
+                        "_UNKNOWN"
+                    ],
+                    "req": false,
+                    "type": "Enum"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "customerAllowDirectDebit",
+                    "name": "customerAllowDirectDebit",
+                    "req": false,
+                    "type": "Boolean"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "customerVatNumber",
+                    "name": "customerVatNumber",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "customerId",
+                    "name": "customerId",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "billingCycles",
+                    "name": "billingCycles",
+                    "req": false,
+                    "type": "Integer"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "invoiceNotes",
+                    "name": "invoiceNotes",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "metaData",
+                    "name": "metaData",
+                    "req": false,
+                    "type": "JSONObject"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "autoCollection",
+                    "name": "autoCollection",
+                    "possible_values": [
+                        "ON",
+                        "OFF",
+                        "_UNKNOWN"
+                    ],
+                    "req": false,
+                    "type": "Enum"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "poNumber",
+                    "name": "poNumber",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "planId",
+                    "name": "planId",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "planQuantity",
+                    "name": "planQuantity",
+                    "req": false,
+                    "type": "Integer"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "planUnitPrice",
+                    "name": "planUnitPrice",
+                    "req": false,
+                    "type": "Integer"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "setupFee",
+                    "name": "setupFee",
+                    "req": false,
+                    "type": "Integer"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "startDate",
+                    "name": "startDate",
+                    "req": false,
+                    "type": "Timestamp"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "trialStart",
+                    "name": "trialStart",
+                    "req": false,
+                    "type": "Timestamp"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "trialEnd",
+                    "name": "trialEnd",
+                    "req": false,
+                    "type": "Timestamp"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "currentTermStart",
+                    "name": "currentTermStart",
+                    "req": false,
+                    "type": "Timestamp"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "currentTermEnd",
+                    "name": "currentTermEnd",
+                    "req": false,
+                    "type": "Timestamp"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "startedAt",
+                    "name": "startedAt",
+                    "req": false,
+                    "type": "Timestamp"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "cancelledAt",
+                    "name": "cancelledAt",
+                    "req": false,
+                    "type": "Timestamp"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "affiliateToken",
+                    "name": "affiliateToken",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": true,
+                    "method_name": "addonQuantity",
+                    "name": "addonQuantity",
+                    "req": false,
+                    "type": "Integer"
+                },
+                {
+                    "is_multi": true,
+                    "method_name": "addonUnitPrice",
+                    "name": "addonUnitPrice",
+                    "req": false,
+                    "type": "Integer"
+                },
+                {
+                    "is_multi": true,
+                    "method_name": "addonId",
+                    "name": "addonId",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "billingAddressFirstName",
+                    "name": "billingAddressFirstName",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "billingAddressLastName",
+                    "name": "billingAddressLastName",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "billingAddressEmail",
+                    "name": "billingAddressEmail",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "billingAddressCompany",
+                    "name": "billingAddressCompany",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "billingAddressPhone",
+                    "name": "billingAddressPhone",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "billingAddressLine1",
+                    "name": "billingAddressLine1",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "billingAddressLine2",
+                    "name": "billingAddressLine2",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "billingAddressLine3",
+                    "name": "billingAddressLine3",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "billingAddressCity",
+                    "name": "billingAddressCity",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "billingAddressStateCode",
+                    "name": "billingAddressStateCode",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "billingAddressState",
+                    "name": "billingAddressState",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "billingAddressZip",
+                    "name": "billingAddressZip",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "billingAddressCountry",
+                    "name": "billingAddressCountry",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "billingAddressValidationStatus",
+                    "name": "billingAddressValidationStatus",
+                    "possible_values": [
+                        "NOT_VALIDATED",
+                        "VALID",
+                        "PARTIALLY_VALID",
+                        "INVALID",
+                        "_UNKNOWN"
+                    ],
+                    "req": false,
+                    "type": "Enum"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "shippingAddressFirstName",
+                    "name": "shippingAddressFirstName",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "shippingAddressLastName",
+                    "name": "shippingAddressLastName",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "shippingAddressEmail",
+                    "name": "shippingAddressEmail",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "shippingAddressCompany",
+                    "name": "shippingAddressCompany",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "shippingAddressPhone",
+                    "name": "shippingAddressPhone",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "shippingAddressLine1",
+                    "name": "shippingAddressLine1",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "shippingAddressLine2",
+                    "name": "shippingAddressLine2",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "shippingAddressLine3",
+                    "name": "shippingAddressLine3",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "shippingAddressCity",
+                    "name": "shippingAddressCity",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "shippingAddressStateCode",
+                    "name": "shippingAddressStateCode",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "shippingAddressState",
+                    "name": "shippingAddressState",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "shippingAddressZip",
+                    "name": "shippingAddressZip",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "shippingAddressCountry",
+                    "name": "shippingAddressCountry",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "shippingAddressValidationStatus",
+                    "name": "shippingAddressValidationStatus",
+                    "possible_values": [
+                        "NOT_VALIDATED",
+                        "VALID",
+                        "PARTIALLY_VALID",
+                        "INVALID",
+                        "_UNKNOWN"
+                    ],
+                    "req": false,
+                    "type": "Enum"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "cardCvv",
+                    "name": "cardCvv",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "paymentMethodType",
+                    "name": "paymentMethodType",
+                    "possible_values": [
+                        "CARD",
+                        "PAYPAL_EXPRESS_CHECKOUT",
+                        "AMAZON_PAYMENTS",
+                        "DIRECT_DEBIT",
+                        "GENERIC",
+                        "ALIPAY",
+                        "UNIONPAY",
+                        "APPLE_PAY",
+                        "_UNKNOWN"
+                    ],
+                    "req": false,
+                    "type": "Enum"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "paymentMethodGatewayAccountId",
+                    "name": "paymentMethodGatewayAccountId",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "paymentMethodReferenceId",
+                    "name": "paymentMethodReferenceId",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "cardGatewayAccountId",
+                    "name": "cardGatewayAccountId",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "cardFirstName",
+                    "name": "cardFirstName",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "cardLastName",
+                    "name": "cardLastName",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "cardNumber",
+                    "name": "cardNumber",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "cardExpiryMonth",
+                    "name": "cardExpiryMonth",
+                    "req": false,
+                    "type": "Integer"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "cardExpiryYear",
+                    "name": "cardExpiryYear",
+                    "req": false,
+                    "type": "Integer"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "cardBillingAddr1",
+                    "name": "cardBillingAddr1",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "cardBillingAddr2",
+                    "name": "cardBillingAddr2",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "cardBillingCity",
+                    "name": "cardBillingCity",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "cardBillingStateCode",
+                    "name": "cardBillingStateCode",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "cardBillingState",
+                    "name": "cardBillingState",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "cardBillingZip",
+                    "name": "cardBillingZip",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "cardBillingCountry",
+                    "name": "cardBillingCountry",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "paymentMethodGateway",
+                    "name": "paymentMethodGateway",
+                    "possible_values": [
+                        "CHARGEBEE",
+                        "STRIPE",
+                        "WEPAY",
+                        "BRAINTREE",
+                        "AUTHORIZE_NET",
+                        "PAYPAL_PRO",
+                        "PIN",
+                        "EWAY",
+                        "EWAY_RAPID",
+                        "WORLDPAY",
+                        "BALANCED_PAYMENTS",
+                        "BEANSTREAM",
+                        "BLUEPAY",
+                        "ELAVON",
+                        "FIRST_DATA_GLOBAL",
+                        "HDFC",
+                        "MIGS",
+                        "NMI",
+                        "OGONE",
+                        "PAYMILL",
+                        "PAYPAL_PAYFLOW_PRO",
+                        "SAGE_PAY",
+                        "TCO",
+                        "WIRECARD",
+                        "AMAZON_PAYMENTS",
+                        "PAYPAL_EXPRESS_CHECKOUT",
+                        "GOCARDLESS",
+                        "ADYEN",
+                        "NOT_APPLICABLE",
+                        "_UNKNOWN"
+                    ],
+                    "req": false,
+                    "type": "Enum"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "cardGateway",
+                    "name": "cardGateway",
+                    "possible_values": [
+                        "CHARGEBEE",
+                        "STRIPE",
+                        "WEPAY",
+                        "BRAINTREE",
+                        "AUTHORIZE_NET",
+                        "PAYPAL_PRO",
+                        "PIN",
+                        "EWAY",
+                        "EWAY_RAPID",
+                        "WORLDPAY",
+                        "BALANCED_PAYMENTS",
+                        "BEANSTREAM",
+                        "BLUEPAY",
+                        "ELAVON",
+                        "FIRST_DATA_GLOBAL",
+                        "HDFC",
+                        "MIGS",
+                        "NMI",
+                        "OGONE",
+                        "PAYMILL",
+                        "PAYPAL_PAYFLOW_PRO",
+                        "SAGE_PAY",
+                        "TCO",
+                        "WIRECARD",
+                        "AMAZON_PAYMENTS",
+                        "PAYPAL_EXPRESS_CHECKOUT",
+                        "GOCARDLESS",
+                        "ADYEN",
+                        "NOT_APPLICABLE",
+                        "_UNKNOWN"
+                    ],
+                    "req": false,
+                    "type": "Enum"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "cardTmpToken",
+                    "name": "cardTmpToken",
+                    "req": false,
+                    "type": "String"
+                }
+            ],
+            "static_method_name": "importSubscription"
+        },
+        {
+            "action_name": "Subscription.chargeFutureRenewals",
+            "arguments": [{
+                "is_multi": false,
+                "method_name": "termsToCharge",
+                "name": "termsToCharge",
+                "req": false,
+                "type": "Integer"
+            }],
+            "static_method_name": "chargeFutureRenewals",
+            "static_param_name": "chargeFutureRenewals",
+            "type": "String"
+        },
+        {
+            "action_name": "Subscription.chargeAddonAtTermEnd",
+            "arguments": [
+                {
+                    "is_multi": false,
+                    "method_name": "addonQuantity",
+                    "name": "addonQuantity",
+                    "req": false,
+                    "type": "Integer"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "addonUnitPrice",
+                    "name": "addonUnitPrice",
+                    "req": false,
+                    "type": "Integer"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "addonId",
+                    "name": "addonId",
+                    "req": false,
+                    "type": "String"
+                }
+            ],
+            "static_method_name": "chargeAddonAtTermEnd",
+            "static_param_name": "chargeAddonAtTermEnd",
+            "type": "String"
+        },
+        {
+            "action_name": "Subscription.addChargeAtTermEnd",
+            "arguments": [
+                {
+                    "is_multi": false,
+                    "method_name": "amount",
+                    "name": "amount",
+                    "req": false,
+                    "type": "Integer"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "description",
+                    "name": "description",
+                    "req": false,
+                    "type": "String"
+                }
+            ],
+            "static_method_name": "addChargeAtTermEnd",
+            "static_param_name": "addChargeAtTermEnd",
+            "type": "String"
+        },
+        {
+            "action_name": "Subscription.reactivate",
+            "arguments": [
+                {
+                    "is_multi": false,
+                    "method_name": "trialPeriodDays",
+                    "name": "trialPeriodDays",
+                    "req": false,
+                    "type": "Integer"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "termsToCharge",
+                    "name": "termsToCharge",
+                    "req": false,
+                    "type": "Integer"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "reactivateFrom",
+                    "name": "reactivateFrom",
+                    "req": false,
+                    "type": "Timestamp"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "invoiceImmediately",
+                    "name": "invoiceImmediately",
+                    "req": false,
+                    "type": "Boolean"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "billingAlignmentMode",
+                    "name": "billingAlignmentMode",
+                    "possible_values": [
+                        "IMMEDIATE",
+                        "DELAYED",
+                        "_UNKNOWN"
+                    ],
+                    "req": false,
+                    "type": "Enum"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "billingCycles",
+                    "name": "billingCycles",
+                    "req": false,
+                    "type": "Integer"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "trialEnd",
+                    "name": "trialEnd",
+                    "req": false,
+                    "type": "Timestamp"
+                }
+            ],
+            "static_method_name": "reactivate",
+            "static_param_name": "reactivate",
+            "type": "String"
+        },
+        {
+            "action_name": "Subscription.cancel",
+            "arguments": [
+                {
+                    "is_multi": false,
+                    "method_name": "endOfTerm",
+                    "name": "endOfTerm",
+                    "req": false,
+                    "type": "Boolean"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "creditOptionForCurrentTermCharges",
+                    "name": "creditOptionForCurrentTermCharges",
+                    "possible_values": [
+                        "NONE",
+                        "PRORATE",
+                        "FULL",
+                        "_UNKNOWN"
+                    ],
+                    "req": true,
+                    "type": "Enum"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "unbilledChargesOption",
+                    "name": "unbilledChargesOption",
+                    "possible_values": [
+                        "INVOICE",
+                        "DELETE",
+                        "_UNKNOWN"
+                    ],
+                    "req": true,
+                    "type": "Enum"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "accountReceivablesHandling",
+                    "name": "accountReceivablesHandling",
+                    "possible_values": [
+                        "NO_ACTION",
+                        "SCHEDULE_PAYMENT_COLLECTION",
+                        "WRITE_OFF",
+                        "_UNKNOWN"
+                    ],
+                    "req": false,
+                    "type": "Enum"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "refundableCreditsHandling",
+                    "name": "refundableCreditsHandling",
+                    "possible_values": [
+                        "NO_ACTION",
+                        "SCHEDULE_REFUND",
+                        "_UNKNOWN"
+                    ],
+                    "req": false,
+                    "type": "Enum"
+                }
+            ],
+            "static_method_name": "cancel",
+            "static_param_name": "cancel",
+            "type": "String"
+        },
+        {
+            "action_name": "Subscription.changeTermEnd",
+            "arguments": [
+                {
+                    "is_multi": false,
+                    "method_name": "invoiceImmediately",
+                    "name": "invoiceImmediately",
+                    "req": false,
+                    "type": "Boolean"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "termEndsAt",
+                    "name": "termEndsAt",
+                    "req": false,
+                    "type": "Timestamp"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "prorate",
+                    "name": "prorate",
+                    "req": false,
+                    "type": "Boolean"
+                }
+            ],
+            "static_method_name": "changeTermEnd",
+            "static_param_name": "changeTermEnd",
+            "type": "String"
+        },
+        {
+            "action_name": "Subscription.update",
+            "arguments": [
+                {
+                    "is_multi": false,
+                    "method_name": "couponIds",
+                    "name": "couponIds",
+                    "req": false,
+                    "type": "List"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "couponIds",
+                    "name": "couponIds",
+                    "req": false,
+                    "type": "String[]"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "customerVatNumber",
+                    "name": "customerVatNumber",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "termsToCharge",
+                    "name": "termsToCharge",
+                    "req": false,
+                    "type": "Integer"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "reactivateFrom",
+                    "name": "reactivateFrom",
+                    "req": false,
+                    "type": "Timestamp"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "invoiceImmediately",
+                    "name": "invoiceImmediately",
+                    "req": false,
+                    "type": "Boolean"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "billingAlignmentMode",
+                    "name": "billingAlignmentMode",
+                    "possible_values": [
+                        "IMMEDIATE",
+                        "DELAYED",
+                        "_UNKNOWN"
+                    ],
+                    "req": false,
+                    "type": "Enum"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "endOfTerm",
+                    "name": "endOfTerm",
+                    "req": false,
+                    "type": "Boolean"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "prorate",
+                    "name": "prorate",
+                    "req": false,
+                    "type": "Boolean"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "replaceAddonList",
+                    "name": "replaceAddonList",
+                    "req": false,
+                    "type": "Boolean"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "replaceCouponList",
+                    "name": "replaceCouponList",
+                    "req": false,
+                    "type": "Boolean"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "forceTermReset",
+                    "name": "forceTermReset",
+                    "req": false,
+                    "type": "Boolean"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "customerRegisteredForGst",
+                    "name": "customerRegisteredForGst",
+                    "req": false,
+                    "type": "Boolean"
+                },
+                {
+                    "is_multi": true,
+                    "method_name": "addonTrialEnd",
+                    "name": "addonTrialEnd",
+                    "req": false,
+                    "type": "Timestamp"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "billingCycles",
+                    "name": "billingCycles",
+                    "req": false,
+                    "type": "Integer"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "invoiceNotes",
+                    "name": "invoiceNotes",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "metaData",
+                    "name": "metaData",
+                    "req": false,
+                    "type": "JSONObject"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "poNumber",
+                    "name": "poNumber",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "planId",
+                    "name": "planId",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "planQuantity",
+                    "name": "planQuantity",
+                    "req": false,
+                    "type": "Integer"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "planUnitPrice",
+                    "name": "planUnitPrice",
+                    "req": false,
+                    "type": "Integer"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "setupFee",
+                    "name": "setupFee",
+                    "req": false,
+                    "type": "Integer"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "startDate",
+                    "name": "startDate",
+                    "req": false,
+                    "type": "Timestamp"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "trialEnd",
+                    "name": "trialEnd",
+                    "req": false,
+                    "type": "Timestamp"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "coupon",
+                    "name": "coupon",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "reactivate",
+                    "name": "reactivate",
+                    "req": false,
+                    "type": "Boolean"
+                },
+                {
+                    "is_multi": true,
+                    "method_name": "addonQuantity",
+                    "name": "addonQuantity",
+                    "req": false,
+                    "type": "Integer"
+                },
+                {
+                    "is_multi": true,
+                    "method_name": "addonUnitPrice",
+                    "name": "addonUnitPrice",
+                    "req": false,
+                    "type": "Integer"
+                },
+                {
+                    "is_multi": true,
+                    "method_name": "addonId",
+                    "name": "addonId",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "billingAddressFirstName",
+                    "name": "billingAddressFirstName",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "billingAddressLastName",
+                    "name": "billingAddressLastName",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "billingAddressEmail",
+                    "name": "billingAddressEmail",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "billingAddressCompany",
+                    "name": "billingAddressCompany",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "billingAddressPhone",
+                    "name": "billingAddressPhone",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "billingAddressLine1",
+                    "name": "billingAddressLine1",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "billingAddressLine2",
+                    "name": "billingAddressLine2",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "billingAddressLine3",
+                    "name": "billingAddressLine3",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "billingAddressCity",
+                    "name": "billingAddressCity",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "billingAddressStateCode",
+                    "name": "billingAddressStateCode",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "billingAddressState",
+                    "name": "billingAddressState",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "billingAddressZip",
+                    "name": "billingAddressZip",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "billingAddressCountry",
+                    "name": "billingAddressCountry",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "billingAddressValidationStatus",
+                    "name": "billingAddressValidationStatus",
+                    "possible_values": [
+                        "NOT_VALIDATED",
+                        "VALID",
+                        "PARTIALLY_VALID",
+                        "INVALID",
+                        "_UNKNOWN"
+                    ],
+                    "req": false,
+                    "type": "Enum"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "shippingAddressFirstName",
+                    "name": "shippingAddressFirstName",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "shippingAddressLastName",
+                    "name": "shippingAddressLastName",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "shippingAddressEmail",
+                    "name": "shippingAddressEmail",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "shippingAddressCompany",
+                    "name": "shippingAddressCompany",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "shippingAddressPhone",
+                    "name": "shippingAddressPhone",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "shippingAddressLine1",
+                    "name": "shippingAddressLine1",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "shippingAddressLine2",
+                    "name": "shippingAddressLine2",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "shippingAddressLine3",
+                    "name": "shippingAddressLine3",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "shippingAddressCity",
+                    "name": "shippingAddressCity",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "shippingAddressStateCode",
+                    "name": "shippingAddressStateCode",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "shippingAddressState",
+                    "name": "shippingAddressState",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "shippingAddressZip",
+                    "name": "shippingAddressZip",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "shippingAddressCountry",
+                    "name": "shippingAddressCountry",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "shippingAddressValidationStatus",
+                    "name": "shippingAddressValidationStatus",
+                    "possible_values": [
+                        "NOT_VALIDATED",
+                        "VALID",
+                        "PARTIALLY_VALID",
+                        "INVALID",
+                        "_UNKNOWN"
+                    ],
+                    "req": false,
+                    "type": "Enum"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "cardCvv",
+                    "name": "cardCvv",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "paymentMethodType",
+                    "name": "paymentMethodType",
+                    "possible_values": [
+                        "CARD",
+                        "PAYPAL_EXPRESS_CHECKOUT",
+                        "AMAZON_PAYMENTS",
+                        "DIRECT_DEBIT",
+                        "GENERIC",
+                        "ALIPAY",
+                        "UNIONPAY",
+                        "APPLE_PAY",
+                        "_UNKNOWN"
+                    ],
+                    "req": false,
+                    "type": "Enum"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "paymentMethodGatewayAccountId",
+                    "name": "paymentMethodGatewayAccountId",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "paymentMethodReferenceId",
+                    "name": "paymentMethodReferenceId",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "paymentMethodTmpToken",
+                    "name": "paymentMethodTmpToken",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "cardGatewayAccountId",
+                    "name": "cardGatewayAccountId",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "cardFirstName",
+                    "name": "cardFirstName",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "cardLastName",
+                    "name": "cardLastName",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "cardNumber",
+                    "name": "cardNumber",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "cardExpiryMonth",
+                    "name": "cardExpiryMonth",
+                    "req": false,
+                    "type": "Integer"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "cardExpiryYear",
+                    "name": "cardExpiryYear",
+                    "req": false,
+                    "type": "Integer"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "cardBillingAddr1",
+                    "name": "cardBillingAddr1",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "cardBillingAddr2",
+                    "name": "cardBillingAddr2",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "cardBillingCity",
+                    "name": "cardBillingCity",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "cardBillingStateCode",
+                    "name": "cardBillingStateCode",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "cardBillingState",
+                    "name": "cardBillingState",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "cardBillingZip",
+                    "name": "cardBillingZip",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "cardBillingCountry",
+                    "name": "cardBillingCountry",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "paymentMethodGateway",
+                    "name": "paymentMethodGateway",
+                    "possible_values": [
+                        "CHARGEBEE",
+                        "STRIPE",
+                        "WEPAY",
+                        "BRAINTREE",
+                        "AUTHORIZE_NET",
+                        "PAYPAL_PRO",
+                        "PIN",
+                        "EWAY",
+                        "EWAY_RAPID",
+                        "WORLDPAY",
+                        "BALANCED_PAYMENTS",
+                        "BEANSTREAM",
+                        "BLUEPAY",
+                        "ELAVON",
+                        "FIRST_DATA_GLOBAL",
+                        "HDFC",
+                        "MIGS",
+                        "NMI",
+                        "OGONE",
+                        "PAYMILL",
+                        "PAYPAL_PAYFLOW_PRO",
+                        "SAGE_PAY",
+                        "TCO",
+                        "WIRECARD",
+                        "AMAZON_PAYMENTS",
+                        "PAYPAL_EXPRESS_CHECKOUT",
+                        "GOCARDLESS",
+                        "ADYEN",
+                        "NOT_APPLICABLE",
+                        "_UNKNOWN"
+                    ],
+                    "req": false,
+                    "type": "Enum"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "cardGateway",
+                    "name": "cardGateway",
+                    "possible_values": [
+                        "CHARGEBEE",
+                        "STRIPE",
+                        "WEPAY",
+                        "BRAINTREE",
+                        "AUTHORIZE_NET",
+                        "PAYPAL_PRO",
+                        "PIN",
+                        "EWAY",
+                        "EWAY_RAPID",
+                        "WORLDPAY",
+                        "BALANCED_PAYMENTS",
+                        "BEANSTREAM",
+                        "BLUEPAY",
+                        "ELAVON",
+                        "FIRST_DATA_GLOBAL",
+                        "HDFC",
+                        "MIGS",
+                        "NMI",
+                        "OGONE",
+                        "PAYMILL",
+                        "PAYPAL_PAYFLOW_PRO",
+                        "SAGE_PAY",
+                        "TCO",
+                        "WIRECARD",
+                        "AMAZON_PAYMENTS",
+                        "PAYPAL_EXPRESS_CHECKOUT",
+                        "GOCARDLESS",
+                        "ADYEN",
+                        "NOT_APPLICABLE",
+                        "_UNKNOWN"
+                    ],
+                    "req": false,
+                    "type": "Enum"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "cardTmpToken",
+                    "name": "cardTmpToken",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "cardIpAddress",
+                    "name": "cardIpAddress",
+                    "req": false,
+                    "type": "String"
+                }
+            ],
+            "static_method_name": "update",
+            "static_param_name": "update",
+            "type": "String"
+        },
+        {
+            "action_name": "Subscription.removeCoupons",
+            "arguments": [
+                {
+                    "is_multi": false,
+                    "method_name": "couponIds",
+                    "name": "couponIds",
+                    "req": false,
+                    "type": "String[]"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "couponIds",
+                    "name": "couponIds",
+                    "req": false,
+                    "type": "List"
+                }
+            ],
+            "static_method_name": "removeCoupons",
+            "static_param_name": "removeCoupons",
+            "type": "String"
+        },
+        {
+            "action_name": "Subscription.removeScheduledCancellation",
+            "arguments": [{
+                "is_multi": false,
+                "method_name": "billingCycles",
+                "name": "billingCycles",
+                "req": false,
+                "type": "Integer"
+            }],
+            "static_method_name": "removeScheduledCancellation",
+            "static_param_name": "removeScheduledCancellation",
+            "type": "String"
+        },
+        {
+            "action_name": "Subscription.createForCustomer",
+            "arguments": [
+                {
+                    "is_multi": false,
+                    "method_name": "id",
+                    "name": "id",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "couponIds",
+                    "name": "couponIds",
+                    "req": false,
+                    "type": "String[]"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "couponIds",
+                    "name": "couponIds",
+                    "req": false,
+                    "type": "List"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "termsToCharge",
+                    "name": "termsToCharge",
+                    "req": false,
+                    "type": "Integer"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "invoiceImmediately",
+                    "name": "invoiceImmediately",
+                    "req": false,
+                    "type": "Boolean"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "billingAlignmentMode",
+                    "name": "billingAlignmentMode",
+                    "possible_values": [
+                        "IMMEDIATE",
+                        "DELAYED",
+                        "_UNKNOWN"
+                    ],
+                    "req": false,
+                    "type": "Enum"
+                },
+                {
+                    "is_multi": true,
+                    "method_name": "addonTrialEnd",
+                    "name": "addonTrialEnd",
+                    "req": false,
+                    "type": "Timestamp"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "billingCycles",
+                    "name": "billingCycles",
+                    "req": false,
+                    "type": "Integer"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "invoiceNotes",
+                    "name": "invoiceNotes",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "metaData",
+                    "name": "metaData",
+                    "req": false,
+                    "type": "JSONObject"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "autoCollection",
+                    "name": "autoCollection",
+                    "possible_values": [
+                        "ON",
+                        "OFF",
+                        "_UNKNOWN"
+                    ],
+                    "req": false,
+                    "type": "Enum"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "paymentSourceId",
+                    "name": "paymentSourceId",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "poNumber",
+                    "name": "poNumber",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "planId",
+                    "name": "planId",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "planQuantity",
+                    "name": "planQuantity",
+                    "req": false,
+                    "type": "Integer"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "planUnitPrice",
+                    "name": "planUnitPrice",
+                    "req": false,
+                    "type": "Integer"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "setupFee",
+                    "name": "setupFee",
+                    "req": false,
+                    "type": "Integer"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "startDate",
+                    "name": "startDate",
+                    "req": false,
+                    "type": "Timestamp"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "trialEnd",
+                    "name": "trialEnd",
+                    "req": false,
+                    "type": "Timestamp"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "coupon",
+                    "name": "coupon",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": true,
+                    "method_name": "addonQuantity",
+                    "name": "addonQuantity",
+                    "req": false,
+                    "type": "Integer"
+                },
+                {
+                    "is_multi": true,
+                    "method_name": "addonUnitPrice",
+                    "name": "addonUnitPrice",
+                    "req": false,
+                    "type": "Integer"
+                },
+                {
+                    "is_multi": true,
+                    "method_name": "addonId",
+                    "name": "addonId",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "shippingAddressFirstName",
+                    "name": "shippingAddressFirstName",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "shippingAddressLastName",
+                    "name": "shippingAddressLastName",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "shippingAddressEmail",
+                    "name": "shippingAddressEmail",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "shippingAddressCompany",
+                    "name": "shippingAddressCompany",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "shippingAddressPhone",
+                    "name": "shippingAddressPhone",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "shippingAddressLine1",
+                    "name": "shippingAddressLine1",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "shippingAddressLine2",
+                    "name": "shippingAddressLine2",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "shippingAddressLine3",
+                    "name": "shippingAddressLine3",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "shippingAddressCity",
+                    "name": "shippingAddressCity",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "shippingAddressStateCode",
+                    "name": "shippingAddressStateCode",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "shippingAddressState",
+                    "name": "shippingAddressState",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "shippingAddressZip",
+                    "name": "shippingAddressZip",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "shippingAddressCountry",
+                    "name": "shippingAddressCountry",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "shippingAddressValidationStatus",
+                    "name": "shippingAddressValidationStatus",
+                    "possible_values": [
+                        "NOT_VALIDATED",
+                        "VALID",
+                        "PARTIALLY_VALID",
+                        "INVALID",
+                        "_UNKNOWN"
+                    ],
+                    "req": false,
+                    "type": "Enum"
+                }
+            ],
+            "static_method_name": "createForCustomer",
+            "static_param_name": "createForCustomer",
+            "type": "String"
+        },
+        {
+            "action_name": "Subscription.create",
+            "arguments": [
+                {
+                    "is_multi": false,
+                    "method_name": "id",
+                    "name": "id",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "couponIds",
+                    "name": "couponIds",
+                    "req": false,
+                    "type": "List"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "couponIds",
+                    "name": "couponIds",
+                    "req": false,
+                    "type": "String[]"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "customerEmail",
+                    "name": "customerEmail",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "customerFirstName",
+                    "name": "customerFirstName",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "customerLastName",
+                    "name": "customerLastName",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "customerCompany",
+                    "name": "customerCompany",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "customerTaxability",
+                    "name": "customerTaxability",
+                    "possible_values": [
+                        "TAXABLE",
+                        "EXEMPT",
+                        "_UNKNOWN"
+                    ],
+                    "req": false,
+                    "type": "Enum"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "customerLocale",
+                    "name": "customerLocale",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "customerEntityCode",
+                    "name": "customerEntityCode",
+                    "possible_values": [
+                        "A",
+                        "B",
+                        "C",
+                        "D",
+                        "E",
+                        "F",
+                        "G",
+                        "H",
+                        "I",
+                        "J",
+                        "K",
+                        "L",
+                        "N",
+                        "P",
+                        "Q",
+                        "R",
+                        "MED1",
+                        "MED2",
+                        "_UNKNOWN"
+                    ],
+                    "req": false,
+                    "type": "Enum"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "customerExemptNumber",
+                    "name": "customerExemptNumber",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "customerNetTermDays",
+                    "name": "customerNetTermDays",
+                    "req": false,
+                    "type": "Integer"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "customerPhone",
+                    "name": "customerPhone",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "customerAutoCollection",
+                    "name": "customerAutoCollection",
+                    "possible_values": [
+                        "ON",
+                        "OFF",
+                        "_UNKNOWN"
+                    ],
+                    "req": false,
+                    "type": "Enum"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "customerAllowDirectDebit",
+                    "name": "customerAllowDirectDebit",
+                    "req": false,
+                    "type": "Boolean"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "customerVatNumber",
+                    "name": "customerVatNumber",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "termsToCharge",
+                    "name": "termsToCharge",
+                    "req": false,
+                    "type": "Integer"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "invoiceImmediately",
+                    "name": "invoiceImmediately",
+                    "req": false,
+                    "type": "Boolean"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "billingAlignmentMode",
+                    "name": "billingAlignmentMode",
+                    "possible_values": [
+                        "IMMEDIATE",
+                        "DELAYED",
+                        "_UNKNOWN"
+                    ],
+                    "req": false,
+                    "type": "Enum"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "customerRegisteredForGst",
+                    "name": "customerRegisteredForGst",
+                    "req": false,
+                    "type": "Boolean"
+                },
+                {
+                    "is_multi": true,
+                    "method_name": "addonTrialEnd",
+                    "name": "addonTrialEnd",
+                    "req": false,
+                    "type": "Timestamp"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "customerConsolidatedInvoicing",
+                    "name": "customerConsolidatedInvoicing",
+                    "req": false,
+                    "type": "Boolean"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "customerId",
+                    "name": "customerId",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "billingCycles",
+                    "name": "billingCycles",
+                    "req": false,
+                    "type": "Integer"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "invoiceNotes",
+                    "name": "invoiceNotes",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "metaData",
+                    "name": "metaData",
+                    "req": false,
+                    "type": "JSONObject"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "autoCollection",
+                    "name": "autoCollection",
+                    "possible_values": [
+                        "ON",
+                        "OFF",
+                        "_UNKNOWN"
+                    ],
+                    "req": false,
+                    "type": "Enum"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "createdFromIp",
+                    "name": "createdFromIp",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "poNumber",
+                    "name": "poNumber",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "planId",
+                    "name": "planId",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "planQuantity",
+                    "name": "planQuantity",
+                    "req": false,
+                    "type": "Integer"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "planUnitPrice",
+                    "name": "planUnitPrice",
+                    "req": false,
+                    "type": "Integer"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "setupFee",
+                    "name": "setupFee",
+                    "req": false,
+                    "type": "Integer"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "startDate",
+                    "name": "startDate",
+                    "req": false,
+                    "type": "Timestamp"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "trialEnd",
+                    "name": "trialEnd",
+                    "req": false,
+                    "type": "Timestamp"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "affiliateToken",
+                    "name": "affiliateToken",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "coupon",
+                    "name": "coupon",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": true,
+                    "method_name": "addonQuantity",
+                    "name": "addonQuantity",
+                    "req": false,
+                    "type": "Integer"
+                },
+                {
+                    "is_multi": true,
+                    "method_name": "addonUnitPrice",
+                    "name": "addonUnitPrice",
+                    "req": false,
+                    "type": "Integer"
+                },
+                {
+                    "is_multi": true,
+                    "method_name": "addonId",
+                    "name": "addonId",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "billingAddressFirstName",
+                    "name": "billingAddressFirstName",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "billingAddressLastName",
+                    "name": "billingAddressLastName",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "billingAddressEmail",
+                    "name": "billingAddressEmail",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "billingAddressCompany",
+                    "name": "billingAddressCompany",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "billingAddressPhone",
+                    "name": "billingAddressPhone",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "billingAddressLine1",
+                    "name": "billingAddressLine1",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "billingAddressLine2",
+                    "name": "billingAddressLine2",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "billingAddressLine3",
+                    "name": "billingAddressLine3",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "billingAddressCity",
+                    "name": "billingAddressCity",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "billingAddressStateCode",
+                    "name": "billingAddressStateCode",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "billingAddressState",
+                    "name": "billingAddressState",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "billingAddressZip",
+                    "name": "billingAddressZip",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "billingAddressCountry",
+                    "name": "billingAddressCountry",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "billingAddressValidationStatus",
+                    "name": "billingAddressValidationStatus",
+                    "possible_values": [
+                        "NOT_VALIDATED",
+                        "VALID",
+                        "PARTIALLY_VALID",
+                        "INVALID",
+                        "_UNKNOWN"
+                    ],
+                    "req": false,
+                    "type": "Enum"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "shippingAddressFirstName",
+                    "name": "shippingAddressFirstName",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "shippingAddressLastName",
+                    "name": "shippingAddressLastName",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "shippingAddressEmail",
+                    "name": "shippingAddressEmail",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "shippingAddressCompany",
+                    "name": "shippingAddressCompany",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "shippingAddressPhone",
+                    "name": "shippingAddressPhone",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "shippingAddressLine1",
+                    "name": "shippingAddressLine1",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "shippingAddressLine2",
+                    "name": "shippingAddressLine2",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "shippingAddressLine3",
+                    "name": "shippingAddressLine3",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "shippingAddressCity",
+                    "name": "shippingAddressCity",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "shippingAddressStateCode",
+                    "name": "shippingAddressStateCode",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "shippingAddressState",
+                    "name": "shippingAddressState",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "shippingAddressZip",
+                    "name": "shippingAddressZip",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "shippingAddressCountry",
+                    "name": "shippingAddressCountry",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "shippingAddressValidationStatus",
+                    "name": "shippingAddressValidationStatus",
+                    "possible_values": [
+                        "NOT_VALIDATED",
+                        "VALID",
+                        "PARTIALLY_VALID",
+                        "INVALID",
+                        "_UNKNOWN"
+                    ],
+                    "req": false,
+                    "type": "Enum"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "cardCvv",
+                    "name": "cardCvv",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "paymentMethodType",
+                    "name": "paymentMethodType",
+                    "possible_values": [
+                        "CARD",
+                        "PAYPAL_EXPRESS_CHECKOUT",
+                        "AMAZON_PAYMENTS",
+                        "DIRECT_DEBIT",
+                        "GENERIC",
+                        "ALIPAY",
+                        "UNIONPAY",
+                        "APPLE_PAY",
+                        "_UNKNOWN"
+                    ],
+                    "req": false,
+                    "type": "Enum"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "paymentMethodGatewayAccountId",
+                    "name": "paymentMethodGatewayAccountId",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "paymentMethodReferenceId",
+                    "name": "paymentMethodReferenceId",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "paymentMethodTmpToken",
+                    "name": "paymentMethodTmpToken",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "cardGatewayAccountId",
+                    "name": "cardGatewayAccountId",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "cardFirstName",
+                    "name": "cardFirstName",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "cardLastName",
+                    "name": "cardLastName",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "cardNumber",
+                    "name": "cardNumber",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "cardExpiryMonth",
+                    "name": "cardExpiryMonth",
+                    "req": false,
+                    "type": "Integer"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "cardExpiryYear",
+                    "name": "cardExpiryYear",
+                    "req": false,
+                    "type": "Integer"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "cardBillingAddr1",
+                    "name": "cardBillingAddr1",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "cardBillingAddr2",
+                    "name": "cardBillingAddr2",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "cardBillingCity",
+                    "name": "cardBillingCity",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "cardBillingStateCode",
+                    "name": "cardBillingStateCode",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "cardBillingState",
+                    "name": "cardBillingState",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "cardBillingZip",
+                    "name": "cardBillingZip",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "cardBillingCountry",
+                    "name": "cardBillingCountry",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "paymentMethodGateway",
+                    "name": "paymentMethodGateway",
+                    "possible_values": [
+                        "CHARGEBEE",
+                        "STRIPE",
+                        "WEPAY",
+                        "BRAINTREE",
+                        "AUTHORIZE_NET",
+                        "PAYPAL_PRO",
+                        "PIN",
+                        "EWAY",
+                        "EWAY_RAPID",
+                        "WORLDPAY",
+                        "BALANCED_PAYMENTS",
+                        "BEANSTREAM",
+                        "BLUEPAY",
+                        "ELAVON",
+                        "FIRST_DATA_GLOBAL",
+                        "HDFC",
+                        "MIGS",
+                        "NMI",
+                        "OGONE",
+                        "PAYMILL",
+                        "PAYPAL_PAYFLOW_PRO",
+                        "SAGE_PAY",
+                        "TCO",
+                        "WIRECARD",
+                        "AMAZON_PAYMENTS",
+                        "PAYPAL_EXPRESS_CHECKOUT",
+                        "GOCARDLESS",
+                        "ADYEN",
+                        "NOT_APPLICABLE",
+                        "_UNKNOWN"
+                    ],
+                    "req": false,
+                    "type": "Enum"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "cardGateway",
+                    "name": "cardGateway",
+                    "possible_values": [
+                        "CHARGEBEE",
+                        "STRIPE",
+                        "WEPAY",
+                        "BRAINTREE",
+                        "AUTHORIZE_NET",
+                        "PAYPAL_PRO",
+                        "PIN",
+                        "EWAY",
+                        "EWAY_RAPID",
+                        "WORLDPAY",
+                        "BALANCED_PAYMENTS",
+                        "BEANSTREAM",
+                        "BLUEPAY",
+                        "ELAVON",
+                        "FIRST_DATA_GLOBAL",
+                        "HDFC",
+                        "MIGS",
+                        "NMI",
+                        "OGONE",
+                        "PAYMILL",
+                        "PAYPAL_PAYFLOW_PRO",
+                        "SAGE_PAY",
+                        "TCO",
+                        "WIRECARD",
+                        "AMAZON_PAYMENTS",
+                        "PAYPAL_EXPRESS_CHECKOUT",
+                        "GOCARDLESS",
+                        "ADYEN",
+                        "NOT_APPLICABLE",
+                        "_UNKNOWN"
+                    ],
+                    "req": false,
+                    "type": "Enum"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "cardTmpToken",
+                    "name": "cardTmpToken",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "cardIpAddress",
+                    "name": "cardIpAddress",
+                    "req": false,
+                    "type": "String"
+                }
+            ],
+            "static_method_name": "create"
+        }
+    ],
+    "class_name": "com.chargebee.v2.models.Subscription"
+}

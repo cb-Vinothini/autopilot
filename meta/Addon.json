@@ -1,1 +1,387 @@
-{"actions":[{"static_method_name":"unarchive","action_name":"Addon.unarchive","arguments":[{"method_name":"id","name":"id","type":"String","req":false,"is_multi":false},{"method_name":"idAtFromSite","name":"idAtFromSite","type":"String","req":false,"is_multi":false},{"method_name":"forSiteMerging","name":"forSiteMerging","type":"Boolean","req":false,"is_multi":false},{"method_name":"fromSite","name":"fromSite","type":"String","req":false,"is_multi":false}]},{"static_method_name":"unarchive","action_name":"Addon.unarchive","arguments":[{"method_name":"name","name":"name","type":"String","req":false,"is_multi":false},{"method_name":"type","possible_values":["ON_OFF","QUANTITY","_UNKNOWN"],"name":"type","type":"Enum","req":false,"is_multi":false},{"method_name":"chargeType","possible_values":["RECURRING","NON_RECURRING","_UNKNOWN"],"name":"chargeType","type":"Enum","req":false,"is_multi":false},{"method_name":"taxable","name":"taxable","type":"Boolean","req":false,"is_multi":false},{"method_name":"price","name":"price","type":"Integer","req":false,"is_multi":false},{"method_name":"metaData","name":"metaData","type":"JSONObject","req":false,"is_multi":false},{"method_name":"taxCode","name":"taxCode","type":"String","req":false,"is_multi":false},{"method_name":"sku","name":"sku","type":"String","req":false,"is_multi":false},{"method_name":"period","name":"period","type":"Integer","req":false,"is_multi":false},{"method_name":"invoiceName","name":"invoiceName","type":"String","req":false,"is_multi":false},{"method_name":"description","name":"description","type":"String","req":false,"is_multi":false},{"method_name":"periodUnit","possible_values":["WEEK","MONTH","YEAR","NOT_APPLICABLE","_UNKNOWN"],"name":"periodUnit","type":"Enum","req":false,"is_multi":false},{"method_name":"enabledInPortal","name":"enabledInPortal","type":"Boolean","req":false,"is_multi":false},{"method_name":"accountingCode","name":"accountingCode","type":"String","req":false,"is_multi":false},{"method_name":"accountingCategory1","name":"accountingCategory1","type":"String","req":false,"is_multi":false},{"method_name":"accountingCategory2","name":"accountingCategory2","type":"String","req":false,"is_multi":false},{"method_name":"invoiceNotes","name":"invoiceNotes","type":"String","req":false,"is_multi":false},{"method_name":"taxProfileId","name":"taxProfileId","type":"String","req":false,"is_multi":false},{"method_name":"unit","name":"unit","type":"String","req":false,"is_multi":false},{"method_name":"currencyCode","name":"currencyCode","type":"String","req":false,"is_multi":false}]},{"static_method_name":"unarchive","action_name":"Addon.unarchive","arguments":[{"method_name":"name","name":"name","type":"String","req":false,"is_multi":false},{"method_name":"type","possible_values":["ON_OFF","QUANTITY","_UNKNOWN"],"name":"type","type":"Enum","req":false,"is_multi":false},{"method_name":"status","possible_values":["ACTIVE","ARCHIVED","DELETED","_UNKNOWN"],"name":"status","type":"Enum","req":false,"is_multi":false},{"method_name":"id","name":"id","type":"String","req":false,"is_multi":false},{"method_name":"chargeType","possible_values":["RECURRING","NON_RECURRING","_UNKNOWN"],"name":"chargeType","type":"Enum","req":false,"is_multi":false},{"method_name":"taxable","name":"taxable","type":"Boolean","req":false,"is_multi":false},{"method_name":"price","name":"price","type":"Integer","req":false,"is_multi":false},{"method_name":"metaData","name":"metaData","type":"JSONObject","req":false,"is_multi":false},{"method_name":"taxCode","name":"taxCode","type":"String","req":false,"is_multi":false},{"method_name":"sku","name":"sku","type":"String","req":false,"is_multi":false},{"method_name":"period","name":"period","type":"Integer","req":false,"is_multi":false},{"method_name":"invoiceName","name":"invoiceName","type":"String","req":false,"is_multi":false},{"method_name":"description","name":"description","type":"String","req":false,"is_multi":false},{"method_name":"periodUnit","possible_values":["WEEK","MONTH","YEAR","NOT_APPLICABLE","_UNKNOWN"],"name":"periodUnit","type":"Enum","req":false,"is_multi":false},{"method_name":"enabledInPortal","name":"enabledInPortal","type":"Boolean","req":false,"is_multi":false},{"method_name":"accountingCode","name":"accountingCode","type":"String","req":false,"is_multi":false},{"method_name":"accountingCategory1","name":"accountingCategory1","type":"String","req":false,"is_multi":false},{"method_name":"accountingCategory2","name":"accountingCategory2","type":"String","req":false,"is_multi":false},{"method_name":"invoiceNotes","name":"invoiceNotes","type":"String","req":false,"is_multi":false},{"method_name":"taxProfileId","name":"taxProfileId","type":"String","req":false,"is_multi":false},{"method_name":"unit","name":"unit","type":"String","req":false,"is_multi":false},{"method_name":"currencyCode","name":"currencyCode","type":"String","req":false,"is_multi":false}]}],"class_name":"com.chargebee.v2.models.Addon"}
+{
+    "actions": [
+        {
+            "action_name": "Addon.copy",
+            "arguments": [
+                {
+                    "is_multi": false,
+                    "method_name": "id",
+                    "name": "id",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "fromSite",
+                    "name": "fromSite",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "idAtFromSite",
+                    "name": "idAtFromSite",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "forSiteMerging",
+                    "name": "forSiteMerging",
+                    "req": false,
+                    "type": "Boolean"
+                }
+            ],
+            "static_method_name": "copy"
+        },
+        {
+            "action_name": "Addon.update",
+            "arguments": [
+                {
+                    "is_multi": false,
+                    "method_name": "name",
+                    "name": "name",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "type",
+                    "name": "type",
+                    "possible_values": [
+                        "ON_OFF",
+                        "QUANTITY",
+                        "_UNKNOWN"
+                    ],
+                    "req": false,
+                    "type": "Enum"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "price",
+                    "name": "price",
+                    "req": false,
+                    "type": "Integer"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "period",
+                    "name": "period",
+                    "req": false,
+                    "type": "Integer"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "taxCode",
+                    "name": "taxCode",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "description",
+                    "name": "description",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "invoiceName",
+                    "name": "invoiceName",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "periodUnit",
+                    "name": "periodUnit",
+                    "possible_values": [
+                        "WEEK",
+                        "MONTH",
+                        "YEAR",
+                        "NOT_APPLICABLE",
+                        "_UNKNOWN"
+                    ],
+                    "req": false,
+                    "type": "Enum"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "enabledInPortal",
+                    "name": "enabledInPortal",
+                    "req": false,
+                    "type": "Boolean"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "sku",
+                    "name": "sku",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "accountingCode",
+                    "name": "accountingCode",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "accountingCategory1",
+                    "name": "accountingCategory1",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "accountingCategory2",
+                    "name": "accountingCategory2",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "invoiceNotes",
+                    "name": "invoiceNotes",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "taxable",
+                    "name": "taxable",
+                    "req": false,
+                    "type": "Boolean"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "taxProfileId",
+                    "name": "taxProfileId",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "metaData",
+                    "name": "metaData",
+                    "req": false,
+                    "type": "JSONObject"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "chargeType",
+                    "name": "chargeType",
+                    "possible_values": [
+                        "RECURRING",
+                        "NON_RECURRING",
+                        "_UNKNOWN"
+                    ],
+                    "req": false,
+                    "type": "Enum"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "unit",
+                    "name": "unit",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "currencyCode",
+                    "name": "currencyCode",
+                    "req": false,
+                    "type": "String"
+                }
+            ],
+            "static_method_name": "update",
+            "static_param_name": "update",
+            "type": "String"
+        },
+        {
+            "action_name": "Addon.create",
+            "arguments": [
+                {
+                    "is_multi": false,
+                    "method_name": "name",
+                    "name": "name",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "type",
+                    "name": "type",
+                    "possible_values": [
+                        "ON_OFF",
+                        "QUANTITY",
+                        "_UNKNOWN"
+                    ],
+                    "req": false,
+                    "type": "Enum"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "status",
+                    "name": "status",
+                    "possible_values": [
+                        "ACTIVE",
+                        "ARCHIVED",
+                        "DELETED",
+                        "_UNKNOWN"
+                    ],
+                    "req": false,
+                    "type": "Enum"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "id",
+                    "name": "id",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "price",
+                    "name": "price",
+                    "req": false,
+                    "type": "Integer"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "period",
+                    "name": "period",
+                    "req": false,
+                    "type": "Integer"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "taxCode",
+                    "name": "taxCode",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "description",
+                    "name": "description",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "invoiceName",
+                    "name": "invoiceName",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "periodUnit",
+                    "name": "periodUnit",
+                    "possible_values": [
+                        "WEEK",
+                        "MONTH",
+                        "YEAR",
+                        "NOT_APPLICABLE",
+                        "_UNKNOWN"
+                    ],
+                    "req": false,
+                    "type": "Enum"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "enabledInPortal",
+                    "name": "enabledInPortal",
+                    "req": false,
+                    "type": "Boolean"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "sku",
+                    "name": "sku",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "accountingCode",
+                    "name": "accountingCode",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "accountingCategory1",
+                    "name": "accountingCategory1",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "accountingCategory2",
+                    "name": "accountingCategory2",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "invoiceNotes",
+                    "name": "invoiceNotes",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "taxable",
+                    "name": "taxable",
+                    "req": false,
+                    "type": "Boolean"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "taxProfileId",
+                    "name": "taxProfileId",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "metaData",
+                    "name": "metaData",
+                    "req": false,
+                    "type": "JSONObject"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "chargeType",
+                    "name": "chargeType",
+                    "possible_values": [
+                        "RECURRING",
+                        "NON_RECURRING",
+                        "_UNKNOWN"
+                    ],
+                    "req": false,
+                    "type": "Enum"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "unit",
+                    "name": "unit",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "currencyCode",
+                    "name": "currencyCode",
+                    "req": false,
+                    "type": "String"
+                }
+            ],
+            "static_method_name": "create"
+        }
+    ],
+    "class_name": "com.chargebee.v2.models.Addon"
+}

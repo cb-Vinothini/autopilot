@@ -1,1 +1,1564 @@
-{"actions":[{"static_method_name":"retrieve","action_name":"Customer.retrieve","arguments":[{"method_name":"billingDate","name":"billingDate","type":"Integer","req":false,"is_multi":false},{"method_name":"billingDateMode","possible_values":["USING_DEFAULTS","MANUALLY_SET","_UNKNOWN"],"name":"billingDateMode","type":"Enum","req":false,"is_multi":false},{"method_name":"billingDayOfWeek","possible_values":["SUNDAY","MONDAY","TUESDAY","WEDNESDAY","THURSDAY","FRIDAY","SATURDAY","_UNKNOWN"],"name":"billingDayOfWeek","type":"Enum","req":false,"is_multi":false},{"method_name":"billingDayOfWeekMode","possible_values":["USING_DEFAULTS","MANUALLY_SET","_UNKNOWN"],"name":"billingDayOfWeekMode","type":"Enum","req":false,"is_multi":false}]},{"static_method_name":"retrieve","action_name":"Customer.retrieve","arguments":[{"method_name":"idAtFromSite","name":"idAtFromSite","type":"String","req":false,"is_multi":false},{"method_name":"fromSite","name":"fromSite","type":"String","req":false,"is_multi":false}]},{"static_method_name":"retrieve","action_name":"Customer.retrieve","arguments":[{"method_name":"deletePaymentMethod","name":"deletePaymentMethod","type":"Boolean","req":false,"is_multi":false}]},{"static_method_name":"retrieve","action_name":"Customer.retrieve","arguments":[{"method_name":"replacePrimaryPaymentSource","name":"replacePrimaryPaymentSource","type":"Boolean","req":false,"is_multi":false},{"method_name":"cardCvv","name":"cardCvv","type":"String","req":false,"is_multi":false},{"method_name":"cardBillingCountry","name":"cardBillingCountry","type":"String","req":false,"is_multi":false},{"method_name":"cardBillingZip","name":"cardBillingZip","type":"String","req":false,"is_multi":false},{"method_name":"cardBillingAddr2","name":"cardBillingAddr2","type":"String","req":false,"is_multi":false},{"method_name":"cardExpiryMonth","name":"cardExpiryMonth","type":"Integer","req":false,"is_multi":false},{"method_name":"cardExpiryYear","name":"cardExpiryYear","type":"Integer","req":false,"is_multi":false},{"method_name":"paymentMethodReferenceId","name":"paymentMethodReferenceId","type":"String","req":false,"is_multi":false},{"method_name":"paymentMethodType","possible_values":["CARD","PAYPAL_EXPRESS_CHECKOUT","AMAZON_PAYMENTS","DIRECT_DEBIT","GENERIC","ALIPAY","UNIONPAY","APPLE_PAY","_UNKNOWN"],"name":"paymentMethodType","type":"Enum","req":false,"is_multi":false},{"method_name":"retainPaymentSource","name":"retainPaymentSource","type":"Boolean","req":false,"is_multi":false},{"method_name":"cardBillingState","name":"cardBillingState","type":"String","req":false,"is_multi":false},{"method_name":"cardBillingAddr1","name":"cardBillingAddr1","type":"String","req":false,"is_multi":false},{"method_name":"cardNumber","name":"cardNumber","type":"String","req":false,"is_multi":false},{"method_name":"cardLastName","name":"cardLastName","type":"String","req":false,"is_multi":false},{"method_name":"cardFirstName","name":"cardFirstName","type":"String","req":false,"is_multi":false},{"method_name":"cardGatewayAccountId","name":"cardGatewayAccountId","type":"String","req":false,"is_multi":false},{"method_name":"paymentMethodTmpToken","name":"paymentMethodTmpToken","type":"String","req":false,"is_multi":false},{"method_name":"cardBillingStateCode","name":"cardBillingStateCode","type":"String","req":false,"is_multi":false},{"method_name":"cardBillingCity","name":"cardBillingCity","type":"String","req":false,"is_multi":false},{"method_name":"paymentMethodGatewayAccountId","name":"paymentMethodGatewayAccountId","type":"String","req":false,"is_multi":false},{"method_name":"invoiceAllocationInvoiceId","name":"invoiceAllocationInvoiceId","type":"String","req":false,"is_multi":true},{"method_name":"invoiceAllocationAllocationAmount","name":"invoiceAllocationAllocationAmount","type":"Integer","req":false,"is_multi":true},{"method_name":"amount","name":"amount","type":"Integer","req":false,"is_multi":false},{"method_name":"paymentSourceId","name":"paymentSourceId","type":"String","req":false,"is_multi":false}]},{"static_method_name":"retrieve","action_name":"Customer.retrieve","arguments":[{"method_name":"transactionCurrencyCode","name":"transactionCurrencyCode","type":"String","req":false,"is_multi":false},{"method_name":"transactionAmount","name":"transactionAmount","type":"Integer","req":false,"is_multi":false},{"method_name":"transactionPaymentMethod","possible_values":["CARD","CASH","CHECK","CHARGEBACK","BANK_TRANSFER","AMAZON_PAYMENTS","PAYPAL_EXPRESS_CHECKOUT","DIRECT_DEBIT","ALIPAY","UNIONPAY","APPLE_PAY","OTHER","_UNKNOWN"],"name":"transactionPaymentMethod","type":"Enum","req":false,"is_multi":false},{"method_name":"transactionReferenceNumber","name":"transactionReferenceNumber","type":"String","req":false,"is_multi":false},{"method_name":"transactionDate","name":"transactionDate","type":"Timestamp","req":false,"is_multi":false},{"method_name":"comment","name":"comment","type":"String","req":false,"is_multi":false}]},{"static_method_name":"retrieve","action_name":"Customer.retrieve","arguments":[{"method_name":"creditType","possible_values":["LOYALTY_CREDITS","REFERRAL_REWARDS","GENERAL","_UNKNOWN"],"name":"creditType","type":"Enum","req":false,"is_multi":false},{"method_name":"amount","name":"amount","type":"Integer","req":false,"is_multi":false},{"method_name":"description","name":"description","type":"String","req":false,"is_multi":false},{"method_name":"reference","name":"reference","type":"String","req":false,"is_multi":false},{"method_name":"currencyCode","name":"currencyCode","type":"String","req":false,"is_multi":false}]},{"static_method_name":"retrieve","action_name":"Customer.retrieve","arguments":[{"method_name":"creditType","possible_values":["LOYALTY_CREDITS","REFERRAL_REWARDS","GENERAL","_UNKNOWN"],"name":"creditType","type":"Enum","req":false,"is_multi":false},{"method_name":"amount","name":"amount","type":"Integer","req":false,"is_multi":false},{"method_name":"description","name":"description","type":"String","req":false,"is_multi":false},{"method_name":"reference","name":"reference","type":"String","req":false,"is_multi":false},{"method_name":"currencyCode","name":"currencyCode","type":"String","req":false,"is_multi":false}]},{"static_method_name":"retrieve","action_name":"Customer.retrieve","arguments":[{"method_name":"creditType","possible_values":["LOYALTY_CREDITS","REFERRAL_REWARDS","GENERAL","_UNKNOWN"],"name":"creditType","type":"Enum","req":false,"is_multi":false},{"method_name":"amount","name":"amount","type":"Integer","req":false,"is_multi":false},{"method_name":"description","name":"description","type":"String","req":false,"is_multi":false},{"method_name":"reference","name":"reference","type":"String","req":false,"is_multi":false},{"method_name":"currencyCode","name":"currencyCode","type":"String","req":false,"is_multi":false}]},{"static_method_name":"retrieve","action_name":"Customer.retrieve","arguments":[{"method_name":"contactId","name":"contactId","type":"String","req":false,"is_multi":false}]},{"static_method_name":"retrieve","action_name":"Customer.retrieve","arguments":[{"method_name":"contactEnabled","name":"contactEnabled","type":"Boolean","req":false,"is_multi":false},{"method_name":"contactEmail","name":"contactEmail","type":"String","req":false,"is_multi":false},{"method_name":"contactLastName","name":"contactLastName","type":"String","req":false,"is_multi":false},{"method_name":"contactPhone","name":"contactPhone","type":"String","req":false,"is_multi":false},{"method_name":"contactFirstName","name":"contactFirstName","type":"String","req":false,"is_multi":false},{"method_name":"contactId","name":"contactId","type":"String","req":false,"is_multi":false},{"method_name":"contactSendAccountEmail","name":"contactSendAccountEmail","type":"Boolean","req":false,"is_multi":false},{"method_name":"contactSendBillingEmail","name":"contactSendBillingEmail","type":"Boolean","req":false,"is_multi":false},{"method_name":"contactLabel","name":"contactLabel","type":"String","req":false,"is_multi":false}]},{"static_method_name":"retrieve","action_name":"Customer.retrieve","arguments":[{"method_name":"contactEnabled","name":"contactEnabled","type":"Boolean","req":false,"is_multi":false},{"method_name":"contactEmail","name":"contactEmail","type":"String","req":false,"is_multi":false},{"method_name":"contactLastName","name":"contactLastName","type":"String","req":false,"is_multi":false},{"method_name":"contactPhone","name":"contactPhone","type":"String","req":false,"is_multi":false},{"method_name":"contactFirstName","name":"contactFirstName","type":"String","req":false,"is_multi":false},{"method_name":"contactId","name":"contactId","type":"String","req":false,"is_multi":false},{"method_name":"contactSendAccountEmail","name":"contactSendAccountEmail","type":"Boolean","req":false,"is_multi":false},{"method_name":"contactSendBillingEmail","name":"contactSendBillingEmail","type":"Boolean","req":false,"is_multi":false},{"method_name":"contactLabel","name":"contactLabel","type":"String","req":false,"is_multi":false}]},{"static_method_name":"retrieve","action_name":"Customer.retrieve","arguments":[{"method_name":"role","possible_values":["PRIMARY","BACKUP","NONE","_UNKNOWN"],"name":"role","type":"Enum","req":false,"is_multi":false},{"method_name":"paymentSourceId","name":"paymentSourceId","type":"String","req":false,"is_multi":false}]},{"static_method_name":"retrieve","action_name":"Customer.retrieve","arguments":[{"method_name":"billingAddressFirstName","name":"billingAddressFirstName","type":"String","req":false,"is_multi":false},{"method_name":"billingAddressLastName","name":"billingAddressLastName","type":"String","req":false,"is_multi":false},{"method_name":"billingAddressEmail","name":"billingAddressEmail","type":"String","req":false,"is_multi":false},{"method_name":"billingAddressCompany","name":"billingAddressCompany","type":"String","req":false,"is_multi":false},{"method_name":"billingAddressPhone","name":"billingAddressPhone","type":"String","req":false,"is_multi":false},{"method_name":"billingAddressLine1","name":"billingAddressLine1","type":"String","req":false,"is_multi":false},{"method_name":"billingAddressLine2","name":"billingAddressLine2","type":"String","req":false,"is_multi":false},{"method_name":"billingAddressLine3","name":"billingAddressLine3","type":"String","req":false,"is_multi":false},{"method_name":"billingAddressCity","name":"billingAddressCity","type":"String","req":false,"is_multi":false},{"method_name":"billingAddressStateCode","name":"billingAddressStateCode","type":"String","req":false,"is_multi":false},{"method_name":"billingAddressState","name":"billingAddressState","type":"String","req":false,"is_multi":false},{"method_name":"billingAddressZip","name":"billingAddressZip","type":"String","req":false,"is_multi":false},{"method_name":"billingAddressCountry","name":"billingAddressCountry","type":"String","req":false,"is_multi":false},{"method_name":"billingAddressValidationStatus","possible_values":["NOT_VALIDATED","VALID","PARTIALLY_VALID","INVALID","_UNKNOWN"],"name":"billingAddressValidationStatus","type":"Enum","req":false,"is_multi":false},{"method_name":"vatNumber","name":"vatNumber","type":"String","req":false,"is_multi":false},{"method_name":"registeredForGst","name":"registeredForGst","type":"Boolean","req":false,"is_multi":false}]},{"static_method_name":"retrieve","action_name":"Customer.retrieve","arguments":[{"method_name":"paymentMethodReferenceId","name":"paymentMethodReferenceId","type":"String","req":false,"is_multi":false},{"method_name":"paymentMethodType","possible_values":["CARD","PAYPAL_EXPRESS_CHECKOUT","AMAZON_PAYMENTS","DIRECT_DEBIT","GENERIC","ALIPAY","UNIONPAY","APPLE_PAY","_UNKNOWN"],"name":"paymentMethodType","type":"Enum","req":false,"is_multi":false},{"method_name":"paymentMethodTmpToken","name":"paymentMethodTmpToken","type":"String","req":false,"is_multi":false},{"method_name":"paymentMethodGatewayAccountId","name":"paymentMethodGatewayAccountId","type":"String","req":false,"is_multi":false},{"method_name":"paymentMethodGateway","possible_values":["CHARGEBEE","STRIPE","WEPAY","BRAINTREE","AUTHORIZE_NET","PAYPAL_PRO","PIN","EWAY","EWAY_RAPID","WORLDPAY","BALANCED_PAYMENTS","BEANSTREAM","BLUEPAY","ELAVON","FIRST_DATA_GLOBAL","HDFC","MIGS","NMI","OGONE","PAYMILL","PAYPAL_PAYFLOW_PRO","SAGE_PAY","TCO","WIRECARD","AMAZON_PAYMENTS","PAYPAL_EXPRESS_CHECKOUT","GOCARDLESS","ADYEN","NOT_APPLICABLE","_UNKNOWN"],"name":"paymentMethodGateway","type":"Enum","req":false,"is_multi":false}]},{"static_method_name":"retrieve","action_name":"Customer.retrieve","arguments":[{"method_name":"locale","name":"locale","type":"String","req":false,"is_multi":false},{"method_name":"lastName","name":"lastName","type":"String","req":false,"is_multi":false},{"method_name":"email","name":"email","type":"String","req":false,"is_multi":false},{"method_name":"firstName","name":"firstName","type":"String","req":false,"is_multi":false},{"method_name":"phone","name":"phone","type":"String","req":false,"is_multi":false},{"method_name":"company","name":"company","type":"String","req":false,"is_multi":false},{"method_name":"autoCollection","possible_values":["ON","OFF","_UNKNOWN"],"name":"autoCollection","type":"Enum","req":false,"is_multi":false},{"method_name":"netTermDays","name":"netTermDays","type":"Integer","req":false,"is_multi":false},{"method_name":"allowDirectDebit","name":"allowDirectDebit","type":"Boolean","req":false,"is_multi":false},{"method_name":"taxability","possible_values":["TAXABLE","EXEMPT","_UNKNOWN"],"name":"taxability","type":"Enum","req":false,"is_multi":false},{"method_name":"entityCode","possible_values":["A","B","C","D","E","F","G","H","I","J","K","L","N","P","Q","R","MED1","MED2","_UNKNOWN"],"name":"entityCode","type":"Enum","req":false,"is_multi":false},{"method_name":"exemptNumber","name":"exemptNumber","type":"String","req":false,"is_multi":false},{"method_name":"consolidatedInvoicing","name":"consolidatedInvoicing","type":"Boolean","req":false,"is_multi":false},{"method_name":"fraudFlag","possible_values":["SAFE","SUSPICIOUS","FRAUDULENT","_UNKNOWN"],"name":"fraudFlag","type":"Enum","req":false,"is_multi":false},{"method_name":"preferredCurrencyCode","name":"preferredCurrencyCode","type":"String","req":false,"is_multi":false},{"method_name":"metaData","name":"metaData","type":"JSONObject","req":false,"is_multi":false},{"method_name":"invoiceNotes","name":"invoiceNotes","type":"String","req":false,"is_multi":false}]},{"static_method_name":"retrieve","action_name":"Customer.retrieve","arguments":[{"method_name":"locale","name":"locale","type":"String","req":false,"is_multi":false},{"method_name":"id","name":"id","type":"String","req":false,"is_multi":false},{"method_name":"cardCvv","name":"cardCvv","type":"String","req":false,"is_multi":false},{"method_name":"cardBillingCountry","name":"cardBillingCountry","type":"String","req":false,"is_multi":false},{"method_name":"cardBillingZip","name":"cardBillingZip","type":"String","req":false,"is_multi":false},{"method_name":"cardBillingAddr2","name":"cardBillingAddr2","type":"String","req":false,"is_multi":false},{"method_name":"cardExpiryMonth","name":"cardExpiryMonth","type":"Integer","req":false,"is_multi":false},{"method_name":"cardExpiryYear","name":"cardExpiryYear","type":"Integer","req":false,"is_multi":false},{"method_name":"paymentMethodReferenceId","name":"paymentMethodReferenceId","type":"String","req":false,"is_multi":false},{"method_name":"paymentMethodType","possible_values":["CARD","PAYPAL_EXPRESS_CHECKOUT","AMAZON_PAYMENTS","DIRECT_DEBIT","GENERIC","ALIPAY","UNIONPAY","APPLE_PAY","_UNKNOWN"],"name":"paymentMethodType","type":"Enum","req":false,"is_multi":false},{"method_name":"cardBillingState","name":"cardBillingState","type":"String","req":false,"is_multi":false},{"method_name":"cardBillingAddr1","name":"cardBillingAddr1","type":"String","req":false,"is_multi":false},{"method_name":"billingAddressFirstName","name":"billingAddressFirstName","type":"String","req":false,"is_multi":false},{"method_name":"billingAddressLastName","name":"billingAddressLastName","type":"String","req":false,"is_multi":false},{"method_name":"billingAddressEmail","name":"billingAddressEmail","type":"String","req":false,"is_multi":false},{"method_name":"billingAddressCompany","name":"billingAddressCompany","type":"String","req":false,"is_multi":false},{"method_name":"billingAddressPhone","name":"billingAddressPhone","type":"String","req":false,"is_multi":false},{"method_name":"billingAddressLine1","name":"billingAddressLine1","type":"String","req":false,"is_multi":false},{"method_name":"billingAddressLine2","name":"billingAddressLine2","type":"String","req":false,"is_multi":false},{"method_name":"billingAddressLine3","name":"billingAddressLine3","type":"String","req":false,"is_multi":false},{"method_name":"billingAddressCity","name":"billingAddressCity","type":"String","req":false,"is_multi":false},{"method_name":"billingAddressStateCode","name":"billingAddressStateCode","type":"String","req":false,"is_multi":false},{"method_name":"billingAddressState","name":"billingAddressState","type":"String","req":false,"is_multi":false},{"method_name":"billingAddressZip","name":"billingAddressZip","type":"String","req":false,"is_multi":false},{"method_name":"billingAddressCountry","name":"billingAddressCountry","type":"String","req":false,"is_multi":false},{"method_name":"billingAddressValidationStatus","possible_values":["NOT_VALIDATED","VALID","PARTIALLY_VALID","INVALID","_UNKNOWN"],"name":"billingAddressValidationStatus","type":"Enum","req":false,"is_multi":false},{"method_name":"cardNumber","name":"cardNumber","type":"String","req":false,"is_multi":false},{"method_name":"cardLastName","name":"cardLastName","type":"String","req":false,"is_multi":false},{"method_name":"cardFirstName","name":"cardFirstName","type":"String","req":false,"is_multi":false},{"method_name":"cardGatewayAccountId","name":"cardGatewayAccountId","type":"String","req":false,"is_multi":false},{"method_name":"paymentMethodTmpToken","name":"paymentMethodTmpToken","type":"String","req":false,"is_multi":false},{"method_name":"cardBillingStateCode","name":"cardBillingStateCode","type":"String","req":false,"is_multi":false},{"method_name":"cardBillingCity","name":"cardBillingCity","type":"String","req":false,"is_multi":false},{"method_name":"paymentMethodGatewayAccountId","name":"paymentMethodGatewayAccountId","type":"String","req":false,"is_multi":false},{"method_name":"lastName","name":"lastName","type":"String","req":false,"is_multi":false},{"method_name":"email","name":"email","type":"String","req":false,"is_multi":false},{"method_name":"vatNumber","name":"vatNumber","type":"String","req":false,"is_multi":false},{"method_name":"firstName","name":"firstName","type":"String","req":false,"is_multi":false},{"method_name":"phone","name":"phone","type":"String","req":false,"is_multi":false},{"method_name":"company","name":"company","type":"String","req":false,"is_multi":false},{"method_name":"autoCollection","possible_values":["ON","OFF","_UNKNOWN"],"name":"autoCollection","type":"Enum","req":false,"is_multi":false},{"method_name":"netTermDays","name":"netTermDays","type":"Integer","req":false,"is_multi":false},{"method_name":"allowDirectDebit","name":"allowDirectDebit","type":"Boolean","req":false,"is_multi":false},{"method_name":"createdFromIp","name":"createdFromIp","type":"String","req":false,"is_multi":false},{"method_name":"taxability","possible_values":["TAXABLE","EXEMPT","_UNKNOWN"],"name":"taxability","type":"Enum","req":false,"is_multi":false},{"method_name":"entityCode","possible_values":["A","B","C","D","E","F","G","H","I","J","K","L","N","P","Q","R","MED1","MED2","_UNKNOWN"],"name":"entityCode","type":"Enum","req":false,"is_multi":false},{"method_name":"exemptNumber","name":"exemptNumber","type":"String","req":false,"is_multi":false},{"method_name":"consolidatedInvoicing","name":"consolidatedInvoicing","type":"Boolean","req":false,"is_multi":false},{"method_name":"preferredCurrencyCode","name":"preferredCurrencyCode","type":"String","req":false,"is_multi":false},{"method_name":"registeredForGst","name":"registeredForGst","type":"Boolean","req":false,"is_multi":false},{"method_name":"paymentMethodGateway","possible_values":["CHARGEBEE","STRIPE","WEPAY","BRAINTREE","AUTHORIZE_NET","PAYPAL_PRO","PIN","EWAY","EWAY_RAPID","WORLDPAY","BALANCED_PAYMENTS","BEANSTREAM","BLUEPAY","ELAVON","FIRST_DATA_GLOBAL","HDFC","MIGS","NMI","OGONE","PAYMILL","PAYPAL_PAYFLOW_PRO","SAGE_PAY","TCO","WIRECARD","AMAZON_PAYMENTS","PAYPAL_EXPRESS_CHECKOUT","GOCARDLESS","ADYEN","NOT_APPLICABLE","_UNKNOWN"],"name":"paymentMethodGateway","type":"Enum","req":false,"is_multi":false},{"method_name":"cardIpAddress","name":"cardIpAddress","type":"String","req":false,"is_multi":false},{"method_name":"cardGateway","possible_values":["CHARGEBEE","STRIPE","WEPAY","BRAINTREE","AUTHORIZE_NET","PAYPAL_PRO","PIN","EWAY","EWAY_RAPID","WORLDPAY","BALANCED_PAYMENTS","BEANSTREAM","BLUEPAY","ELAVON","FIRST_DATA_GLOBAL","HDFC","MIGS","NMI","OGONE","PAYMILL","PAYPAL_PAYFLOW_PRO","SAGE_PAY","TCO","WIRECARD","AMAZON_PAYMENTS","PAYPAL_EXPRESS_CHECKOUT","GOCARDLESS","ADYEN","NOT_APPLICABLE","_UNKNOWN"],"name":"cardGateway","type":"Enum","req":false,"is_multi":false},{"method_name":"metaData","name":"metaData","type":"JSONObject","req":false,"is_multi":false},{"method_name":"invoiceNotes","name":"invoiceNotes","type":"String","req":false,"is_multi":false},{"method_name":"cardTmpToken","name":"cardTmpToken","type":"String","req":false,"is_multi":false}]}],"class_name":"com.chargebee.v2.models.Customer"}
+{
+    "actions": [
+        {
+            "action_name": "Customer.changeBillingDate",
+            "arguments": [
+                {
+                    "is_multi": false,
+                    "method_name": "billingDate",
+                    "name": "billingDate",
+                    "req": false,
+                    "type": "Integer"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "billingDateMode",
+                    "name": "billingDateMode",
+                    "possible_values": [
+                        "USING_DEFAULTS",
+                        "MANUALLY_SET",
+                        "_UNKNOWN"
+                    ],
+                    "req": false,
+                    "type": "Enum"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "billingDayOfWeek",
+                    "name": "billingDayOfWeek",
+                    "possible_values": [
+                        "SUNDAY",
+                        "MONDAY",
+                        "TUESDAY",
+                        "WEDNESDAY",
+                        "THURSDAY",
+                        "FRIDAY",
+                        "SATURDAY",
+                        "_UNKNOWN"
+                    ],
+                    "req": false,
+                    "type": "Enum"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "billingDayOfWeekMode",
+                    "name": "billingDayOfWeekMode",
+                    "possible_values": [
+                        "USING_DEFAULTS",
+                        "MANUALLY_SET",
+                        "_UNKNOWN"
+                    ],
+                    "req": false,
+                    "type": "Enum"
+                }
+            ],
+            "static_method_name": "changeBillingDate",
+            "static_param_name": "changeBillingDate",
+            "type": "String"
+        },
+        {
+            "action_name": "Customer.move",
+            "arguments": [
+                {
+                    "is_multi": false,
+                    "method_name": "fromSite",
+                    "name": "fromSite",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "idAtFromSite",
+                    "name": "idAtFromSite",
+                    "req": false,
+                    "type": "String"
+                }
+            ],
+            "static_method_name": "move"
+        },
+        {
+            "action_name": "Customer.delete",
+            "arguments": [{
+                "is_multi": false,
+                "method_name": "deletePaymentMethod",
+                "name": "deletePaymentMethod",
+                "req": false,
+                "type": "Boolean"
+            }],
+            "static_method_name": "delete",
+            "static_param_name": "delete",
+            "type": "String"
+        },
+        {
+            "action_name": "Customer.collectPayment",
+            "arguments": [
+                {
+                    "is_multi": false,
+                    "method_name": "amount",
+                    "name": "amount",
+                    "req": false,
+                    "type": "Integer"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "paymentSourceId",
+                    "name": "paymentSourceId",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "cardCvv",
+                    "name": "cardCvv",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "replacePrimaryPaymentSource",
+                    "name": "replacePrimaryPaymentSource",
+                    "req": false,
+                    "type": "Boolean"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "retainPaymentSource",
+                    "name": "retainPaymentSource",
+                    "req": false,
+                    "type": "Boolean"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "paymentMethodType",
+                    "name": "paymentMethodType",
+                    "possible_values": [
+                        "CARD",
+                        "PAYPAL_EXPRESS_CHECKOUT",
+                        "AMAZON_PAYMENTS",
+                        "DIRECT_DEBIT",
+                        "GENERIC",
+                        "ALIPAY",
+                        "UNIONPAY",
+                        "APPLE_PAY",
+                        "_UNKNOWN"
+                    ],
+                    "req": false,
+                    "type": "Enum"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "paymentMethodGatewayAccountId",
+                    "name": "paymentMethodGatewayAccountId",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "paymentMethodReferenceId",
+                    "name": "paymentMethodReferenceId",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "paymentMethodTmpToken",
+                    "name": "paymentMethodTmpToken",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "cardGatewayAccountId",
+                    "name": "cardGatewayAccountId",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "cardFirstName",
+                    "name": "cardFirstName",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "cardLastName",
+                    "name": "cardLastName",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "cardNumber",
+                    "name": "cardNumber",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "cardExpiryMonth",
+                    "name": "cardExpiryMonth",
+                    "req": false,
+                    "type": "Integer"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "cardExpiryYear",
+                    "name": "cardExpiryYear",
+                    "req": false,
+                    "type": "Integer"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "cardBillingAddr1",
+                    "name": "cardBillingAddr1",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "cardBillingAddr2",
+                    "name": "cardBillingAddr2",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "cardBillingCity",
+                    "name": "cardBillingCity",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "cardBillingStateCode",
+                    "name": "cardBillingStateCode",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "cardBillingState",
+                    "name": "cardBillingState",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "cardBillingZip",
+                    "name": "cardBillingZip",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "cardBillingCountry",
+                    "name": "cardBillingCountry",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": true,
+                    "method_name": "invoiceAllocationInvoiceId",
+                    "name": "invoiceAllocationInvoiceId",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": true,
+                    "method_name": "invoiceAllocationAllocationAmount",
+                    "name": "invoiceAllocationAllocationAmount",
+                    "req": false,
+                    "type": "Integer"
+                }
+            ],
+            "static_method_name": "collectPayment",
+            "static_param_name": "collectPayment",
+            "type": "String"
+        },
+        {
+            "action_name": "Customer.recordExcessPayment",
+            "arguments": [
+                {
+                    "is_multi": false,
+                    "method_name": "transactionCurrencyCode",
+                    "name": "transactionCurrencyCode",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "transactionAmount",
+                    "name": "transactionAmount",
+                    "req": false,
+                    "type": "Integer"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "transactionPaymentMethod",
+                    "name": "transactionPaymentMethod",
+                    "possible_values": [
+                        "CARD",
+                        "CASH",
+                        "CHECK",
+                        "CHARGEBACK",
+                        "BANK_TRANSFER",
+                        "AMAZON_PAYMENTS",
+                        "PAYPAL_EXPRESS_CHECKOUT",
+                        "DIRECT_DEBIT",
+                        "ALIPAY",
+                        "UNIONPAY",
+                        "APPLE_PAY",
+                        "OTHER",
+                        "_UNKNOWN"
+                    ],
+                    "req": false,
+                    "type": "Enum"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "transactionReferenceNumber",
+                    "name": "transactionReferenceNumber",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "transactionDate",
+                    "name": "transactionDate",
+                    "req": false,
+                    "type": "Timestamp"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "comment",
+                    "name": "comment",
+                    "req": false,
+                    "type": "String"
+                }
+            ],
+            "static_method_name": "recordExcessPayment",
+            "static_param_name": "recordExcessPayment",
+            "type": "String"
+        },
+        {
+            "action_name": "Customer.setPromotionalCredits",
+            "arguments": [
+                {
+                    "is_multi": false,
+                    "method_name": "amount",
+                    "name": "amount",
+                    "req": false,
+                    "type": "Integer"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "description",
+                    "name": "description",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "creditType",
+                    "name": "creditType",
+                    "possible_values": [
+                        "LOYALTY_CREDITS",
+                        "REFERRAL_REWARDS",
+                        "GENERAL",
+                        "_UNKNOWN"
+                    ],
+                    "req": false,
+                    "type": "Enum"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "reference",
+                    "name": "reference",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "currencyCode",
+                    "name": "currencyCode",
+                    "req": false,
+                    "type": "String"
+                }
+            ],
+            "static_method_name": "setPromotionalCredits",
+            "static_param_name": "setPromotionalCredits",
+            "type": "String"
+        },
+        {
+            "action_name": "Customer.deductPromotionalCredits",
+            "arguments": [
+                {
+                    "is_multi": false,
+                    "method_name": "amount",
+                    "name": "amount",
+                    "req": false,
+                    "type": "Integer"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "description",
+                    "name": "description",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "creditType",
+                    "name": "creditType",
+                    "possible_values": [
+                        "LOYALTY_CREDITS",
+                        "REFERRAL_REWARDS",
+                        "GENERAL",
+                        "_UNKNOWN"
+                    ],
+                    "req": false,
+                    "type": "Enum"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "reference",
+                    "name": "reference",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "currencyCode",
+                    "name": "currencyCode",
+                    "req": false,
+                    "type": "String"
+                }
+            ],
+            "static_method_name": "deductPromotionalCredits",
+            "static_param_name": "deductPromotionalCredits",
+            "type": "String"
+        },
+        {
+            "action_name": "Customer.addPromotionalCredits",
+            "arguments": [
+                {
+                    "is_multi": false,
+                    "method_name": "amount",
+                    "name": "amount",
+                    "req": false,
+                    "type": "Integer"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "description",
+                    "name": "description",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "creditType",
+                    "name": "creditType",
+                    "possible_values": [
+                        "LOYALTY_CREDITS",
+                        "REFERRAL_REWARDS",
+                        "GENERAL",
+                        "_UNKNOWN"
+                    ],
+                    "req": false,
+                    "type": "Enum"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "reference",
+                    "name": "reference",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "currencyCode",
+                    "name": "currencyCode",
+                    "req": false,
+                    "type": "String"
+                }
+            ],
+            "static_method_name": "addPromotionalCredits",
+            "static_param_name": "addPromotionalCredits",
+            "type": "String"
+        },
+        {
+            "action_name": "Customer.deleteContact",
+            "arguments": [{
+                "is_multi": false,
+                "method_name": "contactId",
+                "name": "contactId",
+                "req": false,
+                "type": "String"
+            }],
+            "static_method_name": "deleteContact",
+            "static_param_name": "deleteContact",
+            "type": "String"
+        },
+        {
+            "action_name": "Customer.updateContact",
+            "arguments": [
+                {
+                    "is_multi": false,
+                    "method_name": "contactId",
+                    "name": "contactId",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "contactFirstName",
+                    "name": "contactFirstName",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "contactLastName",
+                    "name": "contactLastName",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "contactEmail",
+                    "name": "contactEmail",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "contactPhone",
+                    "name": "contactPhone",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "contactLabel",
+                    "name": "contactLabel",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "contactEnabled",
+                    "name": "contactEnabled",
+                    "req": false,
+                    "type": "Boolean"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "contactSendBillingEmail",
+                    "name": "contactSendBillingEmail",
+                    "req": false,
+                    "type": "Boolean"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "contactSendAccountEmail",
+                    "name": "contactSendAccountEmail",
+                    "req": false,
+                    "type": "Boolean"
+                }
+            ],
+            "static_method_name": "updateContact",
+            "static_param_name": "updateContact",
+            "type": "String"
+        },
+        {
+            "action_name": "Customer.addContact",
+            "arguments": [
+                {
+                    "is_multi": false,
+                    "method_name": "contactId",
+                    "name": "contactId",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "contactFirstName",
+                    "name": "contactFirstName",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "contactLastName",
+                    "name": "contactLastName",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "contactEmail",
+                    "name": "contactEmail",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "contactPhone",
+                    "name": "contactPhone",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "contactLabel",
+                    "name": "contactLabel",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "contactEnabled",
+                    "name": "contactEnabled",
+                    "req": false,
+                    "type": "Boolean"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "contactSendBillingEmail",
+                    "name": "contactSendBillingEmail",
+                    "req": false,
+                    "type": "Boolean"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "contactSendAccountEmail",
+                    "name": "contactSendAccountEmail",
+                    "req": false,
+                    "type": "Boolean"
+                }
+            ],
+            "static_method_name": "addContact",
+            "static_param_name": "addContact",
+            "type": "String"
+        },
+        {
+            "action_name": "Customer.assignPaymentRole",
+            "arguments": [
+                {
+                    "is_multi": false,
+                    "method_name": "paymentSourceId",
+                    "name": "paymentSourceId",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "role",
+                    "name": "role",
+                    "possible_values": [
+                        "PRIMARY",
+                        "BACKUP",
+                        "NONE",
+                        "_UNKNOWN"
+                    ],
+                    "req": false,
+                    "type": "Enum"
+                }
+            ],
+            "static_method_name": "assignPaymentRole",
+            "static_param_name": "assignPaymentRole",
+            "type": "String"
+        },
+        {
+            "action_name": "Customer.updateBillingInfo",
+            "arguments": [
+                {
+                    "is_multi": false,
+                    "method_name": "vatNumber",
+                    "name": "vatNumber",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "registeredForGst",
+                    "name": "registeredForGst",
+                    "req": false,
+                    "type": "Boolean"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "billingAddressFirstName",
+                    "name": "billingAddressFirstName",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "billingAddressLastName",
+                    "name": "billingAddressLastName",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "billingAddressEmail",
+                    "name": "billingAddressEmail",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "billingAddressCompany",
+                    "name": "billingAddressCompany",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "billingAddressPhone",
+                    "name": "billingAddressPhone",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "billingAddressLine1",
+                    "name": "billingAddressLine1",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "billingAddressLine2",
+                    "name": "billingAddressLine2",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "billingAddressLine3",
+                    "name": "billingAddressLine3",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "billingAddressCity",
+                    "name": "billingAddressCity",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "billingAddressStateCode",
+                    "name": "billingAddressStateCode",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "billingAddressState",
+                    "name": "billingAddressState",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "billingAddressZip",
+                    "name": "billingAddressZip",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "billingAddressCountry",
+                    "name": "billingAddressCountry",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "billingAddressValidationStatus",
+                    "name": "billingAddressValidationStatus",
+                    "possible_values": [
+                        "NOT_VALIDATED",
+                        "VALID",
+                        "PARTIALLY_VALID",
+                        "INVALID",
+                        "_UNKNOWN"
+                    ],
+                    "req": false,
+                    "type": "Enum"
+                }
+            ],
+            "static_method_name": "updateBillingInfo",
+            "static_param_name": "updateBillingInfo",
+            "type": "String"
+        },
+        {
+            "action_name": "Customer.updatePaymentMethod",
+            "arguments": [
+                {
+                    "is_multi": false,
+                    "method_name": "paymentMethodType",
+                    "name": "paymentMethodType",
+                    "possible_values": [
+                        "CARD",
+                        "PAYPAL_EXPRESS_CHECKOUT",
+                        "AMAZON_PAYMENTS",
+                        "DIRECT_DEBIT",
+                        "GENERIC",
+                        "ALIPAY",
+                        "UNIONPAY",
+                        "APPLE_PAY",
+                        "_UNKNOWN"
+                    ],
+                    "req": false,
+                    "type": "Enum"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "paymentMethodGatewayAccountId",
+                    "name": "paymentMethodGatewayAccountId",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "paymentMethodReferenceId",
+                    "name": "paymentMethodReferenceId",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "paymentMethodTmpToken",
+                    "name": "paymentMethodTmpToken",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "paymentMethodGateway",
+                    "name": "paymentMethodGateway",
+                    "possible_values": [
+                        "CHARGEBEE",
+                        "STRIPE",
+                        "WEPAY",
+                        "BRAINTREE",
+                        "AUTHORIZE_NET",
+                        "PAYPAL_PRO",
+                        "PIN",
+                        "EWAY",
+                        "EWAY_RAPID",
+                        "WORLDPAY",
+                        "BALANCED_PAYMENTS",
+                        "BEANSTREAM",
+                        "BLUEPAY",
+                        "ELAVON",
+                        "FIRST_DATA_GLOBAL",
+                        "HDFC",
+                        "MIGS",
+                        "NMI",
+                        "OGONE",
+                        "PAYMILL",
+                        "PAYPAL_PAYFLOW_PRO",
+                        "SAGE_PAY",
+                        "TCO",
+                        "WIRECARD",
+                        "AMAZON_PAYMENTS",
+                        "PAYPAL_EXPRESS_CHECKOUT",
+                        "GOCARDLESS",
+                        "ADYEN",
+                        "NOT_APPLICABLE",
+                        "_UNKNOWN"
+                    ],
+                    "req": false,
+                    "type": "Enum"
+                }
+            ],
+            "static_method_name": "updatePaymentMethod",
+            "static_param_name": "updatePaymentMethod",
+            "type": "String"
+        },
+        {
+            "action_name": "Customer.update",
+            "arguments": [
+                {
+                    "is_multi": false,
+                    "method_name": "locale",
+                    "name": "locale",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "invoiceNotes",
+                    "name": "invoiceNotes",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "metaData",
+                    "name": "metaData",
+                    "req": false,
+                    "type": "JSONObject"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "firstName",
+                    "name": "firstName",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "lastName",
+                    "name": "lastName",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "email",
+                    "name": "email",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "phone",
+                    "name": "phone",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "company",
+                    "name": "company",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "autoCollection",
+                    "name": "autoCollection",
+                    "possible_values": [
+                        "ON",
+                        "OFF",
+                        "_UNKNOWN"
+                    ],
+                    "req": false,
+                    "type": "Enum"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "netTermDays",
+                    "name": "netTermDays",
+                    "req": false,
+                    "type": "Integer"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "allowDirectDebit",
+                    "name": "allowDirectDebit",
+                    "req": false,
+                    "type": "Boolean"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "taxability",
+                    "name": "taxability",
+                    "possible_values": [
+                        "TAXABLE",
+                        "EXEMPT",
+                        "_UNKNOWN"
+                    ],
+                    "req": false,
+                    "type": "Enum"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "entityCode",
+                    "name": "entityCode",
+                    "possible_values": [
+                        "A",
+                        "B",
+                        "C",
+                        "D",
+                        "E",
+                        "F",
+                        "G",
+                        "H",
+                        "I",
+                        "J",
+                        "K",
+                        "L",
+                        "N",
+                        "P",
+                        "Q",
+                        "R",
+                        "MED1",
+                        "MED2",
+                        "_UNKNOWN"
+                    ],
+                    "req": false,
+                    "type": "Enum"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "exemptNumber",
+                    "name": "exemptNumber",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "consolidatedInvoicing",
+                    "name": "consolidatedInvoicing",
+                    "req": false,
+                    "type": "Boolean"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "fraudFlag",
+                    "name": "fraudFlag",
+                    "possible_values": [
+                        "SAFE",
+                        "SUSPICIOUS",
+                        "FRAUDULENT",
+                        "_UNKNOWN"
+                    ],
+                    "req": false,
+                    "type": "Enum"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "preferredCurrencyCode",
+                    "name": "preferredCurrencyCode",
+                    "req": false,
+                    "type": "String"
+                }
+            ],
+            "static_method_name": "update",
+            "static_param_name": "update",
+            "type": "String"
+        },
+        {
+            "action_name": "Customer.create",
+            "arguments": [
+                {
+                    "is_multi": false,
+                    "method_name": "locale",
+                    "name": "locale",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "id",
+                    "name": "id",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "invoiceNotes",
+                    "name": "invoiceNotes",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "metaData",
+                    "name": "metaData",
+                    "req": false,
+                    "type": "JSONObject"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "firstName",
+                    "name": "firstName",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "lastName",
+                    "name": "lastName",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "email",
+                    "name": "email",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "phone",
+                    "name": "phone",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "company",
+                    "name": "company",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "vatNumber",
+                    "name": "vatNumber",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "autoCollection",
+                    "name": "autoCollection",
+                    "possible_values": [
+                        "ON",
+                        "OFF",
+                        "_UNKNOWN"
+                    ],
+                    "req": false,
+                    "type": "Enum"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "netTermDays",
+                    "name": "netTermDays",
+                    "req": false,
+                    "type": "Integer"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "allowDirectDebit",
+                    "name": "allowDirectDebit",
+                    "req": false,
+                    "type": "Boolean"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "createdFromIp",
+                    "name": "createdFromIp",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "taxability",
+                    "name": "taxability",
+                    "possible_values": [
+                        "TAXABLE",
+                        "EXEMPT",
+                        "_UNKNOWN"
+                    ],
+                    "req": false,
+                    "type": "Enum"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "entityCode",
+                    "name": "entityCode",
+                    "possible_values": [
+                        "A",
+                        "B",
+                        "C",
+                        "D",
+                        "E",
+                        "F",
+                        "G",
+                        "H",
+                        "I",
+                        "J",
+                        "K",
+                        "L",
+                        "N",
+                        "P",
+                        "Q",
+                        "R",
+                        "MED1",
+                        "MED2",
+                        "_UNKNOWN"
+                    ],
+                    "req": false,
+                    "type": "Enum"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "exemptNumber",
+                    "name": "exemptNumber",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "consolidatedInvoicing",
+                    "name": "consolidatedInvoicing",
+                    "req": false,
+                    "type": "Boolean"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "preferredCurrencyCode",
+                    "name": "preferredCurrencyCode",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "registeredForGst",
+                    "name": "registeredForGst",
+                    "req": false,
+                    "type": "Boolean"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "billingAddressFirstName",
+                    "name": "billingAddressFirstName",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "billingAddressLastName",
+                    "name": "billingAddressLastName",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "billingAddressEmail",
+                    "name": "billingAddressEmail",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "billingAddressCompany",
+                    "name": "billingAddressCompany",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "billingAddressPhone",
+                    "name": "billingAddressPhone",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "billingAddressLine1",
+                    "name": "billingAddressLine1",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "billingAddressLine2",
+                    "name": "billingAddressLine2",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "billingAddressLine3",
+                    "name": "billingAddressLine3",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "billingAddressCity",
+                    "name": "billingAddressCity",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "billingAddressStateCode",
+                    "name": "billingAddressStateCode",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "billingAddressState",
+                    "name": "billingAddressState",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "billingAddressZip",
+                    "name": "billingAddressZip",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "billingAddressCountry",
+                    "name": "billingAddressCountry",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "billingAddressValidationStatus",
+                    "name": "billingAddressValidationStatus",
+                    "possible_values": [
+                        "NOT_VALIDATED",
+                        "VALID",
+                        "PARTIALLY_VALID",
+                        "INVALID",
+                        "_UNKNOWN"
+                    ],
+                    "req": false,
+                    "type": "Enum"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "cardCvv",
+                    "name": "cardCvv",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "paymentMethodType",
+                    "name": "paymentMethodType",
+                    "possible_values": [
+                        "CARD",
+                        "PAYPAL_EXPRESS_CHECKOUT",
+                        "AMAZON_PAYMENTS",
+                        "DIRECT_DEBIT",
+                        "GENERIC",
+                        "ALIPAY",
+                        "UNIONPAY",
+                        "APPLE_PAY",
+                        "_UNKNOWN"
+                    ],
+                    "req": false,
+                    "type": "Enum"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "paymentMethodGatewayAccountId",
+                    "name": "paymentMethodGatewayAccountId",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "paymentMethodReferenceId",
+                    "name": "paymentMethodReferenceId",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "paymentMethodTmpToken",
+                    "name": "paymentMethodTmpToken",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "cardGatewayAccountId",
+                    "name": "cardGatewayAccountId",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "cardFirstName",
+                    "name": "cardFirstName",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "cardLastName",
+                    "name": "cardLastName",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "cardNumber",
+                    "name": "cardNumber",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "cardExpiryMonth",
+                    "name": "cardExpiryMonth",
+                    "req": false,
+                    "type": "Integer"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "cardExpiryYear",
+                    "name": "cardExpiryYear",
+                    "req": false,
+                    "type": "Integer"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "cardBillingAddr1",
+                    "name": "cardBillingAddr1",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "cardBillingAddr2",
+                    "name": "cardBillingAddr2",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "cardBillingCity",
+                    "name": "cardBillingCity",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "cardBillingStateCode",
+                    "name": "cardBillingStateCode",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "cardBillingState",
+                    "name": "cardBillingState",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "cardBillingZip",
+                    "name": "cardBillingZip",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "cardBillingCountry",
+                    "name": "cardBillingCountry",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "paymentMethodGateway",
+                    "name": "paymentMethodGateway",
+                    "possible_values": [
+                        "CHARGEBEE",
+                        "STRIPE",
+                        "WEPAY",
+                        "BRAINTREE",
+                        "AUTHORIZE_NET",
+                        "PAYPAL_PRO",
+                        "PIN",
+                        "EWAY",
+                        "EWAY_RAPID",
+                        "WORLDPAY",
+                        "BALANCED_PAYMENTS",
+                        "BEANSTREAM",
+                        "BLUEPAY",
+                        "ELAVON",
+                        "FIRST_DATA_GLOBAL",
+                        "HDFC",
+                        "MIGS",
+                        "NMI",
+                        "OGONE",
+                        "PAYMILL",
+                        "PAYPAL_PAYFLOW_PRO",
+                        "SAGE_PAY",
+                        "TCO",
+                        "WIRECARD",
+                        "AMAZON_PAYMENTS",
+                        "PAYPAL_EXPRESS_CHECKOUT",
+                        "GOCARDLESS",
+                        "ADYEN",
+                        "NOT_APPLICABLE",
+                        "_UNKNOWN"
+                    ],
+                    "req": false,
+                    "type": "Enum"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "cardGateway",
+                    "name": "cardGateway",
+                    "possible_values": [
+                        "CHARGEBEE",
+                        "STRIPE",
+                        "WEPAY",
+                        "BRAINTREE",
+                        "AUTHORIZE_NET",
+                        "PAYPAL_PRO",
+                        "PIN",
+                        "EWAY",
+                        "EWAY_RAPID",
+                        "WORLDPAY",
+                        "BALANCED_PAYMENTS",
+                        "BEANSTREAM",
+                        "BLUEPAY",
+                        "ELAVON",
+                        "FIRST_DATA_GLOBAL",
+                        "HDFC",
+                        "MIGS",
+                        "NMI",
+                        "OGONE",
+                        "PAYMILL",
+                        "PAYPAL_PAYFLOW_PRO",
+                        "SAGE_PAY",
+                        "TCO",
+                        "WIRECARD",
+                        "AMAZON_PAYMENTS",
+                        "PAYPAL_EXPRESS_CHECKOUT",
+                        "GOCARDLESS",
+                        "ADYEN",
+                        "NOT_APPLICABLE",
+                        "_UNKNOWN"
+                    ],
+                    "req": false,
+                    "type": "Enum"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "cardTmpToken",
+                    "name": "cardTmpToken",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "cardIpAddress",
+                    "name": "cardIpAddress",
+                    "req": false,
+                    "type": "String"
+                }
+            ],
+            "static_method_name": "create"
+        }
+    ],
+    "class_name": "com.chargebee.v2.models.Customer"
+}

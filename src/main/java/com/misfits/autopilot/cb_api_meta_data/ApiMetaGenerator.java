@@ -2,8 +2,8 @@ package com.misfits.autopilot.cb_api_meta_data;
 
 import com.chargebee.models.enums.EntityType;
 import com.chargebee.org.json.JSONArray;
+import com.chargebee.org.json.JSONObject;
 import com.sun.deploy.util.StringUtils;
-import org.json.simple.JSONObject;
 import com.chargebee.v2.internal.Request;
 import org.reflections.Reflections;
 import org.reflections.scanners.ResourcesScanner;
@@ -16,6 +16,8 @@ import java.io.File;
 import java.io.FileWriter;
 import java.lang.reflect.Method;
 import java.util.*;
+
+import static com.misfits.autopilot.Constants.ACTION_META_FILE_DIR;
 
 public class ApiMetaGenerator {
 
@@ -30,7 +32,7 @@ public class ApiMetaGenerator {
 
     private static void createEntityMetaFile(String entityName, Class c) throws Exception {
 
-        File file = new File("./meta/" + entityName + ".json");
+        File file = new File(ACTION_META_FILE_DIR + entityName + ".json");
         JSONObject jsonObject = new JSONObject();
 
         JSONArray actions = new JSONArray();
@@ -54,7 +56,7 @@ public class ApiMetaGenerator {
         }
 
         try(FileWriter fw = new FileWriter(file)) {
-            fw.write(jsonObject.toJSONString());
+            fw.write(jsonObject.toString(4));
             fw.flush();
         }
     }
@@ -63,13 +65,32 @@ public class ApiMetaGenerator {
         JSONObject action = new JSONObject();
         Method[] method = entityInnerClass.getEnclosingClass().getDeclaredMethods();
         String actionName = "";
+        String staticParamName = null;
+        Class staticParamType = null;
+        ClassLoader.getSystemClassLoader().loadClass(entityInnerClass.getEnclosingClass().getName());
         for(Method me : method) {
-            if(me.getReturnType().isAssignableFrom(entityInnerClass)) {
+            if(entityInnerClass.isAssignableFrom(me.getReturnType())) {
                 actionName = me.getName();
+                if(me.getParameterCount() ==1 ){
+                    staticParamName = me.getParameters()[0].getName();
+                    staticParamType = me.getParameterTypes()[0];
+                }
+
             }
         }
         action.put("action_name", entityName + "." + actionName);
         action.put("static_method_name", actionName);
+        if(staticParamName != null){
+            action.put("static_param_name", actionName);
+            if (staticParamType.isEnum()) {
+                Method values = staticParamType.getDeclaredMethod("values");
+                Object obj = values.invoke(null);
+                action.put("type", "Enum");
+                action.put("possible_values", new JSONArray((Object[]) obj));
+            } else {
+                action.put("type", staticParamType.getSimpleName());
+            }
+        }
         JSONArray args = new JSONArray();
         Method[] methods = entityInnerClass.getDeclaredMethods();
         for (Method m : methods) {
