@@ -5,12 +5,16 @@ import com.chargebee.models.enums.EntityType;
 import com.chargebee.org.json.JSONArray;
 import com.chargebee.org.json.JSONException;
 import com.chargebee.org.json.JSONObject;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.google.common.base.Strings;
 import io.swagger.annotations.ApiModelProperty;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -20,6 +24,7 @@ public class Criteria {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @ApiModelProperty(hidden = true)
+    @JsonIgnore
     private Long id;
 
     @Column(name="parameter", nullable=false)
@@ -32,6 +37,7 @@ public class Criteria {
     private Operator operator;
 
     @Column(name="value", nullable=false)
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @ApiModelProperty(example = "US")
     private String value;
 
@@ -44,14 +50,17 @@ public class Criteria {
     private LocalDateTime modifiedAt;
 
     @Transient
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @ApiModelProperty(example = "US")
     public String from;
 
     @Transient
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @ApiModelProperty(example = "US")
     public String to;
 
     @Transient
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @ApiModelProperty(dataType = "list", example = "[\"US\", \"EU\"]")
     public List<String> list;
 
@@ -92,6 +101,22 @@ public class Criteria {
         value = val.toString();
     }
 
+    public void reConvert() throws JSONException {
+         JSONObject val = new JSONObject(value);
+         if(!Strings.isNullOrEmpty(val.optString("from")) && !Strings.isNullOrEmpty(val.optString("to"))) {
+            from = val.optString("from");
+            to = val.optString("to");
+         } else if(val.optJSONArray("list") != null) {
+             JSONArray array = val.optJSONArray("list");
+             list = new ArrayList<>();
+             for(int i =0; i<array.length();i++) {
+                list.add(array.getString(i));
+             }
+         } else {
+            value = val.optString("value");
+         }
+    }
+
     public Long getId() {
         return id;
     }
@@ -119,6 +144,7 @@ public class Criteria {
         containsOnly("contains_only", "contains only"),
         contains("contains", "contains"),
         notContains("not_contains", "does not contain"),
+        doesNotContains("does_not_contains", "does not contain"),
         startsWith("starts_with", "starts with");
 
         String name ;
