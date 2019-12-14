@@ -25,7 +25,7 @@ public class Action {
     private Long id;
 
     @Column(name="api_name", nullable = false)
-    @ApiModelProperty(example = "subscriptions.add_charge_at_term_end")
+    @ApiModelProperty(example = "subscription.add_charge_at_term_end")
     private String name;
 
     @Column(name="api_parameters", nullable = false)

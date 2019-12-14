@@ -67,24 +67,17 @@
                 },
                 {
                     "is_multi": false,
-                    "method_name": "invoiceName",
-                    "name": "invoiceName",
-                    "req": false,
-                    "type": "String"
-                },
-                {
-                    "is_multi": false,
-                    "method_name": "metaData",
-                    "name": "metaData",
-                    "req": false,
-                    "type": "JSONObject"
-                },
-                {
-                    "is_multi": false,
                     "method_name": "discountAmount",
                     "name": "discountAmount",
                     "req": false,
                     "type": "Integer"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "invoiceName",
+                    "name": "invoiceName",
+                    "req": false,
+                    "type": "String"
                 },
                 {
                     "is_multi": false,
@@ -95,17 +88,10 @@
                 },
                 {
                     "is_multi": false,
-                    "method_name": "applyOn",
-                    "name": "applyOn",
-                    "possible_values": [
-                        "INVOICE_AMOUNT",
-                        "SPECIFIED_ITEMS_TOTAL",
-                        "EACH_SPECIFIED_ITEM",
-                        "EACH_UNIT_OF_SPECIFIED_ITEMS",
-                        "_UNKNOWN"
-                    ],
+                    "method_name": "metaData",
+                    "name": "metaData",
                     "req": false,
-                    "type": "Enum"
+                    "type": "JSONObject"
                 },
                 {
                     "is_multi": false,
@@ -167,6 +153,20 @@
                     "name": "maxRedemptions",
                     "req": false,
                     "type": "Integer"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "applyOn",
+                    "name": "applyOn",
+                    "possible_values": [
+                        "INVOICE_AMOUNT",
+                        "SPECIFIED_ITEMS_TOTAL",
+                        "EACH_SPECIFIED_ITEM",
+                        "EACH_UNIT_OF_SPECIFIED_ITEMS",
+                        "_UNKNOWN"
+                    ],
+                    "req": false,
+                    "type": "Enum"
                 },
                 {
                     "is_multi": false,

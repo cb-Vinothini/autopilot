@@ -23,7 +23,7 @@ public class Criteria {
     private Long id;
 
     @Column(name="parameter", nullable=false)
-    @ApiModelProperty(example = "subscriptions.shipping_address.country")
+    @ApiModelProperty(example = "subscription.shipping_address.country")
     private String name;
 
     @Column(name="operator", nullable=false)
@@ -127,6 +127,13 @@ public class Criteria {
         Operator(String name,String displayName) {
             this.name = name;
             this.displayName = displayName;
+        }
+
+        public static boolean perform(Operator operator, JSONObject value, Object obj, Object prevObj) throws JSONException {
+            if(operator.equals(equals)){
+                return value.getString("value").equals((String)obj);
+            }
+            return false;
         }
     }
 

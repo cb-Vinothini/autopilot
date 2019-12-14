@@ -17,6 +17,8 @@ import java.io.FileWriter;
 import java.lang.reflect.Method;
 import java.util.*;
 
+import static com.misfits.autopilot.Constants.ACTION_META_FILE_DIR;
+
 public class ApiMetaGenerator {
 
 
@@ -30,7 +32,7 @@ public class ApiMetaGenerator {
 
     private static void createEntityMetaFile(String entityName, Class c) throws Exception {
 
-        File file = new File("./meta/" + entityName + ".json");
+        File file = new File(ACTION_META_FILE_DIR + entityName + ".json");
         JSONObject jsonObject = new JSONObject();
 
         JSONArray actions = new JSONArray();

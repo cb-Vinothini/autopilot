@@ -94,17 +94,17 @@
             "arguments": [
                 {
                     "is_multi": false,
-                    "method_name": "paymentSourceId",
-                    "name": "paymentSourceId",
-                    "req": false,
-                    "type": "String"
-                },
-                {
-                    "is_multi": false,
                     "method_name": "amount",
                     "name": "amount",
                     "req": false,
                     "type": "Integer"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "paymentSourceId",
+                    "name": "paymentSourceId",
+                    "req": false,
+                    "type": "String"
                 },
                 {
                     "is_multi": false,
@@ -281,6 +281,13 @@
             "arguments": [
                 {
                     "is_multi": false,
+                    "method_name": "transactionCurrencyCode",
+                    "name": "transactionCurrencyCode",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
                     "method_name": "transactionAmount",
                     "name": "transactionAmount",
                     "req": false,
@@ -310,13 +317,6 @@
                 },
                 {
                     "is_multi": false,
-                    "method_name": "transactionDate",
-                    "name": "transactionDate",
-                    "req": false,
-                    "type": "Timestamp"
-                },
-                {
-                    "is_multi": false,
                     "method_name": "transactionReferenceNumber",
                     "name": "transactionReferenceNumber",
                     "req": false,
@@ -324,10 +324,10 @@
                 },
                 {
                     "is_multi": false,
-                    "method_name": "transactionCurrencyCode",
-                    "name": "transactionCurrencyCode",
+                    "method_name": "transactionDate",
+                    "name": "transactionDate",
                     "req": false,
-                    "type": "String"
+                    "type": "Timestamp"
                 },
                 {
                     "is_multi": false,
@@ -676,6 +676,20 @@
             "arguments": [
                 {
                     "is_multi": false,
+                    "method_name": "vatNumber",
+                    "name": "vatNumber",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "registeredForGst",
+                    "name": "registeredForGst",
+                    "req": false,
+                    "type": "Boolean"
+                },
+                {
+                    "is_multi": false,
                     "method_name": "billingAddressFirstName",
                     "name": "billingAddressFirstName",
                     "req": false,
@@ -778,20 +792,6 @@
                     ],
                     "req": false,
                     "type": "Enum"
-                },
-                {
-                    "is_multi": false,
-                    "method_name": "vatNumber",
-                    "name": "vatNumber",
-                    "req": false,
-                    "type": "String"
-                },
-                {
-                    "is_multi": false,
-                    "method_name": "registeredForGst",
-                    "name": "registeredForGst",
-                    "req": false,
-                    "type": "Boolean"
                 }
             ],
             "static_method_name": "updateBillingInfo",
@@ -801,45 +801,6 @@
         {
             "action_name": "Customer.updatePaymentMethod",
             "arguments": [
-                {
-                    "is_multi": false,
-                    "method_name": "paymentMethodGateway",
-                    "name": "paymentMethodGateway",
-                    "possible_values": [
-                        "CHARGEBEE",
-                        "STRIPE",
-                        "WEPAY",
-                        "BRAINTREE",
-                        "AUTHORIZE_NET",
-                        "PAYPAL_PRO",
-                        "PIN",
-                        "EWAY",
-                        "EWAY_RAPID",
-                        "WORLDPAY",
-                        "BALANCED_PAYMENTS",
-                        "BEANSTREAM",
-                        "BLUEPAY",
-                        "ELAVON",
-                        "FIRST_DATA_GLOBAL",
-                        "HDFC",
-                        "MIGS",
-                        "NMI",
-                        "OGONE",
-                        "PAYMILL",
-                        "PAYPAL_PAYFLOW_PRO",
-                        "SAGE_PAY",
-                        "TCO",
-                        "WIRECARD",
-                        "AMAZON_PAYMENTS",
-                        "PAYPAL_EXPRESS_CHECKOUT",
-                        "GOCARDLESS",
-                        "ADYEN",
-                        "NOT_APPLICABLE",
-                        "_UNKNOWN"
-                    ],
-                    "req": false,
-                    "type": "Enum"
-                },
                 {
                     "is_multi": false,
                     "method_name": "paymentMethodType",
@@ -878,6 +839,45 @@
                     "name": "paymentMethodTmpToken",
                     "req": false,
                     "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "paymentMethodGateway",
+                    "name": "paymentMethodGateway",
+                    "possible_values": [
+                        "CHARGEBEE",
+                        "STRIPE",
+                        "WEPAY",
+                        "BRAINTREE",
+                        "AUTHORIZE_NET",
+                        "PAYPAL_PRO",
+                        "PIN",
+                        "EWAY",
+                        "EWAY_RAPID",
+                        "WORLDPAY",
+                        "BALANCED_PAYMENTS",
+                        "BEANSTREAM",
+                        "BLUEPAY",
+                        "ELAVON",
+                        "FIRST_DATA_GLOBAL",
+                        "HDFC",
+                        "MIGS",
+                        "NMI",
+                        "OGONE",
+                        "PAYMILL",
+                        "PAYPAL_PAYFLOW_PRO",
+                        "SAGE_PAY",
+                        "TCO",
+                        "WIRECARD",
+                        "AMAZON_PAYMENTS",
+                        "PAYPAL_EXPRESS_CHECKOUT",
+                        "GOCARDLESS",
+                        "ADYEN",
+                        "NOT_APPLICABLE",
+                        "_UNKNOWN"
+                    ],
+                    "req": false,
+                    "type": "Enum"
                 }
             ],
             "static_method_name": "updatePaymentMethod",
@@ -896,10 +896,17 @@
                 },
                 {
                     "is_multi": false,
-                    "method_name": "lastName",
-                    "name": "lastName",
+                    "method_name": "invoiceNotes",
+                    "name": "invoiceNotes",
                     "req": false,
                     "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "metaData",
+                    "name": "metaData",
+                    "req": false,
+                    "type": "JSONObject"
                 },
                 {
                     "is_multi": false,
@@ -910,10 +917,10 @@
                 },
                 {
                     "is_multi": false,
-                    "method_name": "metaData",
-                    "name": "metaData",
+                    "method_name": "lastName",
+                    "name": "lastName",
                     "req": false,
-                    "type": "JSONObject"
+                    "type": "String"
                 },
                 {
                     "is_multi": false,
@@ -1031,13 +1038,6 @@
                 },
                 {
                     "is_multi": false,
-                    "method_name": "invoiceNotes",
-                    "name": "invoiceNotes",
-                    "req": false,
-                    "type": "String"
-                },
-                {
-                    "is_multi": false,
                     "method_name": "preferredCurrencyCode",
                     "name": "preferredCurrencyCode",
                     "req": false,
@@ -1067,207 +1067,17 @@
                 },
                 {
                     "is_multi": false,
-                    "method_name": "billingAddressFirstName",
-                    "name": "billingAddressFirstName",
+                    "method_name": "invoiceNotes",
+                    "name": "invoiceNotes",
                     "req": false,
                     "type": "String"
                 },
                 {
                     "is_multi": false,
-                    "method_name": "billingAddressLastName",
-                    "name": "billingAddressLastName",
+                    "method_name": "metaData",
+                    "name": "metaData",
                     "req": false,
-                    "type": "String"
-                },
-                {
-                    "is_multi": false,
-                    "method_name": "billingAddressEmail",
-                    "name": "billingAddressEmail",
-                    "req": false,
-                    "type": "String"
-                },
-                {
-                    "is_multi": false,
-                    "method_name": "billingAddressCompany",
-                    "name": "billingAddressCompany",
-                    "req": false,
-                    "type": "String"
-                },
-                {
-                    "is_multi": false,
-                    "method_name": "billingAddressPhone",
-                    "name": "billingAddressPhone",
-                    "req": false,
-                    "type": "String"
-                },
-                {
-                    "is_multi": false,
-                    "method_name": "billingAddressLine1",
-                    "name": "billingAddressLine1",
-                    "req": false,
-                    "type": "String"
-                },
-                {
-                    "is_multi": false,
-                    "method_name": "billingAddressLine2",
-                    "name": "billingAddressLine2",
-                    "req": false,
-                    "type": "String"
-                },
-                {
-                    "is_multi": false,
-                    "method_name": "billingAddressLine3",
-                    "name": "billingAddressLine3",
-                    "req": false,
-                    "type": "String"
-                },
-                {
-                    "is_multi": false,
-                    "method_name": "billingAddressCity",
-                    "name": "billingAddressCity",
-                    "req": false,
-                    "type": "String"
-                },
-                {
-                    "is_multi": false,
-                    "method_name": "billingAddressStateCode",
-                    "name": "billingAddressStateCode",
-                    "req": false,
-                    "type": "String"
-                },
-                {
-                    "is_multi": false,
-                    "method_name": "billingAddressState",
-                    "name": "billingAddressState",
-                    "req": false,
-                    "type": "String"
-                },
-                {
-                    "is_multi": false,
-                    "method_name": "billingAddressZip",
-                    "name": "billingAddressZip",
-                    "req": false,
-                    "type": "String"
-                },
-                {
-                    "is_multi": false,
-                    "method_name": "billingAddressCountry",
-                    "name": "billingAddressCountry",
-                    "req": false,
-                    "type": "String"
-                },
-                {
-                    "is_multi": false,
-                    "method_name": "billingAddressValidationStatus",
-                    "name": "billingAddressValidationStatus",
-                    "possible_values": [
-                        "NOT_VALIDATED",
-                        "VALID",
-                        "PARTIALLY_VALID",
-                        "INVALID",
-                        "_UNKNOWN"
-                    ],
-                    "req": false,
-                    "type": "Enum"
-                },
-                {
-                    "is_multi": false,
-                    "method_name": "paymentMethodGateway",
-                    "name": "paymentMethodGateway",
-                    "possible_values": [
-                        "CHARGEBEE",
-                        "STRIPE",
-                        "WEPAY",
-                        "BRAINTREE",
-                        "AUTHORIZE_NET",
-                        "PAYPAL_PRO",
-                        "PIN",
-                        "EWAY",
-                        "EWAY_RAPID",
-                        "WORLDPAY",
-                        "BALANCED_PAYMENTS",
-                        "BEANSTREAM",
-                        "BLUEPAY",
-                        "ELAVON",
-                        "FIRST_DATA_GLOBAL",
-                        "HDFC",
-                        "MIGS",
-                        "NMI",
-                        "OGONE",
-                        "PAYMILL",
-                        "PAYPAL_PAYFLOW_PRO",
-                        "SAGE_PAY",
-                        "TCO",
-                        "WIRECARD",
-                        "AMAZON_PAYMENTS",
-                        "PAYPAL_EXPRESS_CHECKOUT",
-                        "GOCARDLESS",
-                        "ADYEN",
-                        "NOT_APPLICABLE",
-                        "_UNKNOWN"
-                    ],
-                    "req": false,
-                    "type": "Enum"
-                },
-                {
-                    "is_multi": false,
-                    "method_name": "cardGateway",
-                    "name": "cardGateway",
-                    "possible_values": [
-                        "CHARGEBEE",
-                        "STRIPE",
-                        "WEPAY",
-                        "BRAINTREE",
-                        "AUTHORIZE_NET",
-                        "PAYPAL_PRO",
-                        "PIN",
-                        "EWAY",
-                        "EWAY_RAPID",
-                        "WORLDPAY",
-                        "BALANCED_PAYMENTS",
-                        "BEANSTREAM",
-                        "BLUEPAY",
-                        "ELAVON",
-                        "FIRST_DATA_GLOBAL",
-                        "HDFC",
-                        "MIGS",
-                        "NMI",
-                        "OGONE",
-                        "PAYMILL",
-                        "PAYPAL_PAYFLOW_PRO",
-                        "SAGE_PAY",
-                        "TCO",
-                        "WIRECARD",
-                        "AMAZON_PAYMENTS",
-                        "PAYPAL_EXPRESS_CHECKOUT",
-                        "GOCARDLESS",
-                        "ADYEN",
-                        "NOT_APPLICABLE",
-                        "_UNKNOWN"
-                    ],
-                    "req": false,
-                    "type": "Enum"
-                },
-                {
-                    "is_multi": false,
-                    "method_name": "cardTmpToken",
-                    "name": "cardTmpToken",
-                    "req": false,
-                    "type": "String"
-                },
-                {
-                    "is_multi": false,
-                    "method_name": "cardIpAddress",
-                    "name": "cardIpAddress",
-                    "req": false,
-                    "type": "String"
-                },
-                {
-                    "is_multi": false,
-                    "method_name": "lastName",
-                    "name": "lastName",
-                    "req": false,
-                    "type": "String"
+                    "type": "JSONObject"
                 },
                 {
                     "is_multi": false,
@@ -1278,10 +1088,10 @@
                 },
                 {
                     "is_multi": false,
-                    "method_name": "metaData",
-                    "name": "metaData",
+                    "method_name": "lastName",
+                    "name": "lastName",
                     "req": false,
-                    "type": "JSONObject"
+                    "type": "String"
                 },
                 {
                     "is_multi": false,
@@ -1400,13 +1210,6 @@
                 },
                 {
                     "is_multi": false,
-                    "method_name": "invoiceNotes",
-                    "name": "invoiceNotes",
-                    "req": false,
-                    "type": "String"
-                },
-                {
-                    "is_multi": false,
                     "method_name": "preferredCurrencyCode",
                     "name": "preferredCurrencyCode",
                     "req": false,
@@ -1418,6 +1221,111 @@
                     "name": "registeredForGst",
                     "req": false,
                     "type": "Boolean"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "billingAddressFirstName",
+                    "name": "billingAddressFirstName",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "billingAddressLastName",
+                    "name": "billingAddressLastName",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "billingAddressEmail",
+                    "name": "billingAddressEmail",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "billingAddressCompany",
+                    "name": "billingAddressCompany",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "billingAddressPhone",
+                    "name": "billingAddressPhone",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "billingAddressLine1",
+                    "name": "billingAddressLine1",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "billingAddressLine2",
+                    "name": "billingAddressLine2",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "billingAddressLine3",
+                    "name": "billingAddressLine3",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "billingAddressCity",
+                    "name": "billingAddressCity",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "billingAddressStateCode",
+                    "name": "billingAddressStateCode",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "billingAddressState",
+                    "name": "billingAddressState",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "billingAddressZip",
+                    "name": "billingAddressZip",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "billingAddressCountry",
+                    "name": "billingAddressCountry",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "billingAddressValidationStatus",
+                    "name": "billingAddressValidationStatus",
+                    "possible_values": [
+                        "NOT_VALIDATED",
+                        "VALID",
+                        "PARTIALLY_VALID",
+                        "INVALID",
+                        "_UNKNOWN"
+                    ],
+                    "req": false,
+                    "type": "Enum"
                 },
                 {
                     "is_multi": false,
@@ -1553,6 +1461,98 @@
                     "is_multi": false,
                     "method_name": "cardBillingCountry",
                     "name": "cardBillingCountry",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "paymentMethodGateway",
+                    "name": "paymentMethodGateway",
+                    "possible_values": [
+                        "CHARGEBEE",
+                        "STRIPE",
+                        "WEPAY",
+                        "BRAINTREE",
+                        "AUTHORIZE_NET",
+                        "PAYPAL_PRO",
+                        "PIN",
+                        "EWAY",
+                        "EWAY_RAPID",
+                        "WORLDPAY",
+                        "BALANCED_PAYMENTS",
+                        "BEANSTREAM",
+                        "BLUEPAY",
+                        "ELAVON",
+                        "FIRST_DATA_GLOBAL",
+                        "HDFC",
+                        "MIGS",
+                        "NMI",
+                        "OGONE",
+                        "PAYMILL",
+                        "PAYPAL_PAYFLOW_PRO",
+                        "SAGE_PAY",
+                        "TCO",
+                        "WIRECARD",
+                        "AMAZON_PAYMENTS",
+                        "PAYPAL_EXPRESS_CHECKOUT",
+                        "GOCARDLESS",
+                        "ADYEN",
+                        "NOT_APPLICABLE",
+                        "_UNKNOWN"
+                    ],
+                    "req": false,
+                    "type": "Enum"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "cardGateway",
+                    "name": "cardGateway",
+                    "possible_values": [
+                        "CHARGEBEE",
+                        "STRIPE",
+                        "WEPAY",
+                        "BRAINTREE",
+                        "AUTHORIZE_NET",
+                        "PAYPAL_PRO",
+                        "PIN",
+                        "EWAY",
+                        "EWAY_RAPID",
+                        "WORLDPAY",
+                        "BALANCED_PAYMENTS",
+                        "BEANSTREAM",
+                        "BLUEPAY",
+                        "ELAVON",
+                        "FIRST_DATA_GLOBAL",
+                        "HDFC",
+                        "MIGS",
+                        "NMI",
+                        "OGONE",
+                        "PAYMILL",
+                        "PAYPAL_PAYFLOW_PRO",
+                        "SAGE_PAY",
+                        "TCO",
+                        "WIRECARD",
+                        "AMAZON_PAYMENTS",
+                        "PAYPAL_EXPRESS_CHECKOUT",
+                        "GOCARDLESS",
+                        "ADYEN",
+                        "NOT_APPLICABLE",
+                        "_UNKNOWN"
+                    ],
+                    "req": false,
+                    "type": "Enum"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "cardTmpToken",
+                    "name": "cardTmpToken",
+                    "req": false,
+                    "type": "String"
+                },
+                {
+                    "is_multi": false,
+                    "method_name": "cardIpAddress",
+                    "name": "cardIpAddress",
                     "req": false,
                     "type": "String"
                 }
