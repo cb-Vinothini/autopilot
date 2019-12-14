@@ -28,7 +28,12 @@ public class Workflow {
     @Column(name="type", nullable=false)
     @Enumerated(EnumType.ORDINAL)
     @ApiModelProperty(example = "HOOK")
-    private WorkflowType type;
+    private Type type;
+
+    @Column(name="status", nullable=false)
+    @Enumerated(EnumType.ORDINAL)
+    @ApiModelProperty(example = "ACTIVE")
+    private Status status;
 
     @Column(name="entityType", nullable=false, length=200)
     @Enumerated(EnumType.ORDINAL)
@@ -67,11 +72,11 @@ public class Workflow {
         this.description = description;
     }
 
-    public WorkflowType getType() {
+    public Type getType() {
         return type;
     }
 
-    public void setType(WorkflowType type) {
+    public void setType(Type type) {
         this.type = type;
     }
 
@@ -99,7 +104,19 @@ public class Workflow {
         this.modifiedAt = modifiedAt;
     }
 
-    public enum WorkflowType {
+    public Status getStatus() {
+        return status;
+    }
+
+    public void setStatus(Status status) {
+        this.status = status;
+    }
+
+    public enum Type {
         HOOK, JOB;
+    }
+
+    public enum Status {
+        ACTIVE, DRAFT;
     }
 }

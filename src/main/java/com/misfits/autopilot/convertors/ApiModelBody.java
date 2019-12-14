@@ -16,7 +16,9 @@ public class ApiModelBody {
     @ApiModelProperty(example = "Add shipping charges when subscription shipping address is in US")
     private String desc;
 
-    private Workflow.WorkflowType workflowType;
+    private Workflow.Type type;
+
+    private Workflow.Status status;
 
     @ApiModelProperty(example = "SUBSCRIPTION")
     private EntityType entityName;
@@ -87,12 +89,12 @@ public class ApiModelBody {
         this.desc = desc;
     }
 
-    public Workflow.WorkflowType getWorkflowType() {
-        return workflowType;
+    public Workflow.Type getType() {
+        return type;
     }
 
-    public void setWorkflowType(Workflow.WorkflowType workflowType) {
-        this.workflowType = workflowType;
+    public void setType(Workflow.Type type) {
+        this.type = type;
     }
 
 
@@ -109,7 +111,8 @@ public class ApiModelBody {
         workflow.setName(name);
         workflow.setDescription(desc);
         workflow.setEntityType(entityName);
-        workflow.setType(workflowType);
+        workflow.setType(type);
+        workflow.setStatus(status);
     }
 
     public void convertValues(Workflow flow) throws Exception {
@@ -131,6 +134,14 @@ public class ApiModelBody {
 
     public void setTriggers(List<EventType> triggers) {
         this.triggers = triggers;
+    }
+
+    public Workflow.Status getStatus() {
+        return status;
+    }
+
+    public void setStatus(Workflow.Status status) {
+        this.status = status;
     }
 }
 
