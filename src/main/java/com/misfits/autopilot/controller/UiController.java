@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @Api(value="/model", produces ="application/json")
 @RequestMapping("/model")
-@CrossOrigin(origins = "http://localhost:8080")
+@CrossOrigin(origins = "http://localhost:8081")
 public class UiController {
 
     @RequestMapping(method = RequestMethod.GET)
