@@ -117,6 +117,6 @@ public class Workflow {
     }
 
     public enum Status {
-        ACTIVE, DRAFT;
+        ACTIVE, DISABLED;
     }
 }
